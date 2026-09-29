@@ -8,7 +8,10 @@
     "library": false,
     "revision": 1,
     "type": "catalogue",
-    "catalogueLinks": [{"name": "Heresy", "id": "58c2-eefd-1d1c-1b2b", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}],
+    "catalogueLinks": [
+      {"name": "Heresy", "id": "58c2-eefd-1d1c-1b2b", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"},
+      {"name": "Campaign Rules", "id": "d71c-3895-424b-01c5", "importRootEntries": true, "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"}
+    ],
     "selectionEntries": [
       {
         "name": "Stitch",
@@ -82,7 +85,43 @@
             "name": "Upgrades",
             "id": "16e4-53e9-d432-69b0",
             "hidden": false,
-            "constraints": [{"id": "c602-91a9-5dd0-e610", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "constraints": [{"id": "c602-91a9-5dd0-e610", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "c602-91a9-5dd0-e610",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "c602-91a9-5dd0-e610",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
             "selectionEntries": [
               {
                 "name": "Warping Mutate",
@@ -90,31 +129,8 @@
                 "hidden": false,
                 "import": true,
                 "type": "upgrade",
+                "constraints": [{"id": "01e1-fc08-0a4b-c5d8", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
                 "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                "modifiers": [
-                  {
-                    "field": "error",
-                    "type": "add",
-                    "value": "{this} is not allowed",
-                    "conditionGroups": [
-                      {
-                        "type": "and",
-                        "conditions": [
-                          {
-                            "childId": "upgrade",
-                            "childName": "upgrade",
-                            "field": "selections",
-                            "includeChildSelections": true,
-                            "scope": "self",
-                            "shared": true,
-                            "type": "atLeast",
-                            "value": 1
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
                 "profiles": [
                   {
                     "name": "Warping Mutate",
@@ -132,31 +148,8 @@
                 "hidden": false,
                 "import": true,
                 "type": "upgrade",
+                "constraints": [{"id": "3c9d-94d0-49a6-6961", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
                 "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                "modifiers": [
-                  {
-                    "field": "error",
-                    "type": "add",
-                    "value": "{this} is not allowed",
-                    "conditionGroups": [
-                      {
-                        "type": "and",
-                        "conditions": [
-                          {
-                            "childId": "upgrade",
-                            "childName": "upgrade",
-                            "field": "selections",
-                            "includeChildSelections": true,
-                            "scope": "self",
-                            "shared": true,
-                            "type": "atLeast",
-                            "value": 1
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
                 "profiles": [
                   {
                     "name": "Genestealer",
@@ -174,31 +167,8 @@
                 "hidden": false,
                 "import": true,
                 "type": "upgrade",
+                "constraints": [{"id": "8079-d592-834e-d12f", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
                 "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                "modifiers": [
-                  {
-                    "field": "error",
-                    "type": "add",
-                    "value": "{this} is not allowed",
-                    "conditionGroups": [
-                      {
-                        "type": "and",
-                        "conditions": [
-                          {
-                            "childId": "upgrade",
-                            "childName": "upgrade",
-                            "field": "selections",
-                            "includeChildSelections": true,
-                            "scope": "self",
-                            "shared": true,
-                            "type": "atLeast",
-                            "value": 1
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
                 "profiles": [
                   {
                     "name": "Spread Mutate",
@@ -627,6 +597,7 @@
       {
         "name": "Chirurgeon",
         "id": "1188-a055-8cc9-2578",
+        "defaultAmount": "1",
         "hidden": false,
         "import": true,
         "type": "unit",

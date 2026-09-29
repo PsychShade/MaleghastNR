@@ -31,7 +31,7 @@
       },
       {"name": "Configuration", "id": "0db2-47fa-cad5-79b1", "hidden": false}
     ],
-    "costTypes": [{"name": "Dark Power", "id": "205a-3435-7aea-b42b", "defaultCostLimit": -1}],
+    "costTypes": [{"name": "Dark Power", "id": "205a-3435-7aea-b42b", "defaultCostLimit": -1, "hidden": false}],
     "forceEntries": [
       {
         "name": "Dark Mass",

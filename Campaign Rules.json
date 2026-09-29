@@ -7,6 +7,263 @@
     "gameSystemRevision": 1,
     "library": true,
     "revision": 1,
-    "type": "catalogue"
+    "type": "catalogue",
+    "selectionEntries": [
+      {
+        "name": "Dark Power Upgrades",
+        "id": "28dc-183f-1b48-6477",
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "categoryLinks": [{"name": "Configuration", "id": "051b-e182-99e7-3d41", "hidden": false, "primary": true, "targetId": "0db2-47fa-cad5-79b1"}],
+        "constraints": [{"id": "c4a3-b446-bd9b-5f62", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "max", "value": 1}],
+        "selectionEntries": [
+          {
+            "name": "Hunter",
+            "id": "ebda-48f8-bd51-2c2b",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 5,
+            "type": "upgrade",
+            "constraints": [{"id": "0387-927b-3076-8f11", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": -1}],
+            "modifiers": [
+              {
+                "field": "0387-927b-3076-8f11",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "2272-2d07-a34e-0161",
+                    "childName": "Ultrahell",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "atLeast",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Scion",
+            "id": "cfab-8a96-2672-3d73",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 2,
+            "type": "upgrade",
+            "constraints": [{"id": "ea93-8ae7-b749-ba41", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": -1}],
+            "modifiers": [
+              {
+                "field": "ea93-8ae7-b749-ba41",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "2272-2d07-a34e-0161",
+                    "childName": "Ultrahell",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "atLeast",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Freak",
+            "id": "97b1-8815-fb52-c2ed",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 3,
+            "type": "upgrade",
+            "constraints": [{"id": "e728-8eec-5ddf-e9d4", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": -1}],
+            "modifiers": [
+              {
+                "field": "e728-8eec-5ddf-e9d4",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "2272-2d07-a34e-0161",
+                    "childName": "Ultrahell",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "atLeast",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Horror",
+            "id": "0866-43f5-7846-cb12",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 4,
+            "type": "upgrade",
+            "constraints": [{"id": "bc45-ec98-756f-1ebb", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": -1}],
+            "modifiers": [
+              {
+                "field": "bc45-ec98-756f-1ebb",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "2272-2d07-a34e-0161",
+                    "childName": "Ultrahell",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "atLeast",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Thralls",
+            "id": "cea6-4387-7a91-c774",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 1,
+            "type": "upgrade",
+            "constraints": [{"id": "44ec-bc3d-4f2c-3c87", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": -1}],
+            "modifiers": [
+              {
+                "field": "44ec-bc3d-4f2c-3c87",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "2272-2d07-a34e-0161",
+                    "childName": "Ultrahell",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "atLeast",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Tyrant",
+            "id": "55e1-fec7-07c8-e87e",
+            "hidden": false,
+            "import": true,
+            "sortIndex": 6,
+            "type": "upgrade",
+            "constraints": [{"id": "9f2a-be0e-0402-39d6", "field": "selections", "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": -1}],
+            "modifiers": [
+              {
+                "field": "9f2a-be0e-0402-39d6",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "2272-2d07-a34e-0161",
+                    "childName": "Ultrahell",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "atLeast",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Malice Level",
+        "id": "c704-a541-bc86-c03e",
+        "defaultAmount": "1",
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "categoryLinks": [{"name": "Configuration", "id": "dc36-f68a-8182-528a", "hidden": false, "primary": true, "targetId": "0db2-47fa-cad5-79b1"}],
+        "constraints": [
+          {"id": "caf9-1f54-2b65-9e9d-min", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "min", "value": 1},
+          {"id": "caf9-1f54-2b65-9e9d-max", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "max", "value": 1}
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Malice level of the game",
+            "id": "b821-da62-6230-6808",
+            "hidden": false,
+            "constraints": [{"id": "fbff-6173-3aa5-a134", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "selectionEntries": [
+              {
+                "name": "Ultrahell",
+                "id": "2272-2d07-a34e-0161",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 5,
+                "type": "upgrade",
+                "modifiers": [{"field": "205a-3435-7aea-b42b", "type": "set", "value": 12}]
+              },
+              {
+                "name": "Spite",
+                "id": "15dd-9d83-cd5d-d230",
+                "defaultAmount": "1",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "modifiers": [{"field": "205a-3435-7aea-b42b", "type": "set", "value": 0}]
+              },
+              {
+                "name": "Loathing",
+                "id": "8b82-06e0-743b-c615",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "modifiers": [{"field": "205a-3435-7aea-b42b", "type": "set", "value": 4}]
+              },
+              {
+                "name": "Hatred",
+                "id": "f0ef-41c7-8a14-06ac",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "modifiers": [{"field": "205a-3435-7aea-b42b", "type": "set", "value": 7}]
+              },
+              {
+                "name": "Hell",
+                "id": "82e8-8eec-5e42-f062",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 4,
+                "type": "upgrade",
+                "modifiers": [{"field": "205a-3435-7aea-b42b", "type": "set", "value": 10}]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
