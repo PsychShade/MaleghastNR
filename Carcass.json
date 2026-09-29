@@ -1,0 +1,12 @@
+{
+  "catalogue": {
+    "name": "Carcass",
+    "id": "54cb-0a30-6432-2de9",
+    "battleScribeVersion": "2.03",
+    "gameSystemId": "sys-6f8b-0e7c-218a-f6a4",
+    "gameSystemRevision": 1,
+    "library": false,
+    "revision": 1,
+    "type": "catalogue"
+  }
+}

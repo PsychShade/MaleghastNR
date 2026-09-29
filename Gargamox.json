@@ -1,0 +1,12 @@
+{
+  "catalogue": {
+    "name": "Gargamox",
+    "id": "1bda-f0b5-96f5-595a",
+    "battleScribeVersion": "2.03",
+    "gameSystemId": "sys-6f8b-0e7c-218a-f6a4",
+    "gameSystemRevision": 1,
+    "library": false,
+    "revision": 1,
+    "type": "catalogue"
+  }
+}

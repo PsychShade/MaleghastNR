@@ -1,0 +1,90 @@
+{
+  "gameSystem": {
+    "name": "Maleghast",
+    "id": "sys-6f8b-0e7c-218a-f6a4",
+    "battleScribeVersion": "2.03",
+    "revision": 1,
+    "type": "gameSystem",
+    "categoryEntries": [
+      {"name": "House Unit", "id": "34f2-2368-a022-4c0d", "hidden": false},
+      {"name": "Heresy", "id": "1782-cd4b-822e-0a15", "hidden": false},
+      {"name": "Mercenary", "id": "48cc-6dbf-9729-43e3", "hidden": false},
+      {"name": "Thrall", "id": "b1b6-295a-b637-9c4c", "hidden": false},
+      {"name": "Scion", "id": "fa04-6df6-fc81-7d88", "hidden": false},
+      {"name": "Freak", "id": "19d1-0a3d-46f4-65e9", "hidden": false},
+      {"name": "Horror", "id": "88fe-98a4-c63f-2c4e", "hidden": false},
+      {"name": "Hunter", "id": "8d86-d66c-554d-f5a5", "hidden": false},
+      {
+        "name": "Tyrant",
+        "id": "4e65-8d12-8eab-a6a7",
+        "hidden": false,
+        "constraints": [{"id": "dbf5-31bb-7cae-c26b", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "max", "value": 1}]
+      },
+      {
+        "name": "Necromancer",
+        "id": "51aa-2972-b4d9-be05",
+        "hidden": false,
+        "constraints": [
+          {"id": "8139-a59a-e940-57b4-min", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "min", "value": 1},
+          {"id": "8139-a59a-e940-57b4-max", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "max", "value": 1}
+        ]
+      },
+      {"name": "Configuration", "id": "0db2-47fa-cad5-79b1", "hidden": false}
+    ],
+    "costTypes": [{"name": "Dark Power", "id": "205a-3435-7aea-b42b", "defaultCostLimit": -1}],
+    "forceEntries": [
+      {
+        "name": "Dark Mass",
+        "id": "default-force",
+        "hidden": false,
+        "categoryLinks": [
+          {"name": "Configuration", "id": "8e2f-7e14-7584-15f5", "hidden": false, "targetId": "0db2-47fa-cad5-79b1"},
+          {"name": "Necromancer", "id": "992b-afab-796c-ca66", "hidden": false, "targetId": "51aa-2972-b4d9-be05"},
+          {"name": "House Unit", "id": "f106-d34b-3856-9a7b", "hidden": false, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Mercenary", "id": "6984-aaa5-d6a2-a73e", "hidden": false, "targetId": "48cc-6dbf-9729-43e3"}
+        ]
+      }
+    ],
+    "profileTypes": [
+      {
+        "name": "Upgrade",
+        "id": "47d4-1cb7-7b93-261a",
+        "hidden": false,
+        "characteristicTypes": [{"name": "Description", "id": "2ee8-274b-b3fc-9655", "kind": "longText"}]
+      },
+      {
+        "name": "ACT Ability",
+        "id": "fbdf-1d03-d885-5e61",
+        "hidden": false,
+        "characteristicTypes": [{"name": "Tag", "id": "f29c-ed50-4f8c-19dd"}, {"name": "Description", "id": "4ce0-5160-a645-5c3d", "kind": "longText"}]
+      },
+      {
+        "name": "Unit",
+        "id": "7297-1922-7299-d456",
+        "hidden": false,
+        "characteristicTypes": [
+          {"name": "Movement Value", "id": "3b87-1c4f-a3c0-a6c2"},
+          {"name": "Health Points", "id": "27df-97b3-2013-3ca8"},
+          {"name": "Defense", "id": "86d1-139f-866e-0c1f"},
+          {"name": "Armor", "id": "4ce6-766a-5184-794a"}
+        ]
+      },
+      {
+        "name": "Traits",
+        "id": "957a-4ad1-8e49-55f3",
+        "hidden": false,
+        "characteristicTypes": [{"name": "Description", "id": "14fe-a261-4f47-6f40", "kind": "longText"}]
+      },
+      {
+        "name": "SOUL ability",
+        "id": "dd79-c1b6-f795-8499",
+        "hidden": false,
+        "characteristicTypes": [
+          {"name": "Tag", "id": "b09c-2bf5-95e0-bba3"},
+          {"name": "Cost", "id": "0d1c-aace-0cc0-d3e3", "defaultValue": "\n", "kind": "annotation"},
+          {"name": "Description", "id": "07d2-d978-e8e2-acb2", "kind": "longText"}
+        ]
+      }
+    ]
+  }
+}

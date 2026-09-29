@@ -1,0 +1,37 @@
+{
+  "catalogue": {
+    "name": "Heresy",
+    "id": "bc57-91b8-c7bd-3892",
+    "battleScribeVersion": "2.03",
+    "gameSystemId": "sys-6f8b-0e7c-218a-f6a4",
+    "gameSystemRevision": 1,
+    "library": true,
+    "revision": 1,
+    "type": "catalogue",
+    "selectionEntries": [
+      {
+        "name": "Heresy",
+        "id": "596a-2da8-21c5-9e1a",
+        "hidden": false,
+        "import": true,
+        "type": "upgrade",
+        "categoryLinks": [{"name": "Configuration", "id": "77df-cb9a-95b4-eb4d", "hidden": false, "primary": true, "targetId": "0db2-47fa-cad5-79b1"}],
+        "selectionEntryGroups": [
+          {
+            "name": "Commit Heresy?",
+            "id": "cefa-e7f0-5597-30cb",
+            "hidden": false,
+            "constraints": [
+              {"id": "0fef-7c79-3568-e884", "field": "selections", "includeChildSelections": false, "scope": "self", "shared": true, "type": "min", "value": 1},
+              {"id": "ef53-7001-14ed-ff6f", "field": "selections", "includeChildSelections": false, "scope": "self", "shared": true, "type": "max", "value": 1}
+            ],
+            "selectionEntries": [
+              {"name": "No", "id": "c839-c394-30e9-ca86", "hidden": false, "import": true, "type": "upgrade"},
+              {"name": "Yes", "id": "d02a-0f56-0343-33f8", "hidden": false, "import": true, "type": "upgrade"}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

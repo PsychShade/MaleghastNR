@@ -1,0 +1,12 @@
+{
+  "catalogue": {
+    "name": "Campaign Rules",
+    "id": "3ca5-c8cb-23f1-bf2e",
+    "battleScribeVersion": "2.03",
+    "gameSystemId": "sys-6f8b-0e7c-218a-f6a4",
+    "gameSystemRevision": 1,
+    "library": true,
+    "revision": 1,
+    "type": "catalogue"
+  }
+}

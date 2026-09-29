@@ -1,0 +1,2264 @@
+{
+  "catalogue": {
+    "name": "Igorri",
+    "id": "ed75-a6dc-ea47-9821",
+    "battleScribeVersion": "2.03",
+    "gameSystemId": "sys-6f8b-0e7c-218a-f6a4",
+    "gameSystemRevision": 1,
+    "library": false,
+    "revision": 1,
+    "type": "catalogue",
+    "catalogueLinks": [{"name": "Heresy", "id": "58c2-eefd-1d1c-1b2b", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}],
+    "selectionEntries": [
+      {
+        "name": "Stitch",
+        "id": "e6ae-d4a2-48f2-21be",
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "564c-2ba7-cf40-a010", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Thrall", "id": "2bbf-b8f0-c7bb-5119", "hidden": false, "primary": false, "targetId": "b1b6-295a-b637-9c4c"}
+        ],
+        "profiles": [
+          {
+            "name": "Stitch",
+            "id": "c7e7-f9cd-e9f6-fce8",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "2", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Fall to Shambles",
+            "id": "a03f-051b-2ce3-57fd",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "When slain, leaves an extra corpse token in an adjacent space (two corpses total)", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Thrall",
+            "id": "130d-aa84-521e-a59e",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Unstable Mutation",
+            "id": "0285-3d7a-684a-4a72",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "Effect: Gain 1 strength, (4+) 1 speed, (5+) and 1 vitality, (6+) and explode for splash (self): 1 damage. \nSpare parts: Roll +1D per corpse and pick the highest result.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Twisting Strike",
+            "id": "f214-9ad6-0990-32f9",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "On hit: 1 damage and mutate.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "16e4-53e9-d432-69b0",
+            "hidden": false,
+            "constraints": [{"id": "c602-91a9-5dd0-e610", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "selectionEntries": [
+              {
+                "name": "Warping Mutate",
+                "id": "27b4-dd44-c10c-16aa",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Warping Mutate",
+                    "id": "7074-0e87-f9cc-20d8",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 1 (4+) or 3 spaces before Unstable mutation.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Genestealer",
+                "id": "c947-9a63-2273-0dd9",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Genestealer",
+                    "id": "4f59-fed0-f91b-fd61",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike gain Effect (5+): On hit, steal a positive token from target.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Spread Mutate",
+                "id": "ae91-60aa-ffe2-f38e",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Spread Mutate",
+                    "id": "f3cd-e0f1-9727-6e57",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike also casuses an adjacent ally to mutate on hit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lycan",
+        "id": "4393-9f5b-3c6b-1714",
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "d842-c0ef-b36a-1a34", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Horror", "id": "3c87-df52-e1dc-a686", "hidden": false, "primary": false, "targetId": "88fe-98a4-c63f-2c4e"}
+        ],
+        "constraints": [{"id": "90ea-99a3-7577-421f", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Stitch",
+            "id": "1710-6ea5-7062-14ac",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "2", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Fall to Shambles",
+            "id": "c71d-dde4-fa45-3cc0",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "When slain, leaves an extra corpse token in an adjacent space (two corpses total)", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Thrall",
+            "id": "32a0-92e9-b6bf-5e0b",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Unstable Mutation",
+            "id": "f6a7-4681-2224-652f",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "Effect: Gain 1 strength, (4+) 1 speed, (5+) and 1 vitality, (6+) and explode for splash (self): 1 damage. \nSpare parts: Roll +1D per corpse and pick the highest result.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Twisting Strike",
+            "id": "d2e5-5a65-010f-1645",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "On hit: 1 damage and mutate.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "d2d7-5313-3f68-c180",
+            "hidden": false,
+            "constraints": [{"id": "8080-6eab-1759-7f75", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "selectionEntries": [
+              {
+                "name": "Warping Mutate",
+                "id": "467f-40d3-a7c0-3c89",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Warping Mutate",
+                    "id": "a901-8afc-b129-d324",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 1 (4+) or 3 spaces before Unstable mutation.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Genestealer",
+                "id": "6245-23ba-8ddb-41e9",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Genestealer",
+                    "id": "e650-bc3d-b0b1-3ebb",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike gain Effect (5+): On hit, steal a positive token from target.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Spread Mutate",
+                "id": "6d4b-b218-cebd-e68f",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Spread Mutate",
+                    "id": "556b-6357-c872-3b2e",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike also casuses an adjacent ally to mutate on hit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Chop Doc",
+        "id": "4efe-c1ba-63af-0745",
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "c95c-4b11-05fc-0839", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Freak", "id": "7f6f-09c6-192e-46d0", "hidden": false, "primary": false, "targetId": "19d1-0a3d-46f4-65e9"}
+        ],
+        "constraints": [{"id": "a440-002b-5f27-ea43", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Stitch",
+            "id": "8235-6e2a-5d5c-2cea",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "2", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Fall to Shambles",
+            "id": "825b-a3ed-5e06-a19d",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "When slain, leaves an extra corpse token in an adjacent space (two corpses total)", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Thrall",
+            "id": "97ee-f72a-68bb-b3ff",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Unstable Mutation",
+            "id": "732b-bff6-ed08-a1ad",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "Effect: Gain 1 strength, (4+) 1 speed, (5+) and 1 vitality, (6+) and explode for splash (self): 1 damage. \nSpare parts: Roll +1D per corpse and pick the highest result.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Twisting Strike",
+            "id": "5257-967f-144e-fe7c",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "On hit: 1 damage and mutate.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "5590-1bc3-4b3e-00b6",
+            "hidden": false,
+            "constraints": [{"id": "5955-02fb-4101-3d08", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "selectionEntries": [
+              {
+                "name": "Warping Mutate",
+                "id": "afb0-30ae-1981-f43a",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Warping Mutate",
+                    "id": "3565-393d-48c6-0268",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 1 (4+) or 3 spaces before Unstable mutation.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Genestealer",
+                "id": "b984-d093-a2f3-42b2",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Genestealer",
+                    "id": "890f-5e0e-a149-669f",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike gain Effect (5+): On hit, steal a positive token from target.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Spread Mutate",
+                "id": "1be0-1cc9-aaaa-a43e",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Spread Mutate",
+                    "id": "ed30-4d93-951f-3919",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike also casuses an adjacent ally to mutate on hit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Chirurgeon",
+        "id": "1188-a055-8cc9-2578",
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [{"name": "Necromancer", "id": "16c3-fcb5-59a5-6161", "hidden": false, "primary": true, "targetId": "51aa-2972-b4d9-be05"}],
+        "profiles": [
+          {
+            "name": "Chirurgeon",
+            "id": "d683-12c9-ead8-dc9b",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "10", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "MAG", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Polyglot",
+            "id": "6817-74e8-5e83-6a91",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "At turn start, may convert one of this unit's mutation tokens into strenght, speed, or vitality. Then, mutate.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Wild Mutation",
+            "id": "ce61-2ebf-7b45-b03a",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own or Allied Turn\nRange 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {
+                "name": "Description",
+                "$text": "**Effect:** Unit in range gains 1 *strength*, (3-4) OR 1 *speed*, (5-6) OR 1 *vitality*.\n**Spare parts**: May choose one token per corpse consumed instead of rolling, up to three times.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
+          },
+          {
+            "name": "Experimental Surgery",
+            "id": "e532-beb7-5fc4-75b0",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Line 4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Line:** 1 damage.\n**Effect:** Allies in the line *mutate* instead of taking damage.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Sample Genome",
+            "id": "4c80-70f7-7e38-59b5",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own or Allied Turn. \nRange 1-3. ", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Description", "$text": "Copy up to four positive tokens on target unit, then grant them to another unit in range.", "typeId": "07d2-d978-e8e2-acb2"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Starting Upgrades",
+            "id": "ac03-6f3f-5e61-08fe",
+            "collapsible": true,
+            "hidden": false,
+            "sortIndex": 1,
+            "constraints": [{"id": "201d-9a3b-840c-7413", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 2}],
+            "selectionEntryGroups": [
+              {
+                "name": "Bonus Traits",
+                "id": "0e3a-d09e-93fc-fb30",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "53e3-6f74-5af1-818d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Rapid Move",
+                    "id": "acd2-bbd4-e229-49e3",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "b4e5-54fc-f0f6-6ff6", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Rapid Move",
+                        "id": "5881-50f1-d1ad-a6cf",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "May remove a mutation token at start or end of own turn to step 2 with free\nmovement.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Accelerate Evolution",
+                    "id": "5269-0d5e-970f-9e22",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "2df0-a1c7-c6a8-8d76", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Accelerate Evolution",
+                        "id": "0339-d8e6-683e-59a2",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "At turn end, may remove one token from this unit and grant to a unit in range 2.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Ancillary Limbs",
+                    "id": "8acc-20e4-3c25-354c",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "e527-816c-4a16-94c3", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Ancillary limbs",
+                        "id": "358c-dd2f-9f0a-9d46",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "May remove a mutation token on self to grant +1D on any attack.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "dbf3-28e7-d10f-6f3f",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "New Material",
+                    "id": "aace-65c3-aebe-9ed6",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "57a1-d9a8-1107-bbc7", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "New Material",
+                        "id": "882c-9536-966c-94e8",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Description", "$text": "**Effect:** Create two or (5+) three corpses in free adjacent spaces, then *mutate*.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Clone",
+                    "id": "e946-a5c7-5baa-4eb0",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "a4c4-ec57-c95a-0458", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Clone",
+                        "id": "e6d5-3c92-2ecb-3ae3",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 1-2.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Create a perfect copy of an allied unit in range in any other free space\nin range. Then *obliterate* the original as it collapses into flesh and replace it with a corpse token.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Stitch Fix",
+                    "id": "e974-d737-1057-8f76",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "1898-4071-4c88-8d37", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Stitch Fix",
+                        "id": "213d-66bd-c9da-126f",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 1-3.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Remove up to three negative tokens from a unit, then it may step 1 and it *mutates*. \n**Spare Parts:** The unit *mutates* and steps once for each negative token removed instead.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Inject Stimulant",
+                    "id": "c2c9-6f0b-3989-85d4",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "61c5-86e1-c361-5ded", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Inject Stimulant",
+                        "id": "d045-287f-2784-f6c1",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 1-3.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Choose a unit in range. That unit may step 2. If it ends its turn in the space of a corpse, it *mutates*, removes the corpse, then may step 2 and *mutate* again.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Biotoxin Injector",
+                    "id": "3986-97db-5dae-881d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "8ba4-7f93-5eb3-9260", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Biotoxin Injector",
+                        "id": "5589-4d05-81ff-1972",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, range 2-4.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit:** 1 toxin damage. \n**Effect:** At end of target’s nextturn, they explode for a *splash* (target) effect for 1 toxin damage. Your allies in the area *mutate* instead of taking damage.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Mutagen Injector",
+                    "id": "78d7-085e-80a2-c131",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "5c26-fda5-d5c2-e2f9", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Mutagen Injector",
+                        "id": "f1a6-56a0-4d8b-a96c",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Range 2-4.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit:** May remove one positive token from target, then deal 1 toxin damage. \n**Spare Parts:** If at least one corpse was consumed, repeat this effect, but no more than once this turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Chaos Beam",
+                    "id": "be65-0315-3005-d809",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "21af-18ae-b3a0-2b17", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Chaos Beam",
+                        "id": "1157-369b-2255-be64",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Line 3.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Line: 1 fire damage and inflict 1 *vulnerable*, (3-4) OR 1 toxic damage and inflict 1 *slow*, (5-6) OR 1 curse damage and inflict 1 *weak*. \n**Spare Parts:** Roll 1D for effect per corpse consumed and choose any result.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "0abe-8a6b-6da0-34e5",
+                "hidden": false,
+                "selectionEntries": [
+                  {
+                    "name": "Flesh Jump",
+                    "id": "5afb-4749-43e9-7277",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "4c16-4752-8446-26bf", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Flesh Jump",
+                        "id": "3095-1e5f-a634-d305",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Description", "$text": "**Effect:** Swap places with an allied unit,then both of you *mutate*.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grow Bonus Legs",
+                    "id": "2345-2ab6-d215-83ee",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "4ac2-4195-2c96-6bb2", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Grow Bonus Legs",
+                        "id": "3de6-d0b5-2348-3ea5",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Remove up to three mutation tokens on target unit, then target may step 2 per token removed with *free* movement, ignoring hazards.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grow Bonus Limbs",
+                    "id": "f431-cf66-37a2-82c3",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "2bc9-d8ed-78f9-ef2d", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Grow Bonus Limbs",
+                        "id": "8c23-4d7d-fb6e-3988",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger:** Turn start.\n**Effect:** Remove up to three mutation tokens from target, then target gains +1D on attacks this turn per token removed. If three or more were removed, their damage gains pierce.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Recycle",
+                    "id": "07c6-534d-cef0-88cb",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "0b1b-7e55-cf5b-022a", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Recycle",
+                        "id": "a471-1dd1-aa63-1eaa",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse\nAny Turn\nRange 1-4", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger:** Turn end. \n**Effect:** Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are *obliterated*. Create up to 3 corpse tokens under their space or in free adjacent spaces.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Devolve",
+                    "id": "d4b0-71c9-b3d9-918c",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "5662-bf7a-8dfb-182a", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Devolve",
+                        "id": "20ab-1782-dcc5-19cc",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse\nFoe Turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "4 SOUL", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger:** Target turn start or end. \n**Effect:** Inflict 2 *slow*, *weak*, and *vulnerable* on target foe.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Final Form",
+                    "id": "3f02-98dc-a825-6a95",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "99c8-6b0b-ad2b-69ac", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Final Form",
+                        "id": "d306-747c-147d-eb4f",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "6 SOUL", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger:** Turn start. \n**Effect:** Increase MV to 6, DF to 6+, deal +1 damage with all abilities, become *curseproof*, gain *free* movement, and gain *super armor*. Keep any damage taken. At the end of your next turn, your form destabilizes and you are *obliterated*.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Dark Power Upgrades",
+            "id": "9a44-e4ea-ae27-a1fa",
+            "collapsible": true,
+            "hidden": false,
+            "selectionEntryGroups": [
+              {
+                "name": "SOUL Upgrades",
+                "id": "d848-9a88-64d5-8e5e",
+                "hidden": false,
+                "selectionEntries": [
+                  {
+                    "name": "Flesh Jump",
+                    "id": "0d26-8307-63cd-4f20",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "1e62-9d8e-926c-5c25", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Flesh Jump",
+                        "id": "3d1e-b98e-f271-9ec6",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Description", "$text": "**Effect:** Swap places with an allied unit,then both of you *mutate*.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grow Bonus Legs",
+                    "id": "fa79-c185-dbbc-77dd",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "c3d8-e0dc-4ec3-e20e", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grow Bonus Legs",
+                        "id": "ea14-8c14-67ad-cd09",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Remove up to three mutation tokens on target unit, then target may step 2 per token removed with *free* movement, ignoring hazards.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grow Bonus Limbs",
+                    "id": "4090-5afa-708e-d931",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "c38b-e13b-177c-cbb9", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grow Bonus Limbs",
+                        "id": "a73c-7e1b-2f3a-a7ca",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger:** Turn start.\n**Effect:** Remove up to three mutation tokens from target, then target gains +1D on attacks this turn per token removed. If three or more were removed, their damage gains pierce.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Recycle",
+                    "id": "5d40-14bf-7ff3-bcbe",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "c558-d18e-d3ff-2249", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Recycle",
+                        "id": "9453-8498-9aa1-14c1",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse\nAny Turn\nRange 1-4", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger:** Turn end. \n**Effect:** Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are *obliterated*. Create up to 3 corpse tokens under their space or in free adjacent spaces.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Devolve",
+                    "id": "30b3-ba9f-c85d-6f6d",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "2262-c2a0-55de-1270", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Devolve",
+                        "id": "dd91-11f0-bfb1-7b00",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse\nFoe Turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "4 SOUL", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger:** Target turn start or end. \n**Effect:** Inflict 2 *slow*, *weak*, and *vulnerable* on target foe.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Final Form",
+                    "id": "04c8-667c-055c-b056",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "710c-caf5-2739-90b5", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Final Form",
+                        "id": "9396-2eeb-83b6-dd17",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "6 SOUL", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger:** Turn start. \n**Effect:** Increase MV to 6, DF to 6+, deal +1 damage with all abilities, become *curseproof*, gain *free* movement, and gain *super armor*. Keep any damage taken. At the end of your next turn, your form destabilizes and you are *obliterated*.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "2284-4889-727b-f62d",
+                "hidden": false,
+                "selectionEntries": [
+                  {
+                    "name": "New Material",
+                    "id": "ff95-762c-eb89-14f1",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "06a1-9773-9238-edea", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "New Material",
+                        "id": "327e-48ea-3ee9-96e8",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Description", "$text": "**Effect:** Create two or (5+) three corpses in free adjacent spaces, then *mutate*.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Clone",
+                    "id": "e9cb-344e-ad36-9cb2",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "69d5-fe00-5b9d-7c22", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Clone",
+                        "id": "5ec3-95a7-6c25-cf81",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 1-2.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Create a perfect copy of an allied unit in range in any other free space\nin range. Then *obliterate* the original as it collapses into flesh and replace it with a corpse token.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Stitch Fix",
+                    "id": "5fed-078a-7b4e-23bf",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "cd9b-6955-eb7b-b795", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Stitch Fix",
+                        "id": "677e-99f9-e8b6-0de7",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 1-3.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Remove up to three negative tokens from a unit, then it may step 1 and it *mutates*. \n**Spare Parts:** The unit *mutates* and steps once for each negative token removed instead.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Inject Stimulant",
+                    "id": "6d73-a552-b85e-ee03",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "1021-b4c8-ed94-c5b9", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Inject Stimulant",
+                        "id": "5f0d-4f92-ebfa-fb87",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 1-3.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Choose a unit in range. That unit may step 2. If it ends its turn in the space of a corpse, it *mutates*, removes the corpse, then may step 2 and *mutate* again.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Biotoxin Injector",
+                    "id": "177e-4f9f-9a4f-07a3",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "82dd-ae3c-9114-4768", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Biotoxin Injector",
+                        "id": "b16b-8654-2c32-7b0d",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, range 2-4.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit:** 1 toxin damage. \n**Effect:** At end of target’s nextturn, they explode for a *splash* (target) effect for 1 toxin damage. Your allies in the area *mutate* instead of taking damage.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Mutagen Injector",
+                    "id": "edb7-d654-0ca1-7cdf",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "eac4-07c5-798f-45e4", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Mutagen Injector",
+                        "id": "c4d7-fd97-79b1-a23e",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Range 2-4.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit:** May remove one positive token from target, then deal 1 toxin damage. \n**Spare Parts:** If at least one corpse was consumed, repeat this effect, but no more than once this turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Chaos Beam",
+                    "id": "e6de-5b3c-da9b-e396",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "0bfb-cc66-e8c3-38b2", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Chaos Beam",
+                        "id": "8943-ea38-a412-7230",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Line 3.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect:** Line: 1 fire damage and inflict 1 *vulnerable*, (3-4) OR 1 toxic damage and inflict 1 *slow*, (5-6) OR 1 curse damage and inflict 1 *weak*. \n**Spare Parts:** Roll 1D for effect per corpse consumed and choose any result.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Bonus Traits",
+                "id": "2674-d510-fdcb-3f6b",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "12a6-a984-d92a-a738", "field": "selections", "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "hidden",
+                    "type": "set",
+                    "value": true,
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [{"childId": "0e3a-d09e-93fc-fb30", "childName": "Bonus Traits", "field": "selections", "scope": "parent", "shared": true, "type": "atLeast", "value": 1}]
+                      }
+                    ]
+                  }
+                ],
+                "selectionEntries": [
+                  {
+                    "name": "Rapid Move",
+                    "id": "ba26-bda1-2104-3310",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "5375-a59c-867e-b579", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Rapid Move",
+                        "id": "af54-810c-580a-497b",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "May remove a mutation token at start or end of own turn to step 2 with free\nmovement.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Accelerate Evolution",
+                    "id": "e90b-cec0-13d1-9553",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "30a0-6239-acb2-12b1", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Accelerate Evolution",
+                        "id": "e25e-75cb-eef4-296c",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "At turn end, may remove one token from this unit and grant to a unit in range 2.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Ancillary Limbs",
+                    "id": "8eef-c520-1e4a-7254",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "2216-afe0-ac16-fd3d", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1},
+                      {"id": "a7a4-654e-50b5-ca91", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Ancillary limbs",
+                        "id": "20f3-fb08-71d7-8975",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "May remove a mutation token on self to grant +1D on any attack.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Strigoi",
+        "id": "3452-723e-9002-13f2",
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "e30a-94ff-6929-1a0f", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Hunter", "id": "1939-63ec-7460-8e8e", "hidden": false, "primary": false, "targetId": "8d86-d66c-554d-f5a5"}
+        ],
+        "constraints": [{"id": "d2c5-fd89-befd-ad36", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Stitch",
+            "id": "209b-7431-d400-7f53",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "2", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Fall to Shambles",
+            "id": "a439-4fa8-9e97-db6c",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "When slain, leaves an extra corpse token in an adjacent space (two corpses total)", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Thrall",
+            "id": "923a-7c10-8a1c-c87d",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Unstable Mutation",
+            "id": "5299-33dc-c8c3-c5f5",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "Effect: Gain 1 strength, (4+) 1 speed, (5+) and 1 vitality, (6+) and explode for splash (self): 1 damage. \nSpare parts: Roll +1D per corpse and pick the highest result.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Twisting Strike",
+            "id": "e66e-0bf3-d979-0bdf",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "On hit: 1 damage and mutate.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "4e0b-a66c-c203-d60b",
+            "hidden": false,
+            "constraints": [{"id": "d994-c119-5eb3-5d4b", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "selectionEntries": [
+              {
+                "name": "Warping Mutate",
+                "id": "ea4f-8d29-c312-38de",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Warping Mutate",
+                    "id": "a58a-c233-dc33-9aa1",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 1 (4+) or 3 spaces before Unstable mutation.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Genestealer",
+                "id": "5099-2d39-23b8-2706",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Genestealer",
+                    "id": "16dd-647c-d5b4-5da4",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike gain Effect (5+): On hit, steal a positive token from target.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Spread Mutate",
+                "id": "ef24-85d1-f728-79dc",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Spread Mutate",
+                    "id": "aa1c-253f-48ee-e43b",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike also casuses an adjacent ally to mutate on hit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Homonculus",
+        "id": "6f91-399e-f3c3-4aa2",
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "307c-fe0d-94f6-3e05", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Tyrant", "id": "ca53-5595-05e8-b557", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
+        ],
+        "profiles": [
+          {
+            "name": "Stitch",
+            "id": "07f5-1e35-07b3-55b8",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "2", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Fall to Shambles",
+            "id": "9752-95ad-afae-179b",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "When slain, leaves an extra corpse token in an adjacent space (two corpses total)", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Thrall",
+            "id": "7e87-8080-cc2d-aa24",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Unstable Mutation",
+            "id": "a5fa-f10a-5340-90cd",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "Effect: Gain 1 strength, (4+) 1 speed, (5+) and 1 vitality, (6+) and explode for splash (self): 1 damage. \nSpare parts: Roll +1D per corpse and pick the highest result.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Twisting Strike",
+            "id": "02cf-3a14-c0a0-3304",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "On hit: 1 damage and mutate.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "1eb4-e758-bd66-d577",
+            "hidden": false,
+            "constraints": [{"id": "0967-5f22-f05c-5f59", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "selectionEntries": [
+              {
+                "name": "Warping Mutate",
+                "id": "8a21-4c2f-6fe8-d698",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Warping Mutate",
+                    "id": "65c4-20f0-4aaa-cdc5",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 1 (4+) or 3 spaces before Unstable mutation.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Genestealer",
+                "id": "28f5-336d-079f-a056",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Genestealer",
+                    "id": "243b-f3d5-db04-754a",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike gain Effect (5+): On hit, steal a positive token from target.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Spread Mutate",
+                "id": "9c70-781e-3bc1-e993",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Spread Mutate",
+                    "id": "e1f0-8b40-6572-d6cf",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike also casuses an adjacent ally to mutate on hit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vessel",
+        "id": "03a4-7f97-ee15-ee23",
+        "hidden": false,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "7c6c-750d-e6d6-cf5f", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Tyrant", "id": "603f-9597-5efb-aaca", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
+        ],
+        "profiles": [
+          {
+            "name": "Stitch",
+            "id": "7d4e-0f33-5908-da43",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "2", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Fall to Shambles",
+            "id": "cbe2-c788-8a67-1cae",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "When slain, leaves an extra corpse token in an adjacent space (two corpses total)", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Thrall",
+            "id": "d4bb-6640-11d6-c1b6",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Unstable Mutation",
+            "id": "0a4b-df12-b7d6-6d94",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "Effect: Gain 1 strength, (4+) 1 speed, (5+) and 1 vitality, (6+) and explode for splash (self): 1 damage. \nSpare parts: Roll +1D per corpse and pick the highest result.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Twisting Strike",
+            "id": "f751-47fa-33a8-488a",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "On hit: 1 damage and mutate.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "7d15-d9ed-a0d3-2cec",
+            "hidden": false,
+            "constraints": [{"id": "3bd7-cfcf-52f9-e7c1", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+            "selectionEntries": [
+              {
+                "name": "Warping Mutate",
+                "id": "0771-cffa-d9fe-cb80",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Warping Mutate",
+                    "id": "7515-a545-9340-c73f",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 1 (4+) or 3 spaces before Unstable mutation.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Genestealer",
+                "id": "3dde-2cb1-efe4-c406",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Genestealer",
+                    "id": "0897-7137-fe4b-0ae7",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike gain Effect (5+): On hit, steal a positive token from target.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Spread Mutate",
+                "id": "fb76-5257-c9d4-24e5",
+                "hidden": false,
+                "import": true,
+                "type": "upgrade",
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                "modifiers": [
+                  {
+                    "field": "error",
+                    "type": "add",
+                    "value": "{this} is not allowed",
+                    "conditionGroups": [
+                      {
+                        "type": "and",
+                        "conditions": [
+                          {
+                            "childId": "upgrade",
+                            "childName": "upgrade",
+                            "field": "selections",
+                            "includeChildSelections": true,
+                            "scope": "self",
+                            "shared": true,
+                            "type": "atLeast",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "profiles": [
+                  {
+                    "name": "Spread Mutate",
+                    "id": "75aa-62df-bbd0-e51f",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Twisting strike also casuses an adjacent ally to mutate on hit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
