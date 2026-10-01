@@ -7,6 +7,2100 @@
     "gameSystemRevision": 1,
     "library": false,
     "revision": 1,
-    "type": "catalogue"
+    "type": "catalogue",
+    "catalogueLinks": [
+      {"name": "Campaign Rules", "id": "032a-3485-95bb-da22", "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
+      {"name": "Heresy", "id": "9188-d2e6-624a-43a0", "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+    ],
+    "selectionEntries": [
+      {
+        "name": "Warlord",
+        "id": "1845-fe7c-4487-0cca",
+        "defaultAmount": "1",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 0,
+        "type": "unit",
+        "categoryLinks": [{"name": "Necromancer", "id": "8763-126c-54bc-2e46", "hidden": false, "primary": true, "targetId": "51aa-2972-b4d9-be05"}],
+        "profiles": [
+          {
+            "name": "Warlord",
+            "id": "6b17-d074-e3ee-6b54",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "10", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Ignite",
+            "id": "cbdb-f5cc-1710-b149",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own or allied turn start, Curse, Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Deal 1 *piercing* fire damage to self or a unit in range. That damage cannot slay them. Unit gains 1 *berserk*, and 1 *speed*.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
+          },
+          {
+            "name": "Superheated Chainblade",
+            "id": "49a6-99e9-3633-7eb8",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit**: 1 damage and (4+): 1 fire damage again, (6+): 1 fire damage again.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Glory Kill",
+            "id": "f35b-ed59-7cb4-a249",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Description", "$text": "**Effect**: *Obliterate* an adjacent unit at 1 hp or lower. Gain 2 *strength*, then step 2.", "typeId": "07d2-d978-e8e2-acb2"}
+            ]
+          },
+          {
+            "name": "Blood Rage",
+            "id": "813a-fa42-6d39-1750",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Fueled by Rage",
+            "id": "af19-af6c-aa79-835d",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "Gain 1 *berserk* token at the start of your turn. You may spend *berserk* tokens as *speed* tokens and vice versa.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Starting Upgrades",
+            "id": "da86-3346-1e86-973d",
+            "collapsible": true,
+            "hidden": false,
+            "sortIndex": 1,
+            "constraints": [{"id": "8ef8-f48f-e330-3661", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 2}],
+            "selectionEntryGroups": [
+              {
+                "name": "Bonus Traits",
+                "id": "482e-d953-38e3-1808",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "5ca1-b328-85d1-5f1b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Blood Drinker",
+                    "id": "247b-5b20-51cc-91fc",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "f7c0-b6c4-2fe2-9978", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Blood Drinker",
+                        "id": "3204-4cc5-e03c-62ed",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "Slaying a unit clears two negative tokens.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Nerve Twitch",
+                    "id": "67a4-fe2a-0c61-c0cb",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "6e50-b4eb-076a-8935", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Nerve Twitch",
+                        "id": "5d2f-3756-8c79-79c0",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "At 3 hp or lower, DF increases to 5+.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Blood Rush",
+                    "id": "251a-200d-0036-f2a9",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ca33-49e6-9b17-4eb1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Blood Rush",
+                        "id": "cf1f-4b80-b9e6-6ded",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "At 3 hp or lower, gain *retaliation*.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "d029-1e82-6c51-bd8d",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "Quench",
+                    "id": "bc54-4af6-d28c-1a36",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c3b7-bb38-1e47-6ac5", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Quench",
+                        "id": "53f8-2e0d-d1d5-17f0",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Convert up to 3 negative tokens on self or adjacent allies to *speed* or *strength* tokens. Then this unit becomes *curseproof* until the start of its next turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Frenzy Chain",
+                    "id": "1f08-7418-74f2-7075",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "7656-8094-47a6-4602", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Frenzy Chain",
+                        "id": "34b1-901c-bc6c-97e4",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Description", "$text": "Pull a unit in range 2 spaces, then (3+): pull another unit and (5+): pull another unit.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Furious Roar",
+                    "id": "7674-1fe6-e0b9-5e79",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3c58-411e-04da-36ea", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Furious Roar",
+                        "id": "340f-728b-ab49-8aab",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Destroy all adjacent walls. Then, self and two other adjacent units may step 1 and gain 1 speed.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Apoplexy",
+                    "id": "d2ff-8c27-267c-6b88",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "12aa-9300-115c-8e16", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Apoplexy",
+                        "id": "fb16-a8c8-4398-339c",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Gain 1 *strength* and 1 *berserk*, then double all *berserk* and *strength* tokens.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Pilebunker",
+                    "id": "3502-4e10-2150-773a",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "9a8c-94fc-078b-c8d6", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Pilebunker",
+                        "id": "5f90-884f-a50d-0ec1",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 2 damage, then 1 fire damage again. **Effect**: This attack rolls -1D. Ignore this penalty against large units.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Saw Toothed Slayer Axe",
+                    "id": "5954-e7c0-49e5-3dba",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "1c13-1e01-3c27-1480", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Saw Toothed Slayer Axe",
+                        "id": "fe02-2c23-8281-a15c",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Line 4", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "*Line*: 1 damage. If only one unit is caught in the area, damage gains *piercing* and this line passes through and destroys walls.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Spine Devil Blade",
+                    "id": "fe7b-f410-bab6-c90e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "4e0f-3732-1ad5-3db7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Spine Devil Blade",
+                        "id": "8c42-618f-b302-2228",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 fire damage. **Effect**: Increase this damage by +1 on hit for every 3 hp this unit is missing. If this unit is at 0 hp, this damage *obliterates* its target if it slays them.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "aee9-ea5f-d277-e63c",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Overclock ",
+                    "id": "07ad-9343-d7d5-e1b0",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "0719-b51a-2cc3-a674", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Overclock ",
+                        "id": "b874-1ffb-e8bb-92ca",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Self or unit in range gains 2 *speed*. If the unit is at 0 hp, *splash (target)*: 1 fire damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Gorebather",
+                    "id": "18bc-0168-15a6-8210",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "084a-f72c-76e9-e582", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Gorebather",
+                        "id": "3d53-625d-e8b7-1483",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You slay a unit. \n**Effect**: Step 1. All allied units in range 1-2 may step 1.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Hellrider Kick ",
+                    "id": "501d-6c5e-3ff7-86cb",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "0a9f-830d-c68d-26aa", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Hellrider Kick ",
+                        "id": "4c82-e603-8061-8426",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Description", "$text": "**Effect**: MOVE in a straight line, then deal 1 fire damage to an adjacent foe.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Killing Spree",
+                    "id": "7563-37c0-8144-2d43",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ec2f-2df9-b679-c584", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Killing Spree",
+                        "id": "fb59-4472-85a8-8ab4",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: After a unit ACTs. \n**Effect**: Step 1, then deal 1 *piercing* damage to an adjacent unit. *Speed* can be spent to extend this step by +2. If that unit is slain, repeat this effect. It can repeat any number of times.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Blood Boil",
+                    "id": "45a2-b246-4bb5-549e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "7f62-5c1d-8224-ffe6", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Blood Boil",
+                        "id": "efe4-f8ff-8196-93d1",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Unit is slain. \n**Effect**: Unit is not slain but remains at 0 hp and becomes immune to all damage. At the end of its next turn, it explodes, *obliterating* it, and dealing *splash (self)*: 1 fire damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Devil Impact ",
+                    "id": "4d1f-2d10-6b6b-e693",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "a951-0b35-6913-edaa", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Devil Impact ",
+                        "id": "0e2c-9445-eda7-11bf",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You deal damage to an adjacent foe. \n**Effect**: Deal 6 devil damage to that foe. Then deal 6 devil damage to yourself.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Dark Power Upgrades",
+            "id": "68f6-5541-9aa0-cf76",
+            "collapsible": true,
+            "hidden": false,
+            "sortIndex": 2,
+            "selectionEntryGroups": [
+              {
+                "name": "SOUL Upgrades",
+                "id": "9806-0eae-fe43-38a7",
+                "hidden": false,
+                "selectionEntries": [
+                  {
+                    "name": "Overclock ",
+                    "id": "7c72-5636-3cce-edc8",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "16b0-7ad1-138a-7418", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Overclock ",
+                        "id": "13ad-b64c-ea98-77fc",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Self or unit in range gains 2 *speed*. If the unit is at 0 hp, *splash (target)*: 1 fire damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Gorebather",
+                    "id": "4ddd-7003-7656-800a",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "36de-4cb8-5ce6-50e0", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Gorebather",
+                        "id": "9d55-0dc6-79ff-e25c",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You slay a unit. \n**Effect**: Step 1. All allied units in range 1-2 may step 1.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Hellrider Kick ",
+                    "id": "30d2-0154-adde-b72a",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "5518-a310-8ea0-9ce3", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Hellrider Kick ",
+                        "id": "a77e-a020-f1c2-6f65",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Description", "$text": "**Effect**: MOVE in a straight line, then deal 1 fire damage to an adjacent foe.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Killing Spree",
+                    "id": "664c-318b-c15e-1137",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ebf6-742e-a130-150e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Killing Spree",
+                        "id": "c8ab-2730-e20c-d504",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: After a unit ACTs. \n**Effect**: Step 1, then deal 1 *piercing* damage to an adjacent unit. *Speed* can be spent to extend this step by +2. If that unit is slain, repeat this effect. It can repeat any number of times.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Blood Boil",
+                    "id": "f9c1-882e-f919-dd79",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "4541-a71b-6b05-2712", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Blood Boil",
+                        "id": "273e-cb0f-67c8-d8da",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Unit is slain. \n**Effect**: Unit is not slain but remains at 0 hp and becomes immune to all damage. At the end of its next turn, it explodes, *obliterating* it, and dealing *splash (self)*: 1 fire damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Devil Impact ",
+                    "id": "6290-32ec-cffc-6486",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3816-2405-4be9-5ef8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Devil Impact ",
+                        "id": "91e4-2b82-a265-a2e4",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You deal damage to an adjacent foe. \n**Effect**: Deal 6 devil damage to that foe. Then deal 6 devil damage to yourself.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "27d9-a9eb-4240-99d4",
+                "hidden": false,
+                "selectionEntries": [
+                  {
+                    "name": "Quench",
+                    "id": "573b-52af-ab36-a0dc",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "a9e7-72dd-edf2-a7bb", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Quench",
+                        "id": "8f67-00ca-0b05-5ec4",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Convert up to 3 negative tokens on self or adjacent allies to *speed* or *strength* tokens. Then this unit becomes *curseproof* until the start of its next turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Frenzy Chain",
+                    "id": "0aa4-0f8f-ceed-4dbc",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "d341-03c2-594a-40a2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Frenzy Chain",
+                        "id": "be09-a298-b36a-2d62",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Description", "$text": "Pull a unit in range 2 spaces, then (3+): pull another unit and (5+): pull another unit.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Furious Roar",
+                    "id": "e125-5fea-e1bc-fc96",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3259-e251-c3c2-c0ab", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Furious Roar",
+                        "id": "d37e-67ce-bda8-4161",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Destroy all adjacent walls. Then, self and two other adjacent units may step 1 and gain 1 speed.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Apoplexy",
+                    "id": "e450-a1a7-32d2-bf5e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "f260-bc50-cd88-0ed7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Apoplexy",
+                        "id": "76df-9e4a-2239-381b",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Gain 1 *strength* and 1 *berserk*, then double all *berserk* and *strength* tokens.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Pilebunker",
+                    "id": "c8ba-57f3-4210-dc42",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "7a29-d872-8a57-bfe2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Pilebunker",
+                        "id": "62f1-8be8-eef9-4cc2",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 2 damage, then 1 fire damage again. **Effect**: This attack rolls -1D. Ignore this penalty against large units.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Saw Toothed Slayer Axe",
+                    "id": "cd9a-b363-fd0c-66a0",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "a155-2888-ce06-3b3d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Saw Toothed Slayer Axe",
+                        "id": "c11d-6e47-deda-a0fe",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Line 4", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "*Line*: 1 damage. If only one unit is caught in the area, damage gains *piercing* and this line passes through and destroys walls.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Spine Devil Blade",
+                    "id": "2e9b-4ca7-3087-cd31",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "7a71-fae0-a79c-9cd4", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Spine Devil Blade",
+                        "id": "93ab-d5ee-5be6-d54b",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 fire damage. **Effect**: Increase this damage by +1 on hit for every 3 hp this unit is missing. If this unit is at 0 hp, this damage *obliterates* its target if it slays them.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Bonus Traits",
+                "id": "b7a2-d2fe-dd4d-9382",
+                "hidden": false,
+                "constraints": [{"id": "089a-cbc6-c045-e7c7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Blood Drinker",
+                    "id": "4c55-9467-6a79-8f32",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ef07-435c-8b72-5354", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Blood Drinker",
+                        "id": "7b6e-802f-ad9d-f565",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "Slaying a unit clears two negative tokens.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Nerve Twitch",
+                    "id": "ee4d-cf89-f96a-93f1",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "f038-44d6-0e72-39d8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Nerve Twitch",
+                        "id": "f7be-d8c4-e945-da6b",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "At 3 hp or lower, DF increases to 5+.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Blood Rush",
+                    "id": "94c0-0cad-2242-0565",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [{"id": "23e8-991d-597f-1e49", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Blood Rush",
+                        "id": "f2a8-2c40-395a-a73b",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "At 3 hp or lower, gain *retaliation*.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Warhead",
+        "id": "b75e-9161-8ddf-2bc4",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 1,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "fb1f-3e23-6b47-85b0", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Thrall", "id": "5efe-6d74-8c19-f546", "hidden": false, "primary": false, "targetId": "b1b6-295a-b637-9c4c"}
+        ],
+        "profiles": [
+          {
+            "name": "Warhead",
+            "id": "e29a-7b0c-929a-a041",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "1", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Blood Rage",
+            "id": "c6f3-72f9-011c-abe6",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Thrall",
+            "id": "4bbd-e6b3-df09-7bc1",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Cleave",
+            "id": "1684-66e0-220f-8d47",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit**: 1 damage and 1 damage to another adjacent unit.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Charge",
+            "id": "60e1-a2d1-1634-4676",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Next MOVE goes as far as possible in a straight line, passing through and dealing 1 damage to any units passed through.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "bc47-edb6-0e26-953a",
+            "hidden": false,
+            "constraints": [{"id": "bcaa-b42c-afaf-7dfe", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "bcaa-b42c-afaf-7dfe",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "bcaa-b42c-afaf-7dfe",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Lobotomized",
+                "id": "e6af-bf07-7f3d-e4d6",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "82a9-845e-b569-6ca4", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Lobotomized",
+                    "id": "847c-5272-0b63-baeb",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Gain *Curseproof*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Bladed",
+                "id": "c63a-1d7d-8ea7-85fb",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "5e85-36c4-964c-579a", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Bladed",
+                    "id": "bb01-f1d9-88d2-49b5",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Charge has a (5+) chance to grant *retaliation* until the start of its next turn.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Sprinter",
+                "id": "d327-d184-3653-a326",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "eeb5-4767-60fa-6cae", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Sprinter",
+                    "id": "3af2-19c6-042e-bc1b",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "At 0 hp, gain free movement.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Carnifex",
+        "id": "8faf-0532-d7aa-3bbe",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 2,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "7fe3-7b45-b663-0b50", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Scion", "id": "f45e-e331-2904-7a89", "hidden": false, "primary": false, "targetId": "fa04-6df6-fc81-7d88"}
+        ],
+        "constraints": [{"id": "26b6-7738-3dfe-5531", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Carnifex",
+            "id": "aa4c-6c01-216c-6a9a",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Blood Rage",
+            "id": "4691-f911-abb4-57e2",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Wild Slashes",
+            "id": "3327-aa90-318c-6af5",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Next MOVE goes as far as possible in a straight line, passing through units. Then, all units moved through take 1 fire damage. If no units were moved though, gain *retaliation*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Chainsaw",
+            "id": "ca17-524d-74e9-84c0",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit**: 1 damage, and (effect: 4+): 1 damage again, (6+): 1 damage again.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Rev",
+            "id": "f47a-a2a7-b4c6-77d1",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Gain 1 *strength* and *speed* (4+) and *retaliation* until the start of this unit’s next turn.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "84cd-ecf2-b67e-d202",
+            "hidden": false,
+            "constraints": [{"id": "7226-f74e-edf2-6a7f", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "7226-f74e-edf2-6a7f",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "7226-f74e-edf2-6a7f",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Bloody Teeth",
+                "id": "5996-164f-d009-6a5e",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "b23e-b7f6-cc28-a98c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Bloody Teeth",
+                    "id": "e3ee-de40-fd3c-5797",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "At 0 hp, all damage gains *pierce*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Heavy Swing",
+                "id": "922e-2e5f-9bbf-15fe",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "8a23-dc8f-f93e-8375", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Heavy Swing",
+                    "id": "91cb-8b5e-00d6-c3b6",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 1 before using Chainsaw or Wild Slashes.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Rile",
+                "id": "e932-b07e-37e5-ec6c",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "ac24-a4c1-935c-09f2", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Rile",
+                    "id": "6e87-48dc-5cc3-ac91",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Rev grants one (5+) or two *berserk*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Pain Ghoul",
+        "id": "012c-46dd-e58c-ae32",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 3,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "575c-d401-143a-e58a", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Freak", "id": "8b3a-8a7b-697d-9e57", "hidden": false, "primary": false, "targetId": "19d1-0a3d-46f4-65e9"}
+        ],
+        "constraints": [{"id": "4f71-8d7d-a8b3-914d", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Pain Ghoul",
+            "id": "5b79-c923-bc5e-7868",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Blood Rage",
+            "id": "4ddf-eab6-0815-0487",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Pain Frenzy",
+            "id": "5cc0-30ba-eb8e-a3d3",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Curse, Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Unit gains 2 *berserk* or 2 *speed*.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Meat Hook",
+            "id": "4f45-72ac-9038-302c",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Pull, Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Pull unit 3", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Cauterize",
+            "id": "66dc-bc36-fdc6-0420",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Curse, Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Clear all negative tokens on self or a unit, then deal 1 *piercing* fire damage to them. This damage can’t slay a unit.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "1219-b600-aac9-b3f3",
+            "hidden": false,
+            "constraints": [{"id": "8278-2954-d570-ea23", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "8278-2954-d570-ea23",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "8278-2954-d570-ea23",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Adrenalize",
+                "id": "7cf5-5561-01ce-5cc0",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "4f91-ecc9-e58b-d0d7", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Adrenalize",
+                    "id": "faac-733d-54f7-52b4",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Allies gain 1 speed per negative token removed with Cauterize.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Stim Haze",
+                "id": "81f8-f38c-4913-28e8",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "ce1f-6a8b-67c8-bc65", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Stim Haze",
+                    "id": "c7fc-a16b-040f-1fb7",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "At 1 hp or lower, self and adjacent allies become *curseproof*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Frenzy Hook",
+                "id": "94a6-fb0b-0b7d-9c16",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "9a91-9a20-d2d4-bc3f", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Frenzy Hook",
+                    "id": "5e2f-efa4-9a35-ebb8",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "At 1 hp or lower, Meat Hook can pull up to three units.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Berserker",
+        "id": "12c0-9b4b-fbf0-9bb9",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 6,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "6896-cec3-d4e7-fe8a", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Tyrant", "id": "a887-5410-2668-8549", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
+        ],
+        "profiles": [
+          {
+            "name": "Steaming Rage",
+            "id": "882d-86b5-3541-5df1",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "When taking damage, gain 1 *berserk* and 1 *strength*. This effect can’t trigger more than one a round.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Rip and Tear",
+            "id": "a1ac-9b44-39a4-c938",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit**: 2 damage. Deal 1 damage again if this unit has 3 or less hp, then deal 1 damage again if it is at 1 hp or less.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Building Rage",
+            "id": "f11b-fd4d-14ee-a55b",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Gain 1 *strength* and 1 *berserk*, (4+) then gain *retaliation* until start of this unit’s next turn.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Berserker",
+            "id": "8722-94b6-f6fa-6490",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Pulverize",
+            "id": "00f1-cb37-d7a7-ec32",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Pull all units in range 2 one space towards this unit. Then *splash (self)*: 1 fire damage and destroy all adjacent walls.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Large",
+            "id": "98c3-9889-53a0-4abd",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Blood Rage",
+            "id": "b313-1ade-fae6-f2eb",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "1ede-adee-52ed-d6f3",
+            "hidden": false,
+            "constraints": [{"id": "9ea6-17fb-33b8-bff3", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "9ea6-17fb-33b8-bff3",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "55e1-fec7-07c8-e87e",
+                    "childName": "Tyrant",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "9ea6-17fb-33b8-bff3",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "55e1-fec7-07c8-e87e",
+                    "childName": "Tyrant",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Bifurcate",
+                "id": "f1f5-32bb-432c-4d3d",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "9972-8bc7-0c44-f635", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Bifurcate",
+                    "id": "9f08-768c-bed0-5657",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Rip and Tear *obliterates* units that it reduces to 0 hp.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Machineheart",
+                "id": "8136-dbd1-3752-e216",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "76f7-9e43-56f6-f0bf", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Machineheart",
+                    "id": "ec76-4c8b-25d9-0407",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "At 1 hp or lower, gains *super armor*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Fuel Injectors",
+                "id": "927e-43b6-219d-948d",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "1673-be21-fafa-5b73", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Fuel Injectors",
+                    "id": "547c-0b48-bafc-16d5",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 2 before using Pulverize.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Painwheel",
+        "id": "6b46-a62a-ce77-b370",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 4,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "3c91-5a89-d07e-150e", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Horror", "id": "88ee-6270-e724-57b0", "hidden": false, "primary": false, "targetId": "88fe-98a4-c63f-2c4e"}
+        ],
+        "constraints": [{"id": "f98e-a3ad-d9f3-2b11", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Painwheel",
+            "id": "061d-5951-f0b6-1ff2",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "5", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Exfoliate",
+            "id": "f9ba-132b-25a8-ff5c",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit**: 1 damage and (4+) 1 damage again. (6+) 1 damage again.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Spin Out",
+            "id": "4eff-7316-1828-0748",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Unit MOVEs as far as possible in a straight line until it would enter the space of an unit, or it runs out of movement. That unit takes 1 fire damage. Then this unit gains 2 *speed*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Blood Rage",
+            "id": "a1ad-98e8-2632-258b",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "ec3e-544a-7ce7-7230",
+            "hidden": false,
+            "constraints": [{"id": "3c9b-8195-8a3e-9171", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "3c9b-8195-8a3e-9171",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "3c9b-8195-8a3e-9171",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Hurtle",
+                "id": "722f-cd65-dc9a-7d2b",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "c4e2-526c-3159-d98f", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Hurtle",
+                    "id": "3758-64e0-ae84-4d5f",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "At 1 hp or lower, may MOVE again for free on its turn.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Barbed Wheel",
+                "id": "73b7-9e2c-67c9-cabe",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "cca8-f8d7-8692-948e", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Barbed Wheel",
+                    "id": "9aee-c2a1-c739-1bc3",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Spin Out may pull a unit in range 3 one space before its MOVE.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Endless Screaming",
+                "id": "e7ec-3a64-a023-2484",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "d2a0-41a0-cb7a-571e", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Endless Screaming",
+                    "id": "fcb1-0be8-3614-585b",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "This unit gains 1 berserk* if it starts its turn at 1 hp or lower.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gearhead",
+        "id": "ac2a-951d-dad3-5b59",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 5,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "1e7c-f9b8-a124-5b9b", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Freak", "id": "8152-c209-5789-9fcd", "hidden": false, "primary": false, "targetId": "19d1-0a3d-46f4-65e9"}
+        ],
+        "constraints": [{"id": "f4ac-686f-615c-1440", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Gearhead",
+            "id": "67f6-4422-b934-7695",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Blood Rage",
+            "id": "8c91-d86e-8499-db3b",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Restart Engine",
+            "id": "e510-c7cb-4e81-c9a9",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Ally, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Self or an adjacent ally has their hp set to 1.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Inject Nitro",
+            "id": "b63c-9481-0c3c-e5f2",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Self or a unit in range gains 2 *speed*. If target is at 0 hp or lower, splash (target) 1 fire damage.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Tinker",
+            "id": "2d5f-7c05-18fc-f2e9",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Tinker with an adjacent unit. Unit gains 1 *berserk*, then roll the effect die (1-3): Increase unit’s MV stat by +1 this battle, (4-5): increase a unit’s DF stat by +1 this battle, to a max of 6+, (6+): Increase unit’s current and max hp by 1 this battle.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "a16d-4b5e-c080-a258",
+            "hidden": false,
+            "constraints": [{"id": "4266-f716-80f1-c8a2", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "4266-f716-80f1-c8a2",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "4266-f716-80f1-c8a2",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Frenzied Tinkering",
+                "id": "c7c0-a4d4-b5b6-b07d",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "65cf-a328-9250-8eff", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Frenzied Tinkering",
+                    "id": "1b3e-7bcd-487b-9533",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "At 1 hp or lower, all abilities may target self and an adjacent ally.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Rage Serum",
+                "id": "747c-8beb-5dae-5347",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "b3ac-f3bf-a44a-7aab", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Rage Serum",
+                    "id": "2c82-d78e-5b8f-7077",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Inject Nitro has a 5+ effect chance to grant *retaliation* until the start of this units next turn.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Rolling Start",
+                "id": "67d7-ac7f-57e5-6d49",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "4606-9dd2-4f0c-1d66", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Rolling Start",
+                    "id": "214e-211f-6b22-698e",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Restart engine allows allows the targeted ally to step 2.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

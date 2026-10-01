@@ -7,6 +7,2109 @@
     "gameSystemRevision": 1,
     "library": false,
     "revision": 1,
-    "type": "catalogue"
+    "type": "catalogue",
+    "catalogueLinks": [
+      {"name": "Campaign Rules", "id": "8e03-aa83-94a9-e500", "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
+      {"name": "Heresy", "id": "60ca-d352-9c78-72d5", "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+    ],
+    "selectionEntries": [
+      {
+        "name": "Exorcist",
+        "id": "7262-d19c-9fd2-2bd4",
+        "defaultAmount": "1",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 0,
+        "type": "unit",
+        "categoryLinks": [{"name": "Necromancer", "id": "916b-c282-469d-b4eb", "hidden": false, "primary": true, "targetId": "51aa-2972-b4d9-be05"}],
+        "profiles": [
+          {
+            "name": "Exorcist",
+            "id": "f8d2-70ee-a209-8ff7",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "10", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Holy Vessel",
+            "id": "0fd6-1b85-45c2-c7b6",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Lacks *Miracle*. However, while alive, *miracle* triggers for adjacent allies on a 4+.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Will of God",
+            "id": "cbbb-3e0e-8ecc-387b",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own or Allied Turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {
+                "name": "Description",
+                "$text": "**Trigger**: Turn start. \n**Effect**: For this turn only, self or allied unit in range may treat the current round number as either 2 or 5.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
+          },
+          {
+            "name": "Starmetal Godsword",
+            "id": "163a-857a-54d7-979c",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit**: 1 damage. *Stance (Odd)*: and step 2, *Stance (Even)*: and gain 1 *vitality*, *Stance (Round 5+)*: Increase damage to 3.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Absolution",
+            "id": "691c-82a8-0764-9297",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Any turn\nRange 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {
+                "name": "Description",
+                "$text": "**Trigger**: Turn start. \n**Effect**: Self takes 1 piercing damage, which cannot slay self. One allied unit in range gains one, (4+) two, or (6+) three *vitality*.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Starting Upgrades",
+            "id": "2bdd-0980-4406-92ef",
+            "collapsible": true,
+            "hidden": false,
+            "sortIndex": 1,
+            "constraints": [{"id": "c45b-2104-de50-cecc", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 2}],
+            "selectionEntryGroups": [
+              {
+                "name": "Bonus Traits",
+                "id": "639f-70d6-2d92-2ffe",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "3758-f2fc-b6b8-c7c8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Corpse Violet Stance",
+                    "id": "c9b8-a3b9-c02d-d2db",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "f0b9-d90d-08c0-7eb9", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Corpse Violet Stance",
+                        "id": "91db-b207-44ac-1e95",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: Gain either physical or magical armor (choose).", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Winter Rose Stance",
+                    "id": "f06f-1312-41d1-e6ae",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "642d-8c94-f9c4-781e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Winter Rose Stance",
+                        "id": "690f-e009-2e0d-f145",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: Attacks gain +1D.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Royal Chrysanthemum Stance",
+                    "id": "ae0f-9c66-64de-d24e",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [{"id": "75b5-2080-c40c-7dd1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Royal Chrysanthemum Stance",
+                        "id": "6908-0254-f8f2-88e3",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: May step 2 either before or after ACTing.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "61ca-2449-955a-75c1",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "Grand Oath",
+                    "id": "e5e7-de94-c739-38a8",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "7245-1871-5e7c-9774", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grand Oath",
+                        "id": "edaa-7561-9a5b-28ae",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: *Splash (self)*. Self and allies in the area may convert any number of *vitality* to *strength*.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Redempta",
+                    "id": "d43a-544e-c362-596e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "314c-8139-c8d7-8ed0", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Redempta",
+                        "id": "1bee-b70f-93d8-fc71",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 1-4", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Remove all negative tokens on an ally, then transfer to self. That ally gains 1 *vitality* per negative token removed (up to 3 times) and becomes *curseproof* until the start of its next turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Communion",
+                    "id": "9547-98ee-2744-3d29",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "0c75-4fad-858f-0ed1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Communion",
+                        "id": "27d9-4d74-b4ac-ed9b",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Gain 1 *vitality*. Until end of next turn, self and adjacent allies may spend this unit’s hp as if it were *vitality* tokens.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Decree of Forbiddance",
+                    "id": "f766-e14c-a0aa-0009",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c33a-2903-4521-bf51", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Decree of Forbiddance",
+                        "id": "7c9e-fdf3-be8c-8467",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse, Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Until end of this unit’s next turn, foes ending their turn in range 2 of this unit have a hazard created under them, then are pushed 1.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Holy Water Flail",
+                    "id": "d481-dac0-3f12-bc42",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3e6d-3dfe-4850-2f96", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Holy Water Flail",
+                        "id": "9fe5-7de4-dc63-3653",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Range 2-2. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 holy damage and *splash (target)*: 1 holy damage. *Stance (Round 3+)*: and create a hazard under primary target (round 5+) all units in the area.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Relic Lance",
+                    "id": "3a81-19f1-9a24-fb74",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "29cb-c56a-edd2-1078", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Relic Lance",
+                        "id": "6893-907d-b150-15a6",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 2 damage. *Stance*: May step spaces up to the round number with *free movement*, in a straight line, before the attack. On hit, push target half that many spaces.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Starmetal Shuriken",
+                    "id": "39ce-1241-4a90-5007",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "2b2a-4873-2c79-ee61", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Starmetal Shuriken",
+                        "id": "1bf6-f01f-ed24-f640",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, range 2-4. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 damage. *Stance*: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "6d04-e8b1-1733-1bf8",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Sword Art: Drifting Blossoms",
+                    "id": "8e78-b919-60e5-bcd1",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e1be-89a9-0838-2a24", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Drifting Blossoms",
+                        "id": "3063-8680-3eb6-1059",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn end. \n**Effect**: Stance: Step spaces equal to 1 + the round number, then push an adjacent unit 1.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grace",
+                    "id": "5445-fb8a-4759-8ec5",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "012f-96e5-09a6-47df", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grace",
+                        "id": "ed49-d153-d4df-9b10",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or Allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn start. \n**Effect**: Unit becomes *curseproof* until end of its next turn and attacks against it gain -1D for the duration.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Safflower cut",
+                    "id": "7d23-cccf-bfa5-4364",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "609f-2e3d-a3b5-cfe9", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Safflower cut",
+                        "id": "2a98-47b1-adf4-43c7",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn\nLine", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn start.\n**Effect**: Step 1, then cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1. *Stance (R5+)*: This damage becomes Devil Damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Winter Sprout",
+                    "id": "517a-3778-d998-69c1",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "6bac-49bd-1187-5659", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Winter Sprout",
+                        "id": "4f5e-9d23-6fd2-8fa5",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: This unit takes damage from an ACT ability, and that ability resolves. \n**Effect**: *Splash (self)*: remove 1 negative token on self or gain 1 *vitality* for every foe in the splash area. *Stance (R4+)*: both effects trigger.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                    "id": "c9a6-18cc-db96-4710",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e51f-85a3-69af-72bf", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                        "id": "ef39-739f-9f54-f4c5",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**5 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You hit an attack. \n**Effect**: *Splash (self)*: 1 holy damage. *Stance (R3+)*: 2 holy damage *(R5+)*: 4 holy damage. *(R6+)*: 5 holy damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Resurrection",
+                    "id": "ff81-5ba9-f9bd-d8e5",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "bb16-8eb1-ccae-e254", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Resurrection",
+                        "id": "01c7-39d4-c035-14e8",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Allied unit is slain. \n**Effect**: Return unit to life at 1 hp at the end of the turn and remove all negative tokens. It becomes immune to all damage and *curseproof* until the end of its next turn. *Stance (R3+)* and it gains 1 vitality *(R5+)* 3 *vitality* instead.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Dark Power Upgrades",
+            "id": "4940-9b9d-bb21-a0e6",
+            "collapsible": true,
+            "hidden": false,
+            "sortIndex": 2,
+            "selectionEntryGroups": [
+              {
+                "name": "Bonus Traits",
+                "id": "b832-555a-451f-b656",
+                "hidden": false,
+                "constraints": [{"id": "7449-e621-c8f0-57e7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Corpse Violet Stance",
+                    "id": "b602-8657-25e1-8eb9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "2ded-4308-6335-4e02", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Corpse Violet Stance",
+                        "id": "68a0-ff58-002d-ccb3",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: Gain either physical or magical armor (choose).", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Winter Rose Stance",
+                    "id": "d669-fd6d-9f7e-a2f5",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "09b3-4b87-7874-701d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Winter Rose Stance",
+                        "id": "031f-ad14-ade7-2770",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: Attacks gain +1D.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Royal Chrysanthemum Stance",
+                    "id": "8bf0-e60d-b8ab-041f",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e050-1ded-18f1-8b70", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Royal Chrysanthemum Stance",
+                        "id": "6217-1d43-5072-914b",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: May step 2 either before or after ACTing.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "e3c3-7bd6-0577-aaf8",
+                "hidden": false,
+                "selectionEntries": [
+                  {
+                    "name": "Grand Oath",
+                    "id": "8d7e-b020-9cd5-eaa1",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "fad5-a4b1-3069-9e1e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grand Oath",
+                        "id": "28d3-3a59-d8f8-bf10",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: *Splash (self)*. Self and allies in the area may convert any number of *vitality* to *strength*.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Redempta",
+                    "id": "f9ce-b2f4-f634-f40d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "1e62-004b-c778-8feb", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Redempta",
+                        "id": "47c9-988e-8607-46c0",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Range 1-4", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Remove all negative tokens on an ally, then transfer to self. That ally gains 1 *vitality* per negative token removed (up to 3 times) and becomes *curseproof* until the start of its next turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Communion",
+                    "id": "f0ec-f582-f0aa-0293",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "2e19-1edf-fa6c-ad44", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Communion",
+                        "id": "49e3-87bd-6d99-871f",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Gain 1 *vitality*. Until end of next turn, self and adjacent allies may spend this unit’s hp as if it were *vitality* tokens.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Decree of Forbiddance",
+                    "id": "f998-3975-1e8e-5fc6",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3fcf-90f0-cec7-58bf", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Decree of Forbiddance",
+                        "id": "6128-eba2-ee32-b239",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse, Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Until end of this unit’s next turn, foes ending their turn in range 2 of this unit have a hazard created under them, then are pushed 1.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Holy Water Flail",
+                    "id": "e547-e109-46e5-f368",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "55f7-1db9-9a9c-3025", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Holy Water Flail",
+                        "id": "3893-1575-390c-3e44",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Range 2-2. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 holy damage and *splash (target)*: 1 holy damage. *Stance (Round 3+)*: and create a hazard under primary target (round 5+) all units in the area.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Relic Lance",
+                    "id": "3c4a-6e48-9685-6a00",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "01aa-152e-e3f6-f99a", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Relic Lance",
+                        "id": "98cc-2180-ae3e-f5ce",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 2 damage. *Stance*: May step spaces up to the round number with *free movement*, in a straight line, before the attack. On hit, push target half that many spaces.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Starmetal Shuriken",
+                    "id": "4789-8468-d0d5-31fb",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c2fa-c2d2-1cf3-691c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Starmetal Shuriken",
+                        "id": "b270-2fb0-61ca-d0eb",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, range 2-4. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 damage. *Stance*: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "85e3-b341-5e10-a3a8",
+                "hidden": false,
+                "selectionEntries": [
+                  {
+                    "name": "Sword Art: Drifting Blossoms",
+                    "id": "882c-f53d-8f6f-7bb2",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e6fa-1047-28ec-aca5", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Drifting Blossoms",
+                        "id": "438d-b3b1-d2aa-7077",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn end. \n**Effect**: Stance: Step spaces equal to 1 + the round number, then push an adjacent unit 1.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grace",
+                    "id": "84d1-e24f-20b1-1645",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e213-97ec-5d2d-4950", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grace",
+                        "id": "b0b8-9709-28fd-fd14",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or Allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn start. \n**Effect**: Unit becomes *curseproof* until end of its next turn and attacks against it gain -1D for the duration.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Safflower cut",
+                    "id": "544d-270f-8f3c-e4e9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "0615-2c2b-6830-c8f7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Safflower cut",
+                        "id": "c993-e3e0-1dd0-054a",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn\nLine", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn start.\n**Effect**: Step 1, then cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1. *Stance (R5+)*: This damage becomes Devil Damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Winter Sprout",
+                    "id": "0a2e-b54d-00aa-6a3d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "4dbb-efec-b751-870c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Winter Sprout",
+                        "id": "0d0f-b4fc-b932-8b95",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: This unit takes damage from an ACT ability, and that ability resolves. \n**Effect**: *Splash (self)*: remove 1 negative token on self or gain 1 *vitality* for every foe in the splash area. *Stance (R4+)*: both effects trigger.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                    "id": "265a-5d85-c1aa-e8ae",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "df61-c27d-b8ff-1f4b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                        "id": "1c89-fac2-d874-d7e9",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**5 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You hit an attack. \n**Effect**: *Splash (self)*: 1 holy damage. *Stance (R3+)*: 2 holy damage *(R5+)*: 4 holy damage. *(R6+)*: 5 holy damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Resurrection",
+                    "id": "9798-342d-77b9-f4d2",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "8a99-035e-48e9-b6d4", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Resurrection",
+                        "id": "75b8-4585-384f-f5f2",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Allied unit is slain. \n**Effect**: Return unit to life at 1 hp at the end of the turn and remove all negative tokens. It becomes immune to all damage and *curseproof* until the end of its next turn. *Stance (R3+)* and it gains 1 vitality *(R5+)* 3 *vitality* instead.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Abbot",
+        "id": "4213-b39f-4fce-57dc",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 5,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "1d1d-2a5f-61bd-e56e", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Freak", "id": "3ce9-2a5c-8ae7-2a8b", "hidden": false, "primary": false, "targetId": "19d1-0a3d-46f4-65e9"}
+        ],
+        "constraints": [{"id": "0ac0-86d5-0287-0a2a", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Abbot",
+            "id": "3f0c-6532-22f5-bbc7",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "PHYS", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Miracle",
+            "id": "da19-bc78-b1ab-a8c3",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "A unit affected by a Miracle has a 5+ effect chance to instantly return to life at 1 hp at the end of any turn it is slain, clearing all tokens. It then loses this trait and you gain 1 SOUL.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Blood of the Covenant",
+            "id": "432d-4024-427b-2054",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self, Ally, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Choose self or an adjacent ally. At the end of that unit’s turn, slay them. They splash (self) 1 holy damage to foes, 1 *vitality* to allies. *Stance (R4+)*: Damage gains *piercing* and also clears a negative token from all allies in the area.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Wrath",
+            "id": "1cc5-e45a-2aa2-6db6",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Self or target unit converts all *vitality* into *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Bible Thump",
+            "id": "4ee6-92cf-1d26-91c6",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit**: Self and an adjacent ally gain 1 *vitality* *(Stance: R4+)*: 2 *vitality*. Then deal 1 damage and push 1. Cannot miss allies and pushes them +1.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "ccf8-23ec-e793-59fe",
+            "hidden": false,
+            "constraints": [{"id": "42d4-3cc8-b6d3-38bd", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "42d4-3cc8-b6d3-38bd",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "42d4-3cc8-b6d3-38bd",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Sanctified Sacrifice",
+                "id": "25ca-ff39-2b14-1ae7",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "5782-53c0-1345-faf5", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Sanctified Sacrifice",
+                    "id": "1849-0828-d93a-6039",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Blood of the Covenant causes *miracle* to trigger on a 3+.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "The Good Word",
+                "id": "d9a6-3c29-cb47-5636",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "4562-07e5-07b3-ce42", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "The Good Word",
+                    "id": "e1d4-8b59-58bc-014d",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "At round 6+, Bible Thump deals 4 damage on hit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Cleansing the Hosts",
+                "id": "6ce6-5b25-2f6c-1698",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "46db-ed78-8f74-0e2b", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Cleansing the Hosts",
+                    "id": "bbf2-1bfd-f1ee-67b5",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Bible Thump removes a negative token before granting *vitality*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Holy Body",
+        "id": "6861-4377-cc9f-1bbe",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 6,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "77bf-d9c3-b414-44d1", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Tyrant", "id": "31cc-b761-c47f-c370", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
+        ],
+        "profiles": [
+          {
+            "name": "Miraculous Flesh",
+            "id": "9b0e-3e6c-a0bf-ce7d",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Lacks *miracle*, but starts combat with 3 *vitality* tokens.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Ablutions",
+            "id": "7016-770a-97de-77f3",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Gain two *vitality*. Until the start of this unit’s next turn, adjacent allies may spend *vitality* tokens on this unit as if they were their own.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Bolides",
+            "id": "9ee1-13e6-0c60-c6c4",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 3-5", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Create one or (4+) two or (6+) three hazards in range. May destroy a wall instead of creating a hazard.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Holy Body",
+            "id": "8261-15a2-6c35-a94b",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "SUPER", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Large",
+            "id": "376d-11cb-3284-e266",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Indignation",
+            "id": "4d7a-ba67-1509-e96a",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self: Range 3-5", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Remove one or two *vitality* tokens on this unit, then deal 1 holy damage to that many units in range, ignoring line of sight, and push those units 1. *Stance (4+)*: damage becomes *piercing*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "fe3c-43c1-135a-109a",
+            "hidden": false,
+            "constraints": [{"id": "3bf4-6192-d174-629a", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "3bf4-6192-d174-629a",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "55e1-fec7-07c8-e87e",
+                    "childName": "Tyrant",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "3bf4-6192-d174-629a",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "55e1-fec7-07c8-e87e",
+                    "childName": "Tyrant",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Immaculate",
+                "id": "a081-1aa5-7d17-32a2",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "efe3-798e-ffe5-e509", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Immaculate",
+                    "id": "03ed-3e54-2964-c5ca",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "All attacks automatically miss the Holy Body if not made from adjacent spaces.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Scathe",
+                "id": "3996-58d0-3cb4-c0eb",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "5972-976f-c11d-602b", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Scathe",
+                    "id": "dc10-964f-d961-970a",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "When Bolides destroys a wall, it can deal 1 damage to an adjacent foe.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Holy Font",
+                "id": "991f-6d87-4c63-5981",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "7ad8-f1b3-7f77-0feb", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Holy Font",
+                    "id": "718a-42e7-df81-07e8",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Ablutions gains *Stance (round 3+)*: gain 3 *vitality* instead, (round 5+): gain 4 *vitality* instead.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Zealot",
+        "id": "7deb-bbb8-5369-434d",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 2,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "c176-5e42-77c3-05a9", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Horror", "id": "a0dc-36d5-a19d-d30f", "hidden": false, "primary": false, "targetId": "88fe-98a4-c63f-2c4e"}
+        ],
+        "constraints": [{"id": "5e68-2036-4890-4550", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Zealot",
+            "id": "53b2-2126-bce3-0d95",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Whirling Chain",
+            "id": "b6a9-8e79-34ac-5fd3",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit**: 2 damage. *Stance (Odd)*: and MOVE again, *Stance (Even)*: and push unit 2", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Miracle",
+            "id": "27f4-cbbf-1989-ed8d",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "A unit affected by a Miracle has a 5+ effect chance to instantly return to life at 1 hp at the end of any turn it is slain, clearing all tokens. It then loses this trait and you gain 1 SOUL.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Smite",
+            "id": "dcc2-2652-0660-f021",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Stance**: MOVE again. Whirling Chain deals +damage equal to half the round number the next time it hits, rounded up. This effect does not stack.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Zealotry",
+            "id": "6549-5761-58c7-8caa",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "When MOVEing for the second time or more in a turn, gain 1 *vitality*.", "typeId": "14fe-a261-4f47-6f40"}]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "9f27-2297-aad0-0447",
+            "hidden": false,
+            "constraints": [{"id": "e057-16c5-4a61-5265", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "e057-16c5-4a61-5265",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "e057-16c5-4a61-5265",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Fiery Chain",
+                "id": "af91-80e5-120d-53f1",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "8844-ccb8-8e22-f846", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Fiery Chain",
+                    "id": "da48-9c18-9833-301f",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Whirling chain creates one or (5+) two hazards adjacent to its target after it resolves.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Punisher",
+                "id": "71dd-b664-8980-9c84",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "c96b-0e78-4933-5a78", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Punisher",
+                    "id": "9243-34f4-a97d-8860",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Stance: Whirling chain *Obliterates* foes it slays at round 3+.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Suffuse",
+                "id": "6f42-a63e-a643-5a30",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "ca7d-bf29-4a81-a241", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Suffuse",
+                    "id": "226d-26c2-223a-3bb0",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Smite removes a negative token from this unit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Penitent",
+        "id": "ea4a-2a11-3fd6-b4c1",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 1,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "2c55-c7f1-20de-9d67", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Scion", "id": "155e-c85e-025b-f4ad", "hidden": false, "primary": false, "targetId": "fa04-6df6-fc81-7d88"}
+        ],
+        "constraints": [{"id": "a1f9-5e03-19d9-63d4", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Penitent",
+            "id": "261a-2061-861a-936d",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "SUPER", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Miracle",
+            "id": "8752-f6bc-512b-ec78",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "A unit affected by a Miracle has a 5+ effect chance to instantly return to life at 1 hp at the end of any turn it is slain, clearing all tokens. It then loses this trait and you gain 1 SOUL.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Excoriate",
+            "id": "258b-fd1d-f2c9-d81d",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit:** 1 damage, and *Stance* (Odd): *Splash (self):* 1 holy damage. *(Even)*: gain 1 vitality.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Mea Culpa",
+            "id": "a0bc-b99a-3868-dbca",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "*Splash (self)*: Remove one negative token from all allies in range and place them on this unit. Then remove one, (4+) two, or (6+) all negative tokens from this unit, and gain 1 strength for each negative token removed this way.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Holy Water",
+            "id": "47d8-c96c-897e-6573",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: 1 holy damage and (4+) create a hazard under target.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "6918-e9da-abf5-eed0",
+            "hidden": false,
+            "constraints": [{"id": "5f1d-3680-60f9-d2b7", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "5f1d-3680-60f9-d2b7",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "5f1d-3680-60f9-d2b7",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Taste the Lash",
+                "id": "3485-b1a3-6051-a788",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "c703-a67e-6e6e-91b6", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Taste the Lash",
+                    "id": "5b6a-5a94-fcad-4207",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Stance (round 4+): Excoriate triggers both effects.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Holy Blood",
+                "id": "0ef2-313c-a039-fae5",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "4dea-b867-e34e-f89b", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Holy Blood",
+                    "id": "6f26-cf1f-c212-9684",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Mea Culpa creates one or (4+) two hazards in free adjacent spaces.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Eager",
+                "id": "bf34-4463-9343-2144",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "a66f-83c9-d6f7-bc58", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Eager",
+                    "id": "9752-1ce2-0c13-2dfb",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 2 with *free* movement before using Mea Culpa.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Inquisitor",
+        "id": "f262-135a-604c-bd27",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 4,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "efb3-6fbc-aace-1341", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Hunter", "id": "3092-eebf-7223-22d3", "hidden": false, "primary": false, "targetId": "8d86-d66c-554d-f5a5"}
+        ],
+        "constraints": [{"id": "e352-15ac-fd74-a3fd", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Winch",
+            "id": "19c9-0070-c666-f0d0",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Step 1. Next attack from this unit gains +1D and +2 maximum range. This effect stacks.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Requiesce en Pace",
+            "id": "9137-0071-97c4-6b2b",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit**: 2 damage. *Stance (Round 3+)*: with *piercing*. (Round 5+): 4 damage with *piercing*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Miracle",
+            "id": "d040-c0fe-89f2-d38f",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "A unit affected by a Miracle has a 5+ effect chance to instantly return to life at 1 hp at the end of any turn it is slain, clearing all tokens. It then loses this trait and you gain 1 SOUL.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Inquisitor",
+            "id": "c9e3-df74-004b-93a7",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "6d0b-014f-51dc-0f6e",
+            "hidden": false,
+            "constraints": [{"id": "06e5-e402-9951-9780", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "06e5-e402-9951-9780",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "ebda-48f8-bd51-2c2b",
+                    "childName": "Hunter",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "06e5-e402-9951-9780",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "ebda-48f8-bd51-2c2b",
+                    "childName": "Hunter",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Cleansing Wash",
+                "id": "0e27-46e0-9c08-e429",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "dcfa-8ee8-ac58-0be8", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Cleansing Wash",
+                    "id": "d0b1-ed0b-8b00-091e",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Regurgitate has a 5+ effect chance to remove a negative token from an ally caught in the area.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Focus",
+                "id": "97a2-5531-06cc-bf95",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "ce2d-502e-af2d-acbc", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Focus",
+                    "id": "0747-3b07-8095-7f90",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "If this unit does not move during its turn, it may remove a negative token from itself.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Heart Destroyer",
+                "id": "a2bc-4eb0-25e9-82ec",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "bfd1-376a-7c3a-834a", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Heart Destroyer",
+                    "id": "73af-261f-d391-f2b6",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "*Stance*: Requiesce en Pace *obliterates* units it slays at round 3+.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Antipriest",
+        "id": "61f0-b8fa-f50b-84b8",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 3,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "305d-ff05-0ad7-bd09", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Freak", "id": "4b2b-9bb2-273c-7f18", "hidden": false, "primary": false, "targetId": "19d1-0a3d-46f4-65e9"}
+        ],
+        "constraints": [{"id": "cf89-b63e-0fce-e3c7", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Antipriest",
+            "id": "fd8f-8c6c-fa83-dbe2",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "MAG", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Miracle",
+            "id": "0316-c2ab-4cd4-9722",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "A unit affected by a Miracle has a 5+ effect chance to instantly return to life at 1 hp at the end of any turn it is slain, clearing all tokens. It then loses this trait and you gain 1 SOUL.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Delay Judgement",
+            "id": "f404-6ee2-fb95-6c07",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: An allied unit in range gains *miracle*. If it already had *miracle*, *miracle* triggers on a 2+ until the end of their next turn. At the end of that unit’s turn, they lose *miracle*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Gentleness",
+            "id": "bdd9-ac7f-904c-d8c8",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Gain 1 *vitality*. Become unable to MOVE or step until start of this unit’s next turn. At the start of that turn, a number of allied units adjacent to this unit equal to the current round number may gain 1 *vitality*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Blessed Censer",
+            "id": "23a7-5187-2ecd-bcd8",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: *Stance (Odd)*: Remove a negative token from an ally in the area,\nthen grant that ally 1 *strength*. *(Even)*: *Splash (self)*: Foes take 1 holy damage.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "7979-a822-f60f-b45b",
+            "hidden": false,
+            "constraints": [{"id": "f7f7-be46-14c9-f09c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "f7f7-be46-14c9-f09c",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "f7f7-be46-14c9-f09c",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Boiling Censer",
+                "id": "b4fc-e616-9d69-c10f",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "a2af-6493-5d1b-60f6", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Boiling Censer",
+                    "id": "6455-88e5-41a2-a8ec",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "*Stance (Round 4+)*: Blessed Censer’s damage becomes *piercing*, and it also grants vitality when removing a negative token from an ally.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Cleansing Prayer",
+                "id": "2c57-e3a9-c7f7-6534",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "794a-5697-a67a-ccf5", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Cleansing Prayer",
+                    "id": "3efb-2c33-806f-b15e",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "While Delay Judgement is active, its target is *curseproof*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Consecrate",
+                "id": "3074-a5a8-c9a4-053f",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "5bd8-6826-5de4-c446", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Consecrate",
+                    "id": "cd95-a2f5-a851-a778",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Blessed Censer may remove up to three corpses or hazards in range.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

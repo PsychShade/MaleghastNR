@@ -85,6 +85,105 @@
           {"name": "Description", "id": "07d2-d978-e8e2-acb2", "kind": "longText"}
         ]
       }
+    ],
+    "sharedRules": [
+      {"name": "Curseproof", "id": "9771-1ef0-1bac-141d", "description": "Immune to damage and effects of Curses from foes.", "hidden": false},
+      {"name": "Charge", "id": "53ef-50b4-edaa-6bfd", "description": "Cannot be used round 1.", "hidden": false},
+      {"name": "Pierce", "id": "fd7b-f696-8fdd-99eb", "description": "This damage ignores armor", "hidden": false, "alias": ["pierce", "piercing", "pierces"]},
+      {
+        "name": "Reload",
+        "id": "c65f-cfbf-e786-ba77",
+        "description": "CARCASS faction tag. This ability must be reloaded by sacrificing a MOVE before becoming usable again. Reloading refreshes all abilities with reload.",
+        "hidden": false
+      },
+      {
+        "name": "Headshot",
+        "id": "b4c6-e304-c74c-37c0",
+        "description": "CARCASS special tag. Effect that triggers when rolling a 6 on the final attack roll.",
+        "hidden": false
+      },
+      {
+        "name": "Devil damage",
+        "id": "298c-26bc-8634-2737",
+        "description": "Cannot be reduced, increased, or ignored. Obliterates units it slays.",
+        "hidden": false,
+        "alias": ["devil damage"]
+      },
+      {
+        "name": "Obliterate",
+        "id": "21c6-b3b2-0e4c-28d8",
+        "description": "A unit that is obliterated leaves neither body nor SOUL and does not trigger effects that trigger when they are slain or reduced to 0 hp.",
+        "hidden": false,
+        "alias": ["obliterate", "obliterated", "obliterates"]
+      },
+      {"name": "Formation", "id": "4b05-efb6-ec8c-0bc1", "description": "CARCASS faction trait. Gain +1D on attacks if adjacent to an allied unit.", "hidden": false},
+      {
+        "name": "Miracle",
+        "id": "61cc-9eb7-c792-cb46",
+        "description": "Abhorrer faction tag. When a unit with miracle is slain, it has a 5+ effect chance to return to life at the end of that turn with 1 hp, clearing all tokens.",
+        "hidden": false
+      },
+      {
+        "name": "Spare Parts",
+        "id": "f8b9-fa34-45e9-e2b5",
+        "description": "Gains an additional effects if an adjacent corpse is consumed at the start of the ability. Scales per corpse consumed.",
+        "hidden": false,
+        "page": ""
+      },
+      {
+        "name": "Free movement",
+        "id": "4636-4ef5-fe2a-dc2c",
+        "description": "Unit’s movement cannot be reduced by any means.",
+        "hidden": false,
+        "alias": ["free movement"]
+      },
+      {
+        "name": "SUPER",
+        "id": "2893-b484-e8e9-5676",
+        "description": "Super armor, blocks 1 of any damage except devil damage.",
+        "hidden": false,
+        "alias": ["super armor"]
+      },
+      {
+        "name": "MAG",
+        "id": "8e46-a22d-483e-a43b",
+        "description": "Magical armor. Blocks 1 holy, curse, toxic, or fire damage.",
+        "hidden": false,
+        "alias": ["magical armor"]
+      },
+      {
+        "name": "PHYS",
+        "id": "3752-efcb-047e-b3a2",
+        "description": "Physical armor. Blocks 1 physical damage. All damage is physical by default (damage that is not holy, curse, toxic, fire, or devil damage)",
+        "hidden": false,
+        "alias": ["physical armor"]
+      },
+      {
+        "name": "Retaliation",
+        "id": "9bfb-65cb-11c1-b5e5",
+        "description": "Goreginders faction tag. Deal 1 damage after any ability resolves that damages this unit, to whichever unit damaged them, even if this unit is slain.",
+        "hidden": false
+      },
+      {
+        "name": "Berserk",
+        "id": "bf36-d126-1d6c-523f",
+        "description": "After a berserk unit ACTs, it splashes (self) 1 damage, then discards a berserk token. This damage can’t be increased in any way. If this effect does not damage any other characters, it deals 1 piercing damage to itself instead. Berserk counts as a positive and a negative token.",
+        "hidden": false
+      },
+      {
+        "name": "Doom",
+        "id": "fd0e-3ac7-c059-2473",
+        "description": "Any unit affected by at least one Doom token takes 4 devil damage at the end of round 4. A unit can only clear a Doom token by slaying another unit.",
+        "hidden": false,
+        "alias": ["doomed"]
+      },
+      {
+        "name": "Isolation",
+        "id": "6c08-345e-2048-0abd",
+        "description": "Gains extra effects against units with no allies adjacent.",
+        "hidden": false,
+        "alias": ["isolates", "isolated"]
+      }
     ]
   }
 }
