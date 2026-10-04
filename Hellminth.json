@@ -78,11 +78,8 @@
             "characteristics": [
               {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
               {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-              {
-                "name": "Description",
-                "$text": "**Trigger**: Turn start. \n**Effect**: Ally steps 2, then creates a corpse in a free adjacent space.",
-                "typeId": "07d2-d978-e8e2-acb2"
-              }
+              {"name": "Trigger", "$text": "Turn start.", "typeId": "1168-c65d-8a02-19c3"},
+              {"name": "Effect", "$text": "Ally steps 2, then creates a corpse in a free adjacent space.", "typeId": "07d2-d978-e8e2-acb2"}
             ]
           },
           {
@@ -94,7 +91,8 @@
             "characteristics": [
               {"name": "Tag", "$text": "Own turn, Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
               {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-              {"name": "Description", "$text": "**Effect**: Target ally *evolves*.", "typeId": "07d2-d978-e8e2-acb2"}
+              {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+              {"name": "Effect", "$text": "Target ally *evolves*.", "typeId": "07d2-d978-e8e2-acb2"}
             ]
           },
           {
@@ -120,7 +118,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "This Unit gains +1 max and current HP. Gain +1 SOUL. This evolution may be repeated indefinitely.",
@@ -427,9 +424,10 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You hit an attack. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: You hit an attack. \n**Effect**: Create a corpse in a free adjacent space. Create +1 corpse if you slew or *obliterated* the unit.",
+                            "name": "Effect",
+                            "$text": "Create a corpse in a free adjacent space. Create +1 corpse if you slew or *obliterated* the unit.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -454,9 +452,10 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You hit or miss an attack.", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: You hit or miss an attack. \n**Effect**: You curse the target. When the target is slain, it grants 1 *vitality* to up to three allies in range 1-2.",
+                            "name": "Effect",
+                            "$text": "You curse the target. When the target is slain, it grants 1 *vitality* to up to three allies in range 1-2.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -481,9 +480,10 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Target turn start. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: Target turn start. \n**Effect**: Remove ally from the battlefield, then replace them with a page and create a corpse in a free adjacent space. They can act normally this turn. They keep all tokens and effects.",
+                            "name": "Effect",
+                            "$text": "Remove ally from the battlefield, then replace them with a page and create a corpse in a free adjacent space. They can act normally this turn. They keep all tokens and effects.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -508,9 +508,10 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start.", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn start. \n**Effect**: Acting unit sprouts wings, gaining +2 MV and flying for the rest of combat (Ignores adverse terrain and elevation attack and movement penalties).",
+                            "name": "Effect",
+                            "$text": "Acting unit sprouts wings, gaining +2 MV and flying for the rest of combat (Ignores adverse terrain and elevation attack and movement penalties).",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -535,9 +536,10 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Foe or ally turn, Curse, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn start. \n**Effect**: At the end of the targeted unit’s turn, remove up to three positive tokens. You gain 1 *vitality* per token removed. If the unit has no positive tokens left, deal 2 toxic damage to it.",
+                            "name": "Effect",
+                            "$text": "At the end of the targeted unit’s turn, remove up to three positive tokens. You gain 1 *vitality* per token removed. If the unit has no positive tokens left, deal 2 toxic damage to it.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -562,11 +564,8 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: All other allied units *evolve*. Units already at maximum *evolution* gain 1 *strength*.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "All other allied units *evolve*. Units already at maximum *evolution* gain 1 *strength*.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -868,8 +867,9 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
+                            "name": "Effect",
                             "$text": "**Trigger**: You hit an attack. \n**Effect**: Create a corpse in a free adjacent space. Create +1 corpse if you slew or *obliterated* the unit.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
@@ -895,8 +895,9 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
+                            "name": "Effect",
                             "$text": "**Trigger**: You hit or miss an attack. \n**Effect**: You curse the target. When the target is slain, it grants 1 *vitality* to up to three allies in range 1-2.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
@@ -922,8 +923,9 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
+                            "name": "Effect",
                             "$text": "**Trigger**: Target turn start. \n**Effect**: Remove ally from the battlefield, then replace them with a page and create a corpse in a free adjacent space. They can act normally this turn. They keep all tokens and effects.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
@@ -949,8 +951,9 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
+                            "name": "Effect",
                             "$text": "**Trigger**: Turn start. \n**Effect**: Acting unit sprouts wings, gaining +2 MV and flying for the rest of combat (Ignores adverse terrain and elevation attack and movement penalties).",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
@@ -976,8 +979,9 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Foe or ally turn, Curse, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
+                            "name": "Effect",
                             "$text": "**Trigger**: Turn start. \n**Effect**: At the end of the targeted unit’s turn, remove up to three positive tokens. You gain 1 *vitality* per token removed. If the unit has no positive tokens left, deal 2 toxic damage to it.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
@@ -1003,8 +1007,9 @@
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
                           {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
+                            "name": "Effect",
                             "$text": "**Effect**: All other allied units *evolve*. Units already at maximum *evolution* gain 1 *strength*.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
@@ -1077,7 +1082,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "**Effect:** Remove this unit. Then replace it with the base form of any non-necromancer Hellminth unit, with a current and max hp of 2. If unactivated it can take a turn as normal this round and keeps all tokens and effects.",
@@ -1092,7 +1096,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "**Effect**: Slay this unit. Then, instead of leaving one corpse, this unit leaves 3 corpses stacked in its space.",
@@ -1285,7 +1288,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "+1 HP. Black blade deals +1 damage if it stripped a token.\n**Impaler** upgrades to **Bloody Impaler**: Impaler’s step becomes step 3 and gains *free movement.*",
@@ -1300,7 +1302,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "+2 HP\n**Impaler** upgrades to **Shield Slam:** pushes 2 spaces, and if pushing a foe into a wall, destroys that wall.",
@@ -1315,7 +1316,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "+1 HP. Black Blade deals +2 damage if body blocked.\n**Executioner’s Edge**: Melee\n**Effect**: An adjacent unit at 1 hp or lower has a 3+ effect chance of being *obliterated*. Then gain 1 *strength*.",
@@ -1330,7 +1330,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "This unit gains **SUPER** armor.\n**Flesh Anchors**: Self\n**Effect**: Until start of this unit’s next turn, this unit cannot MOVE, step, or be pushed or pulled. This unit gains *cover* and grants it to adjacent allies from all directions. At the start of that turn, this unit may extend this effect until the start of its following turn without spending an ACT.",
@@ -1517,7 +1516,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "**Seeker Worm**: Self\n**Effect**: Gain 1 or (4+) 2 or (6+) 3 *strength*. The next use of Black Bow cannot miss and ignores line of sight.",
@@ -1532,7 +1530,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "**+1 HP** and *Curseproof*.\n**Punish**: Attack, Range 1-3\n**On hit**: 1 devil damage and pull 1. If target is *obliterated* by this damage, they explode, leaving 2 corpses in free adjacent spaces.",
@@ -1731,7 +1728,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "+1 HP and *free movement*.\n**Spine Impale**: Line 3\n**Effect:** 1 damage. Any unit in the final space takes *piercing* damage instead.",
@@ -1746,7 +1742,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "Gains PHYS Armor\n**Blood Trance** upgrades to **Supreme Trance**: also grants 1 or (4+) 2 vitality.",
@@ -1933,7 +1928,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "**+1 HP** and **MAG armor**\n**Veridian Star** upgrades to **Boiling Star**: gains +1 max range, and its splash effect deals 1 toxic damage to units standing on corpses before pushing them.",
@@ -1948,7 +1942,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "**+1 HP** and **PHYS armor**.\n**The Spiral Worm**: Range 1-3\n**Effect**: Self or target unit removes two tokens of your choice and converts them to vitality.",
@@ -2133,7 +2126,6 @@
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
             "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
               {
                 "name": "Description",
                 "$text": "**Effect**: This unit drops a corpse in its space, steps 2, loses *Shed Flesh*, and immediately becomes able to use *Vicious Thrashing*.",
@@ -2147,10 +2139,7 @@
             "hidden": false,
             "typeId": "8250-8dab-dfd6-d1f7",
             "typeName": "Evolution",
-            "characteristics": [
-              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
-              {"name": "Description", "$text": "**Effect**: All three hits of *Vicious Thrashing* can target the same character.", "typeId": "6b42-e07e-d26c-def6"}
-            ]
+            "characteristics": [{"name": "Description", "$text": "**Effect**: All three hits of *Vicious Thrashing* can target the same character.", "typeId": "6b42-e07e-d26c-def6"}]
           },
           {
             "name": "Vicious Thrashing",
