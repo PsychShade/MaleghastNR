@@ -7,6 +7,2286 @@
     "gameSystemRevision": 1,
     "library": false,
     "revision": 1,
-    "type": "catalogue"
+    "type": "catalogue",
+    "catalogueLinks": [
+      {"name": "Campaign Rules", "id": "b66d-94ec-7734-31df", "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
+      {"name": "Heresy", "id": "7d89-2b91-90a8-99c7", "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+    ],
+    "profileTypes": [
+      {
+        "name": "Evolution",
+        "id": "8250-8dab-dfd6-d1f7",
+        "hidden": false,
+        "kind": "ability",
+        "sortIndex": 5,
+        "characteristicTypes": [{"name": "Description", "id": "6b42-e07e-d26c-def6", "kind": "longText"}]
+      }
+    ],
+    "selectionEntries": [
+      {
+        "name": "Nephilim",
+        "id": "28b0-9256-ed39-4bd3",
+        "defaultAmount": "1",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 0,
+        "type": "unit",
+        "categoryLinks": [{"name": "Necromancer", "id": "a2b1-7a3e-d03f-6984", "hidden": false, "primary": true, "targetId": "51aa-2972-b4d9-be05"}],
+        "profiles": [
+          {
+            "name": "Nephilim",
+            "id": "6de7-318f-748d-fe35",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "10", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Demolisher",
+            "id": "ab80-633c-7ddf-a0f8",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "When moving into the first wall each turn, may destroy it before continuing movement.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Black Talon",
+            "id": "becc-b9e5-5cb2-591d",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Range 1-2 ", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit**: 1 damage. \n**Effect**: May spend up to three *vitality* tokens or adjacent corpses, in any combination, to increase damage on hit by +1 for each token or corpse consumed. If three were spent, gains *pierce*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Force Molt",
+            "id": "1dbf-f685-e0d4-3e6e",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {
+                "name": "Description",
+                "$text": "**Trigger**: Turn start. \n**Effect**: Ally steps 2, then creates a corpse in a free adjacent space.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
+          },
+          {
+            "name": "Rapid Evolve",
+            "id": "9c6c-3974-21f4-f4d3",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own turn, Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Description", "$text": "**Effect**: Target ally *evolves*.", "typeId": "07d2-d978-e8e2-acb2"}
+            ]
+          },
+          {
+            "name": "Necrophage",
+            "id": "c210-9223-5b2e-69b4",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Units with this trait can spend adjacent corpses as vitality tokens, removing the corpse.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Large",
+            "id": "b101-1f4c-dc76-257d",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Evolve: Blood of the Worm Gods",
+            "id": "b61b-2779-035a-7621",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "This Unit gains +1 max and current HP. Gain +1 SOUL. This evolution may be repeated indefinitely.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Starting Upgrades",
+            "id": "7d39-1ad9-0fc4-a22c",
+            "collapsible": true,
+            "hidden": false,
+            "sortIndex": 1,
+            "constraints": [{"id": "c391-6d89-2e50-8984", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 2}],
+            "selectionEntryGroups": [
+              {
+                "name": "Bonus Traits",
+                "id": "b277-4a9f-e873-1c99",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "47d3-739b-7b1e-ab56", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Tyrant Ruler",
+                    "id": "8972-cc27-802f-50e0",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "4d66-20ba-a49a-5a8e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Tyrant Ruler",
+                        "id": "5cf4-87fa-e7ef-29ed",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Blood of the Worm gods grants +2 HP and 2 SOUL instead if there are no other allied units alive.",
+                            "typeId": "14fe-a261-4f47-6f40"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Revelation",
+                    "id": "1934-71ce-d1bf-386c",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "85cf-80df-4268-93d9", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Revelation",
+                        "id": "1112-e23a-4bea-b981",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "When an adjacent ally *evolves*, they gain 1 *vitality*.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Talons of Hell",
+                    "id": "357f-199d-9ac2-8fa6",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "5494-2b4c-eab4-30f6", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Talons of Hell",
+                        "id": "cd0c-33d6-3896-6b04",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "At round 4+, Black Talon deals +1 base damage and *obliterates* units it slays.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "d73e-c8bf-332e-8173",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "Caul of the Worm Gods",
+                    "id": "942f-5774-a6d5-059d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "26f2-f0ef-a4c3-1952", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Caul of the Worm Gods",
+                        "id": "e9e5-d580-0af9-6a6b",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Ally, Range 1-3. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Target ally gains 1 *vitality* at the end of its turns this combat (4+) and clears a negative token. End this effect if this ability is used again.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Psychic Scream",
+                    "id": "a288-a033-d5e8-1dc2",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ca6b-0f41-8778-0ed9", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Psychic Scream",
+                        "id": "fc85-daa9-dfda-598d",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "*Splash (self)*: All other units in the area lose 1 or (5+) two tokens of this unit’s choice, then are pushed 2.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Burrow",
+                    "id": "9372-4d0e-3e52-9673",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3fe7-4c9b-ae16-1209", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Burrow",
+                        "id": "e416-bd00-9a19-f4b1",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Remove self, then place in any space on the battlefield. When reappearing, remove all units in this units space, then each unit’s owner may place them in free space on any edge, starting ally/foe and alternating if necessary.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Acid Jet",
+                    "id": "50f4-ce8b-5c64-79b7",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "fbdb-49b8-cde5-337e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Acid Jet",
+                        "id": "829a-f3f7-ecbb-d3aa",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Line 3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: First unit in the line takes 1 *piercing* toxic damage and push 1, no effect on other units. If that unit was in the last space, it takes 2 *piercing* toxic damage instead.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Dispassionate Dissection",
+                    "id": "0bf2-5ca9-edfd-ddac",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "4f03-81a7-48fd-925e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Dispassionate Dissection",
+                        "id": "20d0-4134-52ab-8bd4",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 damage and (4+) 1 toxic damage again (6+) then 1 toxic damage again. **Effect**: Creates two corpses if slaying a foe.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "The Kiss",
+                    "id": "39bd-59a2-ba0e-2853",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "0bdf-677c-3fc3-41e8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "The Kiss",
+                        "id": "1b2a-2270-2ecc-5d39",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 devil damage. **Effect**: If this slays a unit, *obliterate* them, then summon a page in their space.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Swat Nuisance",
+                    "id": "5a53-b6eb-2661-2ad7",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c930-f996-1602-0bec", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Swat Nuisance",
+                        "id": "59e0-45da-4ca3-9e8e",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 2 damage and push one or (5+) three spaces. If moving into the space of another unit or a wall, deal 1 damage again to both. This additional damage can’t be increased.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "a365-a96f-5a03-d07a",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Tear Off",
+                    "id": "0988-9b77-0a3a-9151",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c130-b939-61f0-1b22", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Tear Off",
+                        "id": "2112-1cb3-00f7-ac42",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You hit an attack. \n**Effect**: Create a corpse in a free adjacent space. Create +1 corpse if you slew or *obliterated* the unit.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Taint Blood",
+                    "id": "c89c-3902-70ba-da38",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "cf77-94cc-8cac-f978", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Taint Blood",
+                        "id": "a0f7-2f93-07e5-a62e",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You hit or miss an attack. \n**Effect**: You curse the target. When the target is slain, it grants 1 *vitality* to up to three allies in range 1-2.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Demote",
+                    "id": "d5eb-eef3-6602-4047",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "d39d-ba40-8d59-97b8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Demote",
+                        "id": "5cfa-616a-9a9a-40dd",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Target turn start. \n**Effect**: Remove ally from the battlefield, then replace them with a page and create a corpse in a free adjacent space. They can act normally this turn. They keep all tokens and effects.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Glider Caul",
+                    "id": "7238-7096-f3f0-b93f",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e0a1-b967-bb64-0a94", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Glider Caul",
+                        "id": "f0d3-8565-d18c-1537",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn start. \n**Effect**: Acting unit sprouts wings, gaining +2 MV and flying for the rest of combat (Ignores adverse terrain and elevation attack and movement penalties).",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Blood Drain",
+                    "id": "f2ad-7e4a-0488-974d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "5aee-f48c-8916-86bc", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Blood Drain",
+                        "id": "4d4a-ca16-9335-04ab",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Foe or ally turn, Curse, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn start. \n**Effect**: At the end of the targeted unit’s turn, remove up to three positive tokens. You gain 1 *vitality* per token removed. If the unit has no positive tokens left, deal 2 toxic damage to it.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Transcendence",
+                    "id": "ed24-573f-4973-93d6",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ffdd-dbe9-a91c-2e15", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Transcendence",
+                        "id": "ebcf-913b-e937-48ec",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: All other allied units *evolve*. Units already at maximum *evolution* gain 1 *strength*.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Dark Power Upgrades",
+            "id": "6bdb-fc2d-adf1-0f2e",
+            "collapsible": true,
+            "hidden": false,
+            "sortIndex": 2,
+            "selectionEntryGroups": [
+              {
+                "name": "Bonus Traits",
+                "id": "6387-cb00-4a2e-d093",
+                "hidden": false,
+                "constraints": [{"id": "29cd-1fb5-e58b-8c9d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Tyrant Ruler",
+                    "id": "a844-80bc-9d1d-17e6",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "74a8-78f7-8375-3032", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Tyrant Ruler",
+                        "id": "5fd1-c0ab-e21b-129a",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [
+                          {
+                            "name": "Description",
+                            "$text": "Blood of the Worm gods grants +2 HP and 2 SOUL instead if there are no other allied units alive.",
+                            "typeId": "14fe-a261-4f47-6f40"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Revelation",
+                    "id": "b956-7d39-f802-b42e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "46c5-e65b-0324-138e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Revelation",
+                        "id": "6596-9194-6ff0-53e5",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "When an adjacent ally *evolves*, they gain 1 *vitality*.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Talons of Hell",
+                    "id": "3375-82bf-b31c-3207",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "62bf-ab7d-3565-61fd", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Talons of Hell",
+                        "id": "6cb4-5572-d57f-4f72",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "At round 4+, Black Talon deals +1 base damage and *obliterates* units it slays.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "4642-6b79-b11f-1d5f",
+                "hidden": false,
+                "selectionEntries": [
+                  {
+                    "name": "Caul of the Worm Gods",
+                    "id": "fdbf-82ad-6258-e796",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "21a7-dcbb-de19-1f1b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Caul of the Worm Gods",
+                        "id": "f117-20e0-908b-4aca",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Ally, Range 1-3. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Target ally gains 1 *vitality* at the end of its turns this combat (4+) and clears a negative token. End this effect if this ability is used again.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Psychic Scream",
+                    "id": "b5f8-40cd-da16-45e9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c20c-45a2-2ece-ff7e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Psychic Scream",
+                        "id": "1122-01fa-1bf0-2da4",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "*Splash (self)*: All other units in the area lose 1 or (5+) two tokens of this unit’s choice, then are pushed 2.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Burrow",
+                    "id": "657b-e9c8-a865-6f94",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "d734-3481-18cc-da4b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Burrow",
+                        "id": "3b82-aab2-9e1e-1df5",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: Remove self, then place in any space on the battlefield. When reappearing, remove all units in this units space, then each unit’s owner may place them in free space on any edge, starting ally/foe and alternating if necessary.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Acid Jet",
+                    "id": "a184-fa43-4dbd-54cc",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "683f-1837-fd48-3984", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Acid Jet",
+                        "id": "200e-80ee-12cd-bc50",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Line 3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: First unit in the line takes 1 *piercing* toxic damage and push 1, no effect on other units. If that unit was in the last space, it takes 2 *piercing* toxic damage instead.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Dispassionate Dissection",
+                    "id": "0e5b-54be-ad87-a8ef",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "f3ca-2e1a-c5ee-81b3", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Dispassionate Dissection",
+                        "id": "9d36-2925-bf1f-d843",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 damage and (4+) 1 toxic damage again (6+) then 1 toxic damage again. **Effect**: Creates two corpses if slaying a foe.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "The Kiss",
+                    "id": "2ce2-c7b5-8129-e482",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "dc5d-6cbf-9467-3227", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "The Kiss",
+                        "id": "3b51-8f09-5fa5-79a8",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 1 devil damage. **Effect**: If this slays a unit, *obliterate* them, then summon a page in their space.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Swat Nuisance",
+                    "id": "9664-04b7-5035-8cb4",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "037e-4587-b363-2b77", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Swat Nuisance",
+                        "id": "c926-ee8c-90be-ae1f",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {
+                            "name": "Description",
+                            "$text": "**On hit**: 2 damage and push one or (5+) three spaces. If moving into the space of another unit or a wall, deal 1 damage again to both. This additional damage can’t be increased.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "5579-1405-a0d5-7752",
+                "hidden": false,
+                "selectionEntries": [
+                  {
+                    "name": "Tear Off",
+                    "id": "1719-6e0d-8da3-166e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c6a9-0193-abf3-2a44", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Tear Off",
+                        "id": "f085-c1fb-ad2f-3988",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You hit an attack. \n**Effect**: Create a corpse in a free adjacent space. Create +1 corpse if you slew or *obliterated* the unit.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Taint Blood",
+                    "id": "8709-97de-1b47-2017",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "4516-e769-9918-430c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Taint Blood",
+                        "id": "beb7-9212-b2af-c522",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: You hit or miss an attack. \n**Effect**: You curse the target. When the target is slain, it grants 1 *vitality* to up to three allies in range 1-2.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Demote",
+                    "id": "db07-43ce-240f-ab9e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "facc-eebc-3f8d-cbc8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Demote",
+                        "id": "9e3c-b6e9-6d65-705a",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Target turn start. \n**Effect**: Remove ally from the battlefield, then replace them with a page and create a corpse in a free adjacent space. They can act normally this turn. They keep all tokens and effects.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Glider Caul",
+                    "id": "5f48-9e02-97a5-5c48",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "dd01-ca2b-d7af-5065", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Glider Caul",
+                        "id": "89fc-88db-3976-20c0",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn start. \n**Effect**: Acting unit sprouts wings, gaining +2 MV and flying for the rest of combat (Ignores adverse terrain and elevation attack and movement penalties).",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Blood Drain",
+                    "id": "eb85-6b9e-538e-91cb",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c7e3-1865-103a-de22", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Blood Drain",
+                        "id": "dff5-99f3-9ce0-ae17",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Foe or ally turn, Curse, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Trigger**: Turn start. \n**Effect**: At the end of the targeted unit’s turn, remove up to three positive tokens. You gain 1 *vitality* per token removed. If the unit has no positive tokens left, deal 2 toxic damage to it.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Transcendence",
+                    "id": "65cc-0488-2f8c-f545",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "4082-d949-43d7-f00b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Transcendence",
+                        "id": "135f-ae3e-b0fc-3f02",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {
+                            "name": "Description",
+                            "$text": "**Effect**: All other allied units *evolve*. Units already at maximum *evolution* gain 1 *strength*.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Page",
+        "id": "3e16-8bfd-8515-a4be",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 1,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "12f4-89b9-7b93-959e", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Thrall", "id": "de97-1c6f-9f49-34dc", "hidden": false, "primary": false, "targetId": "b1b6-295a-b637-9c4c"}
+        ],
+        "profiles": [
+          {
+            "name": "Page",
+            "id": "7524-3ea4-9421-964a",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "2", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Necrophage",
+            "id": "79cc-66be-bcc5-c0a5",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Units with this trait can spend adjacent corpses as vitality tokens, removing the corpse.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Viscous Bite",
+            "id": "21a6-9425-a31b-2c04",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Step 1. \n**On hit:** 1 toxic damage (5+) then this unit *evolves*.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Thrall",
+            "id": "fbba-ad47-1644-698e",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Evolve: Pupate",
+            "id": "4780-5be1-8b22-fe12",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "**Effect:** Remove this unit. Then replace it with the base form of any non-necromancer Hellminth unit, with a current and max hp of 2. If unactivated it can take a turn as normal this round and keeps all tokens and effects.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          },
+          {
+            "name": "Evolve: Cyst",
+            "id": "4abe-c777-c27d-528a",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Slay this unit. Then, instead of leaving one corpse, this unit leaves 3 corpses stacked in its space.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "40b9-2263-a6d1-507a",
+            "hidden": false,
+            "constraints": [{"id": "ea16-a425-39e8-ab81", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "ea16-a425-39e8-ab81",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "ea16-a425-39e8-ab81",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Toxic Exit",
+                "id": "32c9-74fb-6ca7-86e8",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "21d8-753e-3641-68e5", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Toxic Exit",
+                    "id": "7c7b-ed06-9abd-22a0",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Evolve: Cyst deals 1 toxic damage to an adjacent foe.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Draining Bite",
+                "id": "b6b0-21f2-3f37-1942",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "f81b-551c-6bd2-da2a", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Draining Bite",
+                    "id": "5908-c12c-a097-d805",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Viscous Bite removes a positive token on hit but no longer has a chance to *evolve*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Invigorating Evolve",
+                "id": "980b-ee54-95bb-07f0",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "fcd4-3570-175d-1c07", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Invigorating Evolve",
+                    "id": "39a3-97af-8dc6-e540",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Evolving a page grants 1 *vitality* to an adjacent unit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Knight",
+        "id": "ae6c-e5ea-0e2c-93bf",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 3,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "0aea-52a1-913d-7026", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Scion", "id": "3a8f-6880-bf01-a6b3", "hidden": false, "primary": false, "targetId": "fa04-6df6-fc81-7d88"}
+        ],
+        "constraints": [{"id": "841f-8998-cb61-2d92", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 3}],
+        "profiles": [
+          {
+            "name": "Knight",
+            "id": "0cc8-4a55-6ccb-338d",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "\n", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Latent",
+            "id": "e7f7-6445-45bd-68ee",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "Can *evolve* twice, choosing between either option each time for its first and second *evolve*.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Black Blade",
+            "id": "c33e-f00f-6260-25eb",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit:** Strip a positive token from the target, then deal 1 damage.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Impaler",
+            "id": "a944-24fc-5d69-76f5",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Step 1, then deal 1 toxic damage to an adjacent foe and push them 1.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Necrophage",
+            "id": "3c38-63ec-301e-56b0",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Units with this trait can spend adjacent corpses as vitality tokens, removing the corpse.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Evolve 1: Thirsting Blade",
+            "id": "179f-385b-9917-8849",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "+1 HP. Black blade deals +1 damage if it stripped a token.\n**Impaler** upgrades to **Bloody Impaler**: Impaler’s step becomes step 3 and gains *free movement.*",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          },
+          {
+            "name": "Evolve 1: Carapace Shield",
+            "id": "ff58-8376-e3f8-0537",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "+2 HP\n**Impaler** upgrades to **Shield Slam:** pushes 2 spaces, and if pushing a foe into a wall, destroys that wall.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          },
+          {
+            "name": "Evolve 2: Executioner",
+            "id": "32a6-22b9-c94d-95e6",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "+1 HP. Black Blade deals +2 damage if body blocked.\n**Executioner’s Edge**: Melee\n**Effect**: An adjacent unit at 1 hp or lower has a 3+ effect chance of being *obliterated*. Then gain 1 *strength*.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          },
+          {
+            "name": "Evolve 2: Royal Guard",
+            "id": "7a5f-c436-5624-480a",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "This unit gains **SUPER** armor.\n**Flesh Anchors**: Self\n**Effect**: Until start of this unit’s next turn, this unit cannot MOVE, step, or be pushed or pulled. This unit gains *cover* and grants it to adjacent allies from all directions. At the start of that turn, this unit may extend this effect until the start of its following turn without spending an ACT.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "a182-7eba-57d3-80f2",
+            "hidden": false,
+            "constraints": [{"id": "1979-4c53-3dc1-8928", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "1979-4c53-3dc1-8928",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "1979-4c53-3dc1-8928",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Charging Evolve",
+                "id": "9e44-a9ae-06aa-0c79",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "09ed-0e18-9b11-d1bb", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Charging Evolve",
+                    "id": "d92c-4da5-038a-567d",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 2 when *evolving*, then push an adjacent unit 1.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "True Latency",
+                "id": "b21e-37ee-efb5-da21",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "d23e-0bac-4820-a36c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "True Latency",
+                    "id": "e4f2-17f8-c40e-35e0",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Gains 1 *strength* when evolving. May continue to evolve if fully evolved.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Pure Necrophage",
+                "id": "5465-be0c-3a62-fdf3",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "f637-cf54-b283-4730", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Pure Necrophage",
+                    "id": "f100-48f8-b447-3ca2",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Can also use adjacent corpses as *strength* tokens, consuming the corpse.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Huntsman",
+        "id": "e0b8-1721-9feb-cdee",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 6,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "4a36-1ea8-8e90-9449", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Hunter", "id": "860d-1eee-3f1b-a798", "hidden": false, "primary": false, "targetId": "8d86-d66c-554d-f5a5"}
+        ],
+        "constraints": [{"id": "caac-51b5-6546-6e31", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Huntsman",
+            "id": "0061-4dbb-d9ce-3b06",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Black Bow",
+            "id": "473c-c881-b928-be60",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit**: 1 toxic damage and may remove up to two corpses adjacent to the target to deal 1 toxic damage to target again for each corpse removed.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Writhing Earth",
+            "id": "69e5-ba1f-8719-8fcc",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Foe, Curse, Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Choose a foe in range. At the end of that foe’s next turn, if they ended their turn adjacent to a corpse, they take 2 toxic damage. Then create two corpses in free adjacent spaces to them.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Necrophage",
+            "id": "e872-c667-c2ce-2f5b",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Units with this trait can spend adjacent corpses as vitality tokens, removing the corpse.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Evolve: Seeker Worm",
+            "id": "a5c3-d534-4235-97b8",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "**Seeker Worm**: Self\n**Effect**: Gain 1 or (4+) 2 or (6+) 3 *strength*. The next use of Black Bow cannot miss and ignores line of sight.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          },
+          {
+            "name": "Evolve: Punisher Whip",
+            "id": "fbe1-629d-5097-1cf3",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "**+1 HP** and *Curseproof*.\n**Punish**: Attack, Range 1-3\n**On hit**: 1 devil damage and pull 1. If target is *obliterated* by this damage, they explode, leaving 2 corpses in free adjacent spaces.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "e07c-a1cd-dd87-aeca",
+            "hidden": false,
+            "constraints": [{"id": "46d7-56ce-5539-0c38", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "46d7-56ce-5539-0c38",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "ebda-48f8-bd51-2c2b",
+                    "childName": "Hunter",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "46d7-56ce-5539-0c38",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "ebda-48f8-bd51-2c2b",
+                    "childName": "Hunter",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Burst Evolve",
+                "id": "e66d-0df8-aab4-d35f",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "7ae4-d791-75eb-c9dc", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Burst Evolve",
+                    "id": "023b-7672-01d0-6e16",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Before *evolving*, may push an adjacent unit 3.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Lashing Worm",
+                "id": "6bdb-a198-eb37-4179",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "2a36-0022-bb17-b07c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Lashing Worm",
+                    "id": "2919-f874-bbc4-cea1",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "The third hit of Black Bow gains *pierce*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Siege Bow",
+                "id": "f590-f798-1971-1414",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "6623-e97b-01c0-1f78", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Siege Bow",
+                    "id": "18ab-b921-f233-1ff1",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "After this unit *evolves*, Black Bow gains +2 max range and may destroy a wall adjacent to its target on hit.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Knave",
+        "id": "419c-c6dd-0925-87a2",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 4,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "636b-c026-006e-c9d5", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Horror", "id": "309e-1827-6664-6ef7", "hidden": false, "primary": false, "targetId": "88fe-98a4-c63f-2c4e"}
+        ],
+        "constraints": [{"id": "b4d0-ef2e-d738-34b1", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Knave",
+            "id": "0044-7502-714f-b491",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Carrion Burrow",
+            "id": "4a19-c683-49f6-6e28",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "When MOVEing, may teleport into the space of any corpse, removing the corpse. Does not require line of sight.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Rending Talon",
+            "id": "8f5a-3ba2-0bc0-cb6e",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit**: 1 damage then 1 damage again to the same or a different adjacent foe.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Blood Trance",
+            "id": "7dc9-7670-99e8-ff26",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Gain 1 *strength* for every adjacent foe or corpse, up to three times.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Necrophage",
+            "id": "d8ff-1b0a-dc18-dd76",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Units with this trait can spend adjacent corpses as vitality tokens, removing the corpse.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Evolve: Spined Limbs",
+            "id": "4eba-ad35-0132-f89f",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "+1 HP and *free movement*.\n**Spine Impale**: Line 3\n**Effect:** 1 damage. Any unit in the final space takes *piercing* damage instead.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          },
+          {
+            "name": "Evolve: Assault Carapace",
+            "id": "5a9e-b093-228a-9d1c",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "Gains PHYS Armor\n**Blood Trance** upgrades to **Supreme Trance**: also grants 1 or (4+) 2 vitality.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "78be-9a36-1fb2-881a",
+            "hidden": false,
+            "constraints": [{"id": "e90e-f462-3362-9bbf", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "e90e-f462-3362-9bbf",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "e90e-f462-3362-9bbf",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Sprinting Evolve",
+                "id": "be8e-9af8-2d0b-9b54",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "72fa-6766-991d-be36", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Sprinting Evolve",
+                    "id": "ede3-ddbc-049f-166c",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "May step 3 with *free movement* before *evolving*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Graceful Exit",
+                "id": "5262-c0b5-d3af-68f7",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "f003-0875-7a96-e403", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Graceful Exit",
+                    "id": "0c6a-6eeb-9f11-6707",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Does not remove the corpse when using Carrion Burrow.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Heady Trance",
+                "id": "f078-6436-1bb9-03c4",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "7504-f306-8070-a43c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Heady Trance",
+                    "id": "b6a6-667e-e2bb-545a",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Blood Trance gains a 5+ effect chance to *evolve* this unit.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sage",
+        "id": "bffe-52f9-fe00-afa7",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 5,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "98a2-6aa0-fada-b8a6", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Freak", "id": "b12b-46d2-e244-e4a2", "hidden": false, "primary": false, "targetId": "19d1-0a3d-46f4-65e9"}
+        ],
+        "constraints": [{"id": "c6b8-a108-d147-d2d9", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Sage",
+            "id": "a592-ea5f-9c4c-6eab",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Veridian Star",
+            "id": "e1ed-2ff2-2c26-6804",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: 1 toxic damage and Splash (target): push 1. Then create one, (4+) two or (6+) three corpses in free adjacent spaces to the target.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Force Evolution",
+            "id": "f049-c558-57fb-53c8",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 1-3, Self, Ally", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Target self or ally. Remove three *vitality* tokens or adjacent corpses, in any combination. If three were removed, unit *evolves*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Necrophage",
+            "id": "46bc-3be8-e53f-e5c8",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Units with this trait can spend adjacent corpses as vitality tokens, removing the corpse.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Evolve: Erudite Sage",
+            "id": "f6a4-a8fa-077f-dbf9",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "**+1 HP** and **MAG armor**\n**Veridian Star** upgrades to **Boiling Star**: gains +1 max range, and its splash effect deals 1 toxic damage to units standing on corpses before pushing them.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          },
+          {
+            "name": "Evolve: Pure Sage",
+            "id": "38df-11ad-cc3b-5313",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "**+1 HP** and **PHYS armor**.\n**The Spiral Worm**: Range 1-3\n**Effect**: Self or target unit removes two tokens of your choice and converts them to vitality.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "8ae8-419b-7814-6eea",
+            "hidden": false,
+            "constraints": [{"id": "7c7d-3f28-af94-11f0", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "7c7d-3f28-af94-11f0",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "7c7d-3f28-af94-11f0",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Apex Evolve",
+                "id": "f55f-8218-8faf-9f6f",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "8937-b4e5-701b-7a44", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Apex Evolve",
+                    "id": "199c-b4d3-b5a1-74c3",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Force Evolution grants 2 *strength* when targeting fully *evolved* units.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Tutor",
+                "id": "cd2c-da01-eb42-8d67",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "3992-369c-b1d3-2e4c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Tutor",
+                    "id": "9dd6-aac0-20cb-38c2",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Forced Evolution has no maximum range if this unit has already *evolved*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Cleansing Evolve",
+                "id": "7b17-526c-2ba9-61a2",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "285b-91cf-858b-5ee0", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Cleansing Evolve",
+                    "id": "7237-ed1c-1e28-35c1",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "When this unit *evolves*, it may remove a token of your choice from up to two adjacent units.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Peon",
+        "id": "e1c9-3e8b-346b-b049",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 2,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "37a2-e657-7aaf-8299", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Thrall", "id": "d880-0dd9-b0f6-1c80", "hidden": false, "primary": false, "targetId": "b1b6-295a-b637-9c4c"}
+        ],
+        "profiles": [
+          {
+            "name": "Peon",
+            "id": "a2a3-663a-3f82-96b7",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "2", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Necrophage",
+            "id": "9af1-5d89-c237-b151",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Units with this trait can spend adjacent corpses as vitality tokens, removing the corpse.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Shed Flesh",
+            "id": "b529-aa52-c486-1b36",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: At the start of its next turn, if not slain, this unit drops a corpse in its space, then loses this ability and gains access to *vicious thrashing*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Thrall",
+            "id": "4f22-c3ab-224a-f4f2",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Evolve: Slip Flesh",
+            "id": "bf88-4e46-b111-ee80",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: This unit drops a corpse in its space, steps 2, loses *Shed Flesh*, and immediately becomes able to use *Vicious Thrashing*.",
+                "typeId": "6b42-e07e-d26c-def6"
+              }
+            ]
+          },
+          {
+            "name": "Evolve: Burrowing Mandible",
+            "id": "7b44-cc84-56b0-ed53",
+            "hidden": false,
+            "typeId": "8250-8dab-dfd6-d1f7",
+            "typeName": "Evolution",
+            "characteristics": [
+              {"$text": "\n", "typeId": "f037-fd95-f525-a31b"},
+              {"name": "Description", "$text": "**Effect**: All three hits of *Vicious Thrashing* can target the same character.", "typeId": "6b42-e07e-d26c-def6"}
+            ]
+          },
+          {
+            "name": "Vicious Thrashing",
+            "id": "8797-0b62-73a8-e8db",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Special**: Only available if **Shed Flesh** has been used.\n**Effect**: 1 toxic damage, then 1 toxic damage to one or two different adjacent foes.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "171d-e165-fb4e-aeee",
+            "hidden": false,
+            "constraints": [{"id": "a901-2f44-e0a5-c540", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "a901-2f44-e0a5-c540",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "a901-2f44-e0a5-c540",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Bloated Host",
+                "id": "fc0a-23e3-8d66-ee68",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "88a7-0138-0253-8999", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Bloated Host",
+                    "id": "c843-1e83-7cd0-f29c",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "*Shed flesh* and the *Slip Flesh* *evolution* drop 2 corpses.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Toxic Collapse",
+                "id": "af1d-27df-a239-8ad4",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "d625-b802-b957-d039", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Toxic Collapse",
+                    "id": "9eba-e55a-c251-bdc2",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "**Effect**: This unit may deal 1 *piercing toxic* damage to an adjacent foe if slain while *Shed Flesh* is active.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Leaping Birth",
+                "id": "d9f8-7a54-5189-2964",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "5a9b-5d90-8d36-1b9a", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Leaping Birth",
+                    "id": "8ce0-6ee7-8c12-6f83",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "After *evolving* or after *Shed Flesh* completes, may step 2, ignoring hazards and adverse terrain.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

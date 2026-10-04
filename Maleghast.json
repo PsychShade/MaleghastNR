@@ -14,12 +14,7 @@
       {"name": "Freak", "id": "19d1-0a3d-46f4-65e9", "hidden": false},
       {"name": "Horror", "id": "88fe-98a4-c63f-2c4e", "hidden": false},
       {"name": "Hunter", "id": "8d86-d66c-554d-f5a5", "hidden": false},
-      {
-        "name": "Tyrant",
-        "id": "4e65-8d12-8eab-a6a7",
-        "hidden": false,
-        "constraints": [{"id": "dbf5-31bb-7cae-c26b", "field": "selections", "includeChildSelections": true, "scope": "force", "shared": true, "type": "max", "value": 1}]
-      },
+      {"name": "Tyrant", "id": "4e65-8d12-8eab-a6a7", "hidden": false},
       {
         "name": "Necromancer",
         "id": "51aa-2972-b4d9-be05",
@@ -50,18 +45,21 @@
         "name": "Upgrade",
         "id": "47d4-1cb7-7b93-261a",
         "hidden": false,
+        "sortIndex": 6,
         "characteristicTypes": [{"name": "Description", "id": "2ee8-274b-b3fc-9655", "kind": "longText"}]
       },
       {
         "name": "ACT Ability",
         "id": "fbdf-1d03-d885-5e61",
         "hidden": false,
+        "sortIndex": 3,
         "characteristicTypes": [{"name": "Tag", "id": "f29c-ed50-4f8c-19dd"}, {"name": "Description", "id": "4ce0-5160-a645-5c3d", "kind": "longText"}]
       },
       {
         "name": "Unit",
         "id": "7297-1922-7299-d456",
         "hidden": false,
+        "sortIndex": 1,
         "characteristicTypes": [
           {"name": "Movement Value", "id": "3b87-1c4f-a3c0-a6c2"},
           {"name": "Health Points", "id": "27df-97b3-2013-3ca8"},
@@ -73,12 +71,14 @@
         "name": "Traits",
         "id": "957a-4ad1-8e49-55f3",
         "hidden": false,
+        "sortIndex": 2,
         "characteristicTypes": [{"name": "Description", "id": "14fe-a261-4f47-6f40", "kind": "longText"}]
       },
       {
         "name": "SOUL ability",
         "id": "dd79-c1b6-f795-8499",
         "hidden": false,
+        "sortIndex": 4,
         "characteristicTypes": [
           {"name": "Tag", "id": "b09c-2bf5-95e0-bba3"},
           {"name": "Cost", "id": "0d1c-aace-0cc0-d3e3", "defaultValue": "\n", "kind": "annotation"},
@@ -183,6 +183,13 @@
         "description": "Gains extra effects against units with no allies adjacent.",
         "hidden": false,
         "alias": ["isolates", "isolated"]
+      },
+      {
+        "name": "Mutation",
+        "id": "3c06-c687-44d0-6f08",
+        "description": "When a unit mutates, it gains a mutation token. Mutation tokens can be discarded instead of discarding any other token. (Mutation tokens can be a stand-in and act as a ‘copy’ for any other token, allowing you to keep the original)",
+        "hidden": false,
+        "alias": ["mutate", "mutates"]
       }
     ]
   }

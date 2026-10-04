@@ -48,6 +48,17 @@
             "characteristics": [{"name": "Description", "$text": "While adjacent to an ally, gain +1D on attacks.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
+            "name": "Regurgitate Ammo",
+            "id": "381b-9f80-86ed-b86e",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: A unit in range *reloads* and gains one, (6+) or two *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
             "name": "Bone Shards",
             "id": "31c7-9344-0e46-ca3b",
             "hidden": false,
@@ -75,17 +86,6 @@
                 "$text": "**Effect**: Step 1, then *Splash (self)*: 1 fire damage, push 1, and inflict 1 *vulnerable*, then self is *obliterated*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
-            ]
-          },
-          {
-            "name": "Regurgitate Ammo",
-            "id": "381b-9f80-86ed-b86e",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: A unit in range *reloads* and gains one, (6+) or two *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -234,20 +234,12 @@
             "characteristics": [{"name": "Description", "$text": "While adjacent to an ally, gain +1D on attacks.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
-            "name": "Bullet Time",
-            "id": "d3a2-2be7-c599-eef6",
+            "name": "Hot Clip",
+            "id": "aa91-1d75-253f-0e8b",
             "hidden": false,
-            "typeId": "dd79-c1b6-f795-8499",
-            "typeName": "SOUL ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
-              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Clear one (5+) or two negative tokens. Ranged attacks automatically miss you until the end of your next turn (5+) and you are immune to splash and line damage for the duration.",
-                "typeId": "07d2-d978-e8e2-acb2"
-              }
-            ]
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Headshots grant you 1 *strength* and allow you to step 1", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
             "name": "Akimbo",
@@ -277,12 +269,20 @@
             ]
           },
           {
-            "name": "Hot Clip",
-            "id": "aa91-1d75-253f-0e8b",
+            "name": "Bullet Time",
+            "id": "d3a2-2be7-c599-eef6",
             "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "Headshots grant you 1 *strength* and allow you to step 1", "typeId": "14fe-a261-4f47-6f40"}]
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Clear one (5+) or two negative tokens. Ranged attacks automatically miss you until the end of your next turn (5+) and you are immune to splash and line damage for the duration.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -1175,7 +1175,48 @@
           {"name": "House Unit", "id": "709f-5098-5dae-b484", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Tyrant", "id": "ce6d-cddc-bca7-a053", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
         ],
+        "constraints": [
+          {
+            "id": "74e9-839d-43e4-0f0d",
+            "field": "selections",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "scope": "roster",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "modifiers": [
+          {
+            "field": "error",
+            "type": "add",
+            "value": "Only 1 Tyrant unit allowed",
+            "conditions": [{"childId": "4e65-8d12-8eab-a6a7", "childName": "Tyrant", "field": "selections", "scope": "parent", "shared": true, "type": "greaterThan", "value": 1}]
+          }
+        ],
         "profiles": [
+        {
+            "name": "EGIS Weapon",
+            "id": "4baf-e17e-e6ea-2c2e",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "PHYS", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Formation",
+            "id": "969c-b299-224f-ccdd",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "While adjacent to an ally, gain +1D on attacks.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
           {
             "name": "Siege Shield",
             "id": "bb34-d68f-3199-35c2",
@@ -1183,6 +1224,14 @@
             "typeId": "957a-4ad1-8e49-55f3",
             "typeName": "Traits",
             "characteristics": [{"name": "Description", "$text": "May be used as a cover object by allies", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Large",
+            "id": "2089-0d6c-b281-8553",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
             "name": "Juggernaut",
@@ -1211,27 +1260,6 @@
             ]
           },
           {
-            "name": "EGIS Weapon",
-            "id": "4baf-e17e-e6ea-2c2e",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
-            "characteristics": [
-              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "PHYS", "typeId": "4ce6-766a-5184-794a"}
-            ]
-          },
-          {
-            "name": "Formation",
-            "id": "969c-b299-224f-ccdd",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "While adjacent to an ally, gain +1D on attacks.", "typeId": "14fe-a261-4f47-6f40"}]
-          },
-          {
             "name": "Catechism Devil Cannon",
             "id": "7d0b-1cfa-509d-183f",
             "hidden": false,
@@ -1245,14 +1273,6 @@
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
-          },
-          {
-            "name": "Large",
-            "id": "2089-0d6c-b281-8553",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
           }
         ],
         "selectionEntryGroups": [
@@ -1375,20 +1395,26 @@
         ],
         "constraints": [{"id": "bb02-2aa0-a5f5-dd95", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
-          {
-            "name": "Transform to Gun",
-            "id": "872e-fd0c-46d7-2169",
+        {
+            "name": "Barrelform",
+            "id": "8bcd-4f77-5e3c-8980",
             "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
             "characteristics": [
-              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Unit becomes unable to MOVE or step, but ranged abilities gain +2 maximum range, +1D to hit, and pierce. It can end this effect by sacrificing a MOVE, but if it does, it loses all associate effects.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Movement Value", "$text": "2", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
             ]
+          },
+          {
+            "name": "Formation",
+            "id": "0122-767f-c687-2062",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "While adjacent to an ally, gain +1D on attacks.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
             "name": "Snipe",
@@ -1402,24 +1428,18 @@
             ]
           },
           {
-            "name": "Formation",
-            "id": "0122-767f-c687-2062",
+            "name": "Transform to Gun",
+            "id": "872e-fd0c-46d7-2169",
             "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "While adjacent to an ally, gain +1D on attacks.", "typeId": "14fe-a261-4f47-6f40"}]
-          },
-          {
-            "name": "Barrelform",
-            "id": "8bcd-4f77-5e3c-8980",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Movement Value", "$text": "2", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Unit becomes unable to MOVE or step, but ranged abilities gain +2 maximum range, +1D to hit, and pierce. It can end this effect by sacrificing a MOVE, but if it does, it loses all associate effects.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
             ]
           },
           {
@@ -1591,21 +1611,6 @@
             ]
           },
           {
-            "name": "Shieldwall",
-            "id": "57fe-bef5-d754-450a",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Until start of this unit’s next turn, this unit cannot MOVE, step, or be pushed or pulled, gains cover, and grants cover to adjacent allies from all directions.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
-          {
             "name": "Flashbang",
             "id": "d3c7-fa9b-472a-c7e4",
             "hidden": false,
@@ -1616,6 +1621,21 @@
               {
                 "name": "Description",
                 "$text": "**Effect**: 1 fire damage and 1 vulnerable, then *Splash (target)*: push 1 away from target.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Shieldwall",
+            "id": "57fe-bef5-d754-450a",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Until start of this unit’s next turn, this unit cannot MOVE, step, or be pushed or pulled, gains cover, and grants cover to adjacent allies from all directions.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1776,17 +1796,6 @@
             "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
-            "name": "Baton",
-            "id": "0fbd-8a7c-fe9e-3238",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Push, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Push 1 and (3+) inflict 1 *vulnerable*.", "typeId": "4ce0-5160-a645-5c3d"}
-            ]
-          },
-          {
             "name": "OL45",
             "id": "bace-ffd7-7f8d-69fa",
             "hidden": false,
@@ -1795,6 +1804,17 @@
             "characteristics": [
               {"name": "Tag", "$text": "Attack, Range 2-3, Reload", "typeId": "f29c-ed50-4f8c-19dd"},
               {"name": "Description", "$text": "**On hit**: 1 *piercing* damage. *Headshot*: inflict 1 vulnerable", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Baton",
+            "id": "0fbd-8a7c-fe9e-3238",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Push, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Push 1 and (3+) inflict 1 *vulnerable*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1918,17 +1938,52 @@
         ],
         "constraints": [{"id": "673a-accc-d47f-38dd", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
+        {
+            "name": "Infiltrator",
+            "id": "ff3b-77b6-4a90-832e",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "MAG", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
           {
-            "name": "Trick Reload",
-            "id": "e475-37d6-14c3-cdfa",
+            "name": "Formation",
+            "id": "d272-963a-e665-55f2",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "While adjacent to an ally, gain +1D on attacks.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Active Camo",
+            "id": "875a-1dc5-bca8-c737",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If this unit ends its turn with no foes adjacent, this unit becomes *curseproof* and all attacks against it gain -1D. Both effects last until the start of its next turn.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Cross Fire",
+            "id": "ca06-d5ea-e89b-19cc",
             "hidden": false,
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Line 5, Reload", "typeId": "f29c-ed50-4f8c-19dd"},
               {
                 "name": "Description",
-                "$text": "**Effect**: *Reload* and gain 1 *strength* (4+) then regain this unit’s ACT. This ability can’t be used again this turn.",
+                "$text": "**Effect**: First unit in the line takes 1 *piercing* damage. If catching an allied unit in the line, also inflict 2 *vulnerable*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1949,55 +2004,20 @@
             ]
           },
           {
-            "name": "Formation",
-            "id": "d272-963a-e665-55f2",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "While adjacent to an ally, gain +1D on attacks.", "typeId": "14fe-a261-4f47-6f40"}]
-          },
-          {
-            "name": "Infiltrator",
-            "id": "ff3b-77b6-4a90-832e",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
-            "characteristics": [
-              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "MAG", "typeId": "4ce6-766a-5184-794a"}
-            ]
-          },
-          {
-            "name": "Cross Fire",
-            "id": "ca06-d5ea-e89b-19cc",
+            "name": "Trick Reload",
+            "id": "e475-37d6-14c3-cdfa",
             "hidden": false,
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Line 5, Reload", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
               {
                 "name": "Description",
-                "$text": "**Effect**: First unit in the line takes 1 *piercing* damage. If catching an allied unit in the line, also inflict 2 *vulnerable*.",
+                "$text": "**Effect**: *Reload* and gain 1 *strength* (4+) then regain this unit’s ACT. This ability can’t be used again this turn.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
           },
-          {
-            "name": "Active Camo",
-            "id": "875a-1dc5-bca8-c737",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [
-              {
-                "name": "Description",
-                "$text": "If this unit ends its turn with no foes adjacent, this unit becomes *curseproof* and all attacks against it gain -1D. Both effects last until the start of its next turn.",
-                "typeId": "14fe-a261-4f47-6f40"
-              }
-            ]
-          }
         ],
         "selectionEntryGroups": [
           {

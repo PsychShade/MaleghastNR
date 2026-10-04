@@ -45,22 +45,6 @@
             "characteristics": [{"name": "Description", "$text": "Lacks *Miracle*. However, while alive, *miracle* triggers for adjacent allies on a 4+.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
-            "name": "Will of God",
-            "id": "cbbb-3e0e-8ecc-387b",
-            "hidden": false,
-            "typeId": "dd79-c1b6-f795-8499",
-            "typeName": "SOUL ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Own or Allied Turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
-              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-              {
-                "name": "Description",
-                "$text": "**Trigger**: Turn start. \n**Effect**: For this turn only, self or allied unit in range may treat the current round number as either 2 or 5.",
-                "typeId": "07d2-d978-e8e2-acb2"
-              }
-            ]
-          },
-          {
             "name": "Starmetal Godsword",
             "id": "163a-857a-54d7-979c",
             "hidden": false,
@@ -87,6 +71,22 @@
               {
                 "name": "Description",
                 "$text": "**Trigger**: Turn start. \n**Effect**: Self takes 1 piercing damage, which cannot slay self. One allied unit in range gains one, (4+) two, or (6+) three *vitality*.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
+          },
+          {
+            "name": "Will of God",
+            "id": "cbbb-3e0e-8ecc-387b",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own or Allied Turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {
+                "name": "Description",
+                "$text": "**Trigger**: Turn start. \n**Effect**: For this turn only, self or allied unit in range may treat the current round number as either 2 or 5.",
                 "typeId": "07d2-d978-e8e2-acb2"
               }
             ]
@@ -1008,6 +1008,21 @@
             ]
           },
           {
+            "name": "Bible Thump",
+            "id": "4ee6-92cf-1d26-91c6",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit**: Self and an adjacent ally gain 1 *vitality* *(Stance: R4+)*: 2 *vitality*. Then deal 1 damage and push 1. Cannot miss allies and pushes them +1.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
             "name": "Blood of the Covenant",
             "id": "432d-4024-427b-2054",
             "hidden": false,
@@ -1031,21 +1046,6 @@
             "characteristics": [
               {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
               {"name": "Description", "$text": "**Effect**: Self or target unit converts all *vitality* into *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
-            ]
-          },
-          {
-            "name": "Bible Thump",
-            "id": "4ee6-92cf-1d26-91c6",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**On hit**: Self and an adjacent ally gain 1 *vitality* *(Stance: R4+)*: 2 *vitality*. Then deal 1 damage and push 1. Cannot miss allies and pushes them +1.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
             ]
           }
         ],
@@ -1167,7 +1167,40 @@
           {"name": "House Unit", "id": "77bf-d9c3-b414-44d1", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Tyrant", "id": "31cc-b761-c47f-c370", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
         ],
+        "constraints": [
+          {
+            "id": "9670-bd8b-c15a-2c6b",
+            "field": "selections",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "scope": "roster",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "modifiers": [
+          {
+            "field": "error",
+            "type": "add",
+            "value": "Only 1 Tyrant unit allowed",
+            "conditions": [{"childId": "4e65-8d12-8eab-a6a7", "childName": "Tyrant", "field": "selections", "scope": "parent", "shared": true, "type": "greaterThan", "value": 1}]
+          }
+        ],
         "profiles": [
+        {
+            "name": "Holy Body",
+            "id": "8261-15a2-6c35-a94b",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "SUPER", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
           {
             "name": "Miraculous Flesh",
             "id": "9b0e-3e6c-a0bf-ce7d",
@@ -1177,19 +1210,12 @@
             "characteristics": [{"name": "Description", "$text": "Lacks *miracle*, but starts combat with 3 *vitality* tokens.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
-            "name": "Ablutions",
-            "id": "7016-770a-97de-77f3",
+            "name": "Large",
+            "id": "376d-11cb-3284-e266",
             "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Gain two *vitality*. Until the start of this unit’s next turn, adjacent allies may spend *vitality* tokens on this unit as if they were their own.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
             "name": "Bolides",
@@ -1207,27 +1233,6 @@
             ]
           },
           {
-            "name": "Holy Body",
-            "id": "8261-15a2-6c35-a94b",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
-            "characteristics": [
-              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "SUPER", "typeId": "4ce6-766a-5184-794a"}
-            ]
-          },
-          {
-            "name": "Large",
-            "id": "376d-11cb-3284-e266",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
-          },
-          {
             "name": "Indignation",
             "id": "4d7a-ba67-1509-e96a",
             "hidden": false,
@@ -1237,7 +1242,22 @@
               {"name": "Tag", "$text": "Self: Range 3-5", "typeId": "f29c-ed50-4f8c-19dd"},
               {
                 "name": "Description",
-                "$text": "**Effect**: Remove one or two *vitality* tokens on this unit, then deal 1 holy damage to that many units in range, ignoring line of sight, and push those units 1. *Stance (4+)*: damage becomes *piercing*.",
+                "$text": "**Effect**: Remove one or two *vitality* tokens on this unit, then deal 1 holy damage to that many units in range, ignoring line of sight, and push those units 1. *Stance (R4+)*: damage becomes *piercing*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Ablutions",
+            "id": "7016-770a-97de-77f3",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Gain two *vitality*. Until the start of this unit’s next turn, adjacent allies may spend *vitality* tokens on this unit as if they were their own.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1383,17 +1403,6 @@
             ]
           },
           {
-            "name": "Whirling Chain",
-            "id": "b6a9-8e79-34ac-5fd3",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 2 damage. *Stance (Odd)*: and MOVE again, *Stance (Even)*: and push unit 2", "typeId": "4ce0-5160-a645-5c3d"}
-            ]
-          },
-          {
             "name": "Miracle",
             "id": "27f4-cbbf-1989-ed8d",
             "hidden": false,
@@ -1406,6 +1415,14 @@
                 "typeId": "14fe-a261-4f47-6f40"
               }
             ]
+          },
+          {
+            "name": "Zealotry",
+            "id": "6549-5761-58c7-8caa",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "When MOVEing for the second time or more in a turn, gain 1 *vitality*.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
             "name": "Smite",
@@ -1423,12 +1440,15 @@
             ]
           },
           {
-            "name": "Zealotry",
-            "id": "6549-5761-58c7-8caa",
+            "name": "Whirling Chain",
+            "id": "b6a9-8e79-34ac-5fd3",
             "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "When MOVEing for the second time or more in a turn, gain 1 *vitality*.", "typeId": "14fe-a261-4f47-6f40"}]
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit**: 2 damage. *Stance (Odd)*: and MOVE again, *Stance (Even)*: and push unit 2", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
           }
         ],
         "selectionEntryGroups": [
@@ -1579,21 +1599,6 @@
             ]
           },
           {
-            "name": "Excoriate",
-            "id": "258b-fd1d-f2c9-d81d",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**On hit:** 1 damage, and *Stance* (Odd): *Splash (self):* 1 holy damage. *(Even)*: gain 1 vitality.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
-          {
             "name": "Mea Culpa",
             "id": "a0bc-b99a-3868-dbca",
             "hidden": false,
@@ -1617,6 +1622,21 @@
             "characteristics": [
               {"name": "Tag", "$text": "Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
               {"name": "Description", "$text": "**Effect**: 1 holy damage and (4+) create a hazard under target.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Excoriate",
+            "id": "258b-fd1d-f2c9-d81d",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit:** 1 damage, and *Stance* (Odd): *Splash (self):* 1 holy damage. *(Even)*: gain 1 vitality.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
             ]
           }
         ],
@@ -1740,6 +1760,33 @@
         ],
         "constraints": [{"id": "e352-15ac-fd74-a3fd", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
+        {
+            "name": "Inquisitor",
+            "id": "c9e3-df74-004b-93a7",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Miracle",
+            "id": "d040-c0fe-89f2-d38f",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "A unit affected by a Miracle has a 5+ effect chance to instantly return to life at 1 hp at the end of any turn it is slain, clearing all tokens. It then loses this trait and you gain 1 SOUL.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
           {
             "name": "Winch",
             "id": "19c9-0070-c666-f0d0",
@@ -1768,33 +1815,6 @@
                 "$text": "**On hit**: 2 damage. *Stance (Round 3+)*: with *piercing*. (Round 5+): 4 damage with *piercing*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
-            ]
-          },
-          {
-            "name": "Miracle",
-            "id": "d040-c0fe-89f2-d38f",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [
-              {
-                "name": "Description",
-                "$text": "A unit affected by a Miracle has a 5+ effect chance to instantly return to life at 1 hp at the end of any turn it is slain, clearing all tokens. It then loses this trait and you gain 1 SOUL.",
-                "typeId": "14fe-a261-4f47-6f40"
-              }
-            ]
-          },
-          {
-            "name": "Inquisitor",
-            "id": "c9e3-df74-004b-93a7",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
-            "characteristics": [
-              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
             ]
           }
         ],
@@ -1952,21 +1972,6 @@
             ]
           },
           {
-            "name": "Delay Judgement",
-            "id": "f404-6ee2-fb95-6c07",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: An allied unit in range gains *miracle*. If it already had *miracle*, *miracle* triggers on a 2+ until the end of their next turn. At the end of that unit’s turn, they lose *miracle*.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
-          {
             "name": "Gentleness",
             "id": "bdd9-ac7f-904c-d8c8",
             "hidden": false,
@@ -1977,6 +1982,21 @@
               {
                 "name": "Description",
                 "$text": "**Effect**: Gain 1 *vitality*. Become unable to MOVE or step until start of this unit’s next turn. At the start of that turn, a number of allied units adjacent to this unit equal to the current round number may gain 1 *vitality*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Delay Judgement",
+            "id": "f404-6ee2-fb95-6c07",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: An allied unit in range gains *miracle*. If it already had *miracle*, *miracle* triggers on a 2+ until the end of their next turn. At the end of that unit’s turn, they lose *miracle*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]

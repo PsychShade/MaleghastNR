@@ -37,45 +37,6 @@
             ]
           },
           {
-            "name": "Ignite",
-            "id": "cbdb-f5cc-1710-b149",
-            "hidden": false,
-            "typeId": "dd79-c1b6-f795-8499",
-            "typeName": "SOUL ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Own or allied turn start, Curse, Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
-              {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Deal 1 *piercing* fire damage to self or a unit in range. That damage cannot slay them. Unit gains 1 *berserk*, and 1 *speed*.",
-                "typeId": "07d2-d978-e8e2-acb2"
-              }
-            ]
-          },
-          {
-            "name": "Superheated Chainblade",
-            "id": "49a6-99e9-3633-7eb8",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 1 damage and (4+): 1 fire damage again, (6+): 1 fire damage again.", "typeId": "4ce0-5160-a645-5c3d"}
-            ]
-          },
-          {
-            "name": "Glory Kill",
-            "id": "f35b-ed59-7cb4-a249",
-            "hidden": false,
-            "typeId": "dd79-c1b6-f795-8499",
-            "typeName": "SOUL ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
-              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-              {"name": "Description", "$text": "**Effect**: *Obliterate* an adjacent unit at 1 hp or lower. Gain 2 *strength*, then step 2.", "typeId": "07d2-d978-e8e2-acb2"}
-            ]
-          },
-          {
             "name": "Blood Rage",
             "id": "813a-fa42-6d39-1750",
             "hidden": false,
@@ -101,6 +62,45 @@
                 "$text": "Gain 1 *berserk* token at the start of your turn. You may spend *berserk* tokens as *speed* tokens and vice versa.",
                 "typeId": "14fe-a261-4f47-6f40"
               }
+            ]
+          },
+          {
+            "name": "Superheated Chainblade",
+            "id": "49a6-99e9-3633-7eb8",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit**: 1 damage and (4+): 1 fire damage again, (6+): 1 fire damage again.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Ignite",
+            "id": "cbdb-f5cc-1710-b149",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own or allied turn start, Curse, Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Deal 1 *piercing* fire damage to self or a unit in range. That damage cannot slay them. Unit gains 1 *berserk*, and 1 *speed*.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
+          },
+          {
+            "name": "Glory Kill",
+            "id": "f35b-ed59-7cb4-a249",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Description", "$text": "**Effect**: *Obliterate* an adjacent unit at 1 hp or lower. Gain 2 *strength*, then step 2.", "typeId": "07d2-d978-e8e2-acb2"}
             ]
           }
         ],
@@ -1011,17 +1011,6 @@
             "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
-            "name": "Cleave",
-            "id": "1684-66e0-220f-8d47",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 1 damage and 1 damage to another adjacent unit.", "typeId": "4ce0-5160-a645-5c3d"}
-            ]
-          },
-          {
             "name": "Charge",
             "id": "60e1-a2d1-1634-4676",
             "hidden": false,
@@ -1034,6 +1023,17 @@
                 "$text": "**Effect**: Next MOVE goes as far as possible in a straight line, passing through and dealing 1 damage to any units passed through.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
+            ]
+          },
+          {
+            "name": "Cleave",
+            "id": "1684-66e0-220f-8d47",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**On hit**: 1 damage and 1 damage to another adjacent unit.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1185,8 +1185,8 @@
             ]
           },
           {
-            "name": "Wild Slashes",
-            "id": "3327-aa90-318c-6af5",
+            "name": "Rev",
+            "id": "f47a-a2a7-b4c6-77d1",
             "hidden": false,
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
@@ -1194,7 +1194,7 @@
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
               {
                 "name": "Description",
-                "$text": "**Effect**: Next MOVE goes as far as possible in a straight line, passing through units. Then, all units moved through take 1 fire damage. If no units were moved though, gain *retaliation*.",
+                "$text": "**Effect**: Gain 1 *strength* and *speed* (4+) and *retaliation* until the start of this unit’s next turn.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1211,8 +1211,8 @@
             ]
           },
           {
-            "name": "Rev",
-            "id": "f47a-a2a7-b4c6-77d1",
+            "name": "Wild Slashes",
+            "id": "3327-aa90-318c-6af5",
             "hidden": false,
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
@@ -1220,7 +1220,7 @@
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
               {
                 "name": "Description",
-                "$text": "**Effect**: Gain 1 *strength* and *speed* (4+) and *retaliation* until the start of this unit’s next turn.",
+                "$text": "**Effect**: Next MOVE goes as far as possible in a straight line, passing through units. Then, all units moved through take 1 fire damage. If no units were moved though, gain *retaliation*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1385,17 +1385,6 @@
             ]
           },
           {
-            "name": "Meat Hook",
-            "id": "4f45-72ac-9038-302c",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Pull, Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Pull unit 3", "typeId": "4ce0-5160-a645-5c3d"}
-            ]
-          },
-          {
             "name": "Cauterize",
             "id": "66dc-bc36-fdc6-0420",
             "hidden": false,
@@ -1408,6 +1397,17 @@
                 "$text": "**Effect**: Clear all negative tokens on self or a unit, then deal 1 *piercing* fire damage to them. This damage can’t slay a unit.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
+            ]
+          },
+          {
+            "name": "Meat Hook",
+            "id": "4f45-72ac-9038-302c",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Pull, Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Pull unit 3", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1529,7 +1529,54 @@
           {"name": "House Unit", "id": "6896-cec3-d4e7-fe8a", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Tyrant", "id": "a887-5410-2668-8549", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
         ],
+        "constraints": [
+          {
+            "id": "a920-5e68-1fda-23eb",
+            "field": "selections",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "scope": "roster",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "modifiers": [
+          {
+            "field": "error",
+            "type": "add",
+            "value": "Only 1 Tyrant unit allowed",
+            "conditions": [{"childId": "4e65-8d12-8eab-a6a7", "childName": "Tyrant", "field": "selections", "scope": "parent", "shared": true, "type": "greaterThan", "value": 1}]
+          }
+        ],
         "profiles": [
+        {
+            "name": "Berserker",
+            "id": "8722-94b6-f6fa-6490",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Blood Rage",
+            "id": "b313-1ade-fae6-f2eb",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
           {
             "name": "Steaming Rage",
             "id": "882d-86b5-3541-5df1",
@@ -1545,16 +1592,24 @@
             ]
           },
           {
-            "name": "Rip and Tear",
-            "id": "a1ac-9b44-39a4-c938",
+            "name": "Large",
+            "id": "98c3-9889-53a0-4abd",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Pulverize",
+            "id": "00f1-cb37-d7a7-ec32",
             "hidden": false,
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
               {
                 "name": "Description",
-                "$text": "**On hit**: 2 damage. Deal 1 damage again if this unit has 3 or less hp, then deal 1 damage again if it is at 1 hp or less.",
+                "$text": "**Effect**: Pull all units in range 2 one space towards this unit. Then *splash (self)*: 1 fire damage and destroy all adjacent walls.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1575,52 +1630,17 @@
             ]
           },
           {
-            "name": "Berserker",
-            "id": "8722-94b6-f6fa-6490",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
-            "characteristics": [
-              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
-            ]
-          },
-          {
-            "name": "Pulverize",
-            "id": "00f1-cb37-d7a7-ec32",
+            "name": "Rip and Tear",
+            "id": "a1ac-9b44-39a4-c938",
             "hidden": false,
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
               {
                 "name": "Description",
-                "$text": "**Effect**: Pull all units in range 2 one space towards this unit. Then *splash (self)*: 1 fire damage and destroy all adjacent walls.",
+                "$text": "**On hit**: 2 damage. Deal 1 damage again if this unit has 3 or less hp, then deal 1 damage again if it is at 1 hp or less.",
                 "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
-          {
-            "name": "Large",
-            "id": "98c3-9889-53a0-4abd",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
-          },
-          {
-            "name": "Blood Rage",
-            "id": "b313-1ade-fae6-f2eb",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [
-              {
-                "name": "Description",
-                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
-                "typeId": "14fe-a261-4f47-6f40"
               }
             ]
           }
@@ -1759,6 +1779,20 @@
             ]
           },
           {
+            "name": "Blood Rage",
+            "id": "a1ad-98e8-2632-258b",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
             "name": "Exfoliate",
             "id": "f9ba-132b-25a8-ff5c",
             "hidden": false,
@@ -1781,20 +1815,6 @@
                 "name": "Description",
                 "$text": "**Effect**: Unit MOVEs as far as possible in a straight line until it would enter the space of an unit, or it runs out of movement. That unit takes 1 fire damage. Then this unit gains 2 *speed*.",
                 "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
-          {
-            "name": "Blood Rage",
-            "id": "a1ad-98e8-2632-258b",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [
-              {
-                "name": "Description",
-                "$text": "If a unit with this trait is reduced to 0 hp, they are not slain, but instead gain 1 *strength* and remain at 0 hp, no matter how much damage they took. If they take any further damage at 0 hp, they are slain as normal. ",
-                "typeId": "14fe-a261-4f47-6f40"
               }
             ]
           }
@@ -1947,14 +1967,18 @@
             ]
           },
           {
-            "name": "Restart Engine",
-            "id": "e510-c7cb-4e81-c9a9",
+            "name": "Tinker",
+            "id": "2d5f-7c05-18fc-f2e9",
             "hidden": false,
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Ally, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Self or an adjacent ally has their hp set to 1.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Tinker with an adjacent unit. Unit gains 1 *berserk*, then roll the effect die (1-3): Increase unit’s MV stat by +1 this battle, (4-5): increase a unit’s DF stat by +1 this battle, to a max of 6+, (6+): Increase unit’s current and max hp by 1 this battle.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
             ]
           },
           {
@@ -1973,18 +1997,14 @@
             ]
           },
           {
-            "name": "Tinker",
-            "id": "2d5f-7c05-18fc-f2e9",
+            "name": "Restart Engine",
+            "id": "e510-c7cb-4e81-c9a9",
             "hidden": false,
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Tinker with an adjacent unit. Unit gains 1 *berserk*, then roll the effect die (1-3): Increase unit’s MV stat by +1 this battle, (4-5): increase a unit’s DF stat by +1 this battle, to a max of 6+, (6+): Increase unit’s current and max hp by 1 this battle.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Tag", "$text": "Ally, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect**: Self or an adjacent ally has their hp set to 1.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],

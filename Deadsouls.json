@@ -37,18 +37,16 @@
             ]
           },
           {
-            "name": "Soulfeed",
-            "id": "74eb-71a4-5aa5-2c1f",
+            "name": "Dread Presence",
+            "id": "e53f-b582-6367-eb17",
             "hidden": false,
-            "typeId": "dd79-c1b6-f795-8499",
-            "typeName": "SOUL ability",
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
             "characteristics": [
-              {"name": "Tag", "$text": "Self or Allied Turn. Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
-              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
               {
                 "name": "Description",
-                "$text": "**Effect**: All *isolated* or *doomed* foes in range take 1 curse damage, gain 1 *weak*, and this unit gains 1 *strength* for each of these foes.",
-                "typeId": "07d2-d978-e8e2-acb2"
+                "$text": "May move through walls. Foes count as *isolated* when adjacent to this unit unless they have two or more allies adjacent.",
+                "typeId": "14fe-a261-4f47-6f40"
               }
             ]
           },
@@ -84,16 +82,18 @@
             ]
           },
           {
-            "name": "Dread Presence",
-            "id": "e53f-b582-6367-eb17",
+            "name": "Soulfeed",
+            "id": "74eb-71a4-5aa5-2c1f",
             "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
             "characteristics": [
+              {"name": "Tag", "$text": "Self or Allied Turn. Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
               {
                 "name": "Description",
-                "$text": "May move through walls. Foes count as *isolated* when adjacent to this unit unless they have two or more allies adjacent.",
-                "typeId": "14fe-a261-4f47-6f40"
+                "$text": "**Effect**: All *isolated* or *doomed* foes in range take 1 curse damage, gain 1 *weak*, and this unit gains 1 *strength* for each of these foes.",
+                "typeId": "07d2-d978-e8e2-acb2"
               }
             ]
           }
@@ -1027,7 +1027,7 @@
               {"name": "Description", "$text": "**Effect**: Pull 1 or (5+) 2 spaces. Ignores line of sight.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
-                    {
+          {
             "name": "Shudder",
             "id": "011b-ecbb-1f04-b39d",
             "hidden": false,
@@ -1181,21 +1181,6 @@
             "characteristics": [{"name": "Description", "$text": "Has free movement while adjacent to a wall.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
-            "name": "Kidnap",
-            "id": "3647-754f-fac4-55f6",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Curse, Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Pull 1, ignoring line of sight. If pulling a unit into a wall, pull 3 instead and the kidnapped unit can pass through walls and units during this pull.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
-          {
             "name": "Tombraiser",
             "id": "dbc0-781b-ebdb-1dc2",
             "hidden": false,
@@ -1206,6 +1191,21 @@
               {
                 "name": "Description",
                 "$text": "**Effect**: Create a wall in range (3+) then create adverse terrain (5+) then create adverse terrain again.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Kidnap",
+            "id": "3647-754f-fac4-55f6",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Curse, Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Pull 1, ignoring line of sight. If pulling a unit into a wall, pull 3 instead and the kidnapped unit can pass through walls and units during this pull.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1356,6 +1356,20 @@
             ]
           },
           {
+            "name": "Teleport",
+            "id": "561f-b6b3-e575-66e3",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "When MOVEing a second time or more in a turn, may instead remove self from the battlefield, then place anywhere in free space in range 4.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
             "name": "Horrendous Shriek",
             "id": "d48f-6fae-5bd1-1e47",
             "hidden": false,
@@ -1382,20 +1396,6 @@
                 "name": "Description",
                 "$text": "**On hit**: 2 curse damage. \n**Effect**: Against *isolated* units, gain 1 *strength* and may then MOVE again.",
                 "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
-          {
-            "name": "Teleport",
-            "id": "561f-b6b3-e575-66e3",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [
-              {
-                "name": "Description",
-                "$text": "When MOVEing a second time or more in a turn, may instead remove self from the battlefield, then place anywhere in free space in range 4.",
-                "typeId": "14fe-a261-4f47-6f40"
               }
             ]
           }
@@ -1520,6 +1520,27 @@
         ],
         "constraints": [{"id": "2390-3ede-023e-70dd", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
+        {
+            "name": "Banshee",
+            "id": "f96e-40e8-e3e5-0414",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "5+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "MAG", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Soul Sight",
+            "id": "8541-62ea-fc70-f56a",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Abilities ignore line of sight.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
           {
             "name": "Bale scream",
             "id": "cac7-2fa8-a5d0-0c4f",
@@ -1544,27 +1565,6 @@
             "characteristics": [
               {"name": "Tag", "$text": "Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
               {"name": "Description", "$text": "**Effect**: Create a wall in range and (5+) adjacent foes to the wall gain 1 *weak*.", "typeId": "4ce0-5160-a645-5c3d"}
-            ]
-          },
-          {
-            "name": "Soul Sight",
-            "id": "8541-62ea-fc70-f56a",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "Abilities ignore line of sight.", "typeId": "14fe-a261-4f47-6f40"}]
-          },
-          {
-            "name": "Banshee",
-            "id": "f96e-40e8-e3e5-0414",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
-            "characteristics": [
-              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "3", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "5+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "MAG", "typeId": "4ce6-766a-5184-794a"}
             ]
           }
         ],
@@ -1702,6 +1702,28 @@
             ]
           },
           {
+            "name": "Buried Alive",
+            "id": "5475-3de6-7933-6c70",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "The Geist is bound to the stone of Anzenmezzeron.\n• It cannot MOVE or step.\n• At the start of its turn, teleport it to any space adjacent to a wall.\n• At the start of combat, place a wall in a free adjacent space to it.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Tomb Bound",
+            "id": "6b3c-f803-065e-ff48",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "If not adjacent to a wall, the geist loses all armor.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
             "name": "Strangle",
             "id": "bdf7-32fc-432e-1cf3",
             "hidden": false,
@@ -1730,28 +1752,6 @@
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
-          },
-          {
-            "name": "Buried Alive",
-            "id": "5475-3de6-7933-6c70",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [
-              {
-                "name": "Description",
-                "$text": "The Geist is bound to the stone of Anzenmezzeron.\n• It cannot MOVE or step.\n• At the start of its turn, teleport it to any space adjacent to a wall.\n• At the start of combat, place a wall in a free adjacent space to it.",
-                "typeId": "14fe-a261-4f47-6f40"
-              }
-            ]
-          },
-          {
-            "name": "Tomb Bound",
-            "id": "6b3c-f803-065e-ff48",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "If not adjacent to a wall, the geist loses all armor.", "typeId": "14fe-a261-4f47-6f40"}]
           }
         ],
         "selectionEntryGroups": [
@@ -1884,7 +1884,40 @@
           {"name": "House Unit", "id": "8ebf-bdb4-8e71-2918", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Tyrant", "id": "a98a-2213-5fdf-75cd", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
         ],
+        "constraints": [
+          {
+            "id": "c234-f25a-9a11-30de",
+            "field": "selections",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "scope": "roster",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "modifiers": [
+          {
+            "field": "error",
+            "type": "add",
+            "value": "Only 1 Tyrant unit allowed",
+            "conditions": [{"childId": "4e65-8d12-8eab-a6a7", "childName": "Tyrant", "field": "selections", "scope": "parent", "shared": true, "type": "greaterThan", "value": 1}]
+          }
+        ],
         "profiles": [
+        {
+            "name": "Bound Devil",
+            "id": "0fa9-b8d6-cdd8-de93",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "MAG", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
           {
             "name": "Labyrinth Master",
             "id": "cb3f-3b5e-b18c-b53e",
@@ -1897,19 +1930,6 @@
                 "$text": "Once per MOVE, when entering the space of a wall, may remove and place the wall in any other free adjacent space.",
                 "typeId": "14fe-a261-4f47-6f40"
               }
-            ]
-          },
-          {
-            "name": "Bound Devil",
-            "id": "0fa9-b8d6-cdd8-de93",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
-            "characteristics": [
-              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "MAG", "typeId": "4ce6-766a-5184-794a"}
             ]
           },
           {

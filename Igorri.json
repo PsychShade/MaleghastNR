@@ -397,17 +397,6 @@
             "characteristics": [{"name": "Description", "$text": "After MOVEing, drop a corpse in a free adjacent space", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
-            "name": "Purge",
-            "id": "732b-bff6-ed08-a1ad",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Curse, Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect:** A unit in range removes one token of this unit’s choice (3+): two (5+) all", "typeId": "4ce0-5160-a645-5c3d"}
-            ]
-          },
-          {
             "name": "Inject Mutagen",
             "id": "5257-967f-144e-fe7c",
             "hidden": false,
@@ -420,6 +409,17 @@
                 "$text": "**Effect:** One or two units in range *mutate*. \n**Spare parts:** and also grant one of these units 1 strength if at least one corpse was consumed.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
+            ]
+          },
+          {
+            "name": "Purge",
+            "id": "732b-bff6-ed08-a1ad",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Curse, Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Effect:** A unit in range removes one token of this unit’s choice (3+): two (5+) all", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -583,6 +583,17 @@
             ]
           },
           {
+            "name": "Experimental Surgery",
+            "id": "e532-beb7-5fc4-75b0",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Line 4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Description", "$text": "**Line:** 1 damage.\n**Effect:** Allies in the line *mutate* instead of taking damage.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
             "name": "Wild Mutation",
             "id": "ce61-2ebf-7b45-b03a",
             "hidden": false,
@@ -596,17 +607,6 @@
                 "$text": "**Effect:** Unit in range gains 1 *strength*, (3-4) OR 1 *speed*, (5-6) OR 1 *vitality*.\n**Spare parts**: May choose one token per corpse consumed instead of rolling, up to three times.",
                 "typeId": "07d2-d978-e8e2-acb2"
               }
-            ]
-          },
-          {
-            "name": "Experimental Surgery",
-            "id": "e532-beb7-5fc4-75b0",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Line 4", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Line:** 1 damage.\n**Effect:** Allies in the line *mutate* instead of taking damage.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -656,7 +656,7 @@
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
-                        "characteristics": [{"name": "Description", "$text": "May remove a mutation token at start or end of own turn to step 2 with free\nmovement.", "typeId": "14fe-a261-4f47-6f40"}]
+                        "characteristics": [{"name": "Description", "$text": "May remove a *mutation* token at start or end of own turn to step 2 with *free movement*.", "typeId": "14fe-a261-4f47-6f40"}]
                       }
                     ]
                   },
@@ -687,6 +687,7 @@
                     "id": "8acc-20e4-3c25-354c",
                     "hidden": false,
                     "import": true,
+                    "sortIndex": 3,
                     "type": "upgrade",
                     "constraints": [
                       {"id": "e527-816c-4a16-94c3", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
@@ -1517,7 +1518,7 @@
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
-                        "characteristics": [{"name": "Description", "$text": "May remove a mutation token at start or end of own turn to step 2 with free\nmovement.", "typeId": "14fe-a261-4f47-6f40"}]
+                        "characteristics": [{"name": "Description", "$text": "May remove a *mutation* token at start or end of own turn to step 2 with *free movement*.", "typeId": "14fe-a261-4f47-6f40"}]
                       }
                     ]
                   },
@@ -1585,17 +1586,38 @@
         ],
         "constraints": [{"id": "060e-72a9-ca4b-7617", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
+        {
+            "name": "Strigoi",
+            "id": "4aa4-b435-20c4-6e02",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
           {
-            "name": "Bloodgorger",
-            "id": "2cc7-23be-f859-d252",
+            "name": "Flight",
+            "id": "8d85-f4c2-16c8-0129",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Ignores adverse terrain and elevation attack and movement penalties", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Regurgitate",
+            "id": "38d9-0585-38b6-14e8",
             "hidden": false,
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
               {
                 "name": "Description",
-                "$text": "**Effect:** *Mutate*, then gain 1 *strength*. \n**Spare Parts**: Then gain (3+) 1 *speed*, (5+) and 1 *vitality*, (6+) then *mutate again*. Roll +1D per corpse and pick the highest result.",
+                "$text": "**Effect**: *Splash (target)*: Create a corpse in the area for every unit in the area, up to three times, then *mutate*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1613,42 +1635,6 @@
                 "$text": "**On hit:** 1 toxic damage. \n**Effect**: Steal a positive token from target. If target has no positive tokens, gain 1 *strength* instead of stealing a token. \n**Spare Parts**: steal 1 more token per corpse consumed. ",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
-            ]
-          },
-          {
-            "name": "Regurgitate",
-            "id": "38d9-0585-38b6-14e8",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: *Splash (target)*: Create a corpse in the area for every unit in\nthe area, up to three times, then *mutate*.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
-          {
-            "name": "Flight",
-            "id": "8d85-f4c2-16c8-0129",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "Ignores adverse terrain and elevation attack and movement penalties", "typeId": "14fe-a261-4f47-6f40"}]
-          },
-          {
-            "name": "Strigoi",
-            "id": "4aa4-b435-20c4-6e02",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
-            "characteristics": [
-              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
             ]
           }
         ],
@@ -1782,20 +1768,38 @@
           {"name": "House Unit", "id": "307c-fe0d-94f6-3e05", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Tyrant", "id": "ca53-5595-05e8-b557", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
         ],
+        "constraints": [
+          {
+            "id": "f603-5cc0-016d-a0d4",
+            "field": "selections",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "scope": "roster",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "modifiers": [
+          {
+            "field": "error",
+            "type": "add",
+            "value": "Only 1 Tyrant unit allowed",
+            "conditions": [{"childId": "4e65-8d12-8eab-a6a7", "childName": "Tyrant", "field": "selections", "scope": "parent", "shared": true, "type": "greaterThan", "value": 1}]
+          }
+        ],
         "profiles": [
           {
-            "name": "Bloodgorger",
-            "id": "e795-1d8c-a81a-637e",
+            "name": "Homonculus",
+            "id": "c5ca-2ff4-dea5-70d0",
             "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
             "characteristics": [
-              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect:** *Mutate*, then gain 1 *strength*. \n**Spare Parts**: Then gain (3+) 1 *speed*, (5+) and 1 *vitality*, (6+) then *mutate again*. Roll +1D per corpse and pick the highest result.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
             ]
           },
           {
@@ -1805,6 +1809,14 @@
             "typeId": "957a-4ad1-8e49-55f3",
             "typeName": "Traits",
             "characteristics": [{"name": "Description", "$text": "Starts combat with 3 mutation tokens.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Large",
+            "id": "826c-a031-9e42-78a3",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
             "name": "Sculpt Flesh",
@@ -1835,27 +1847,6 @@
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
-          },
-          {
-            "name": "Homonculus",
-            "id": "c5ca-2ff4-dea5-70d0",
-            "hidden": false,
-            "typeId": "7297-1922-7299-d456",
-            "typeName": "Unit",
-            "characteristics": [
-              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
-              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
-              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
-              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
-            ]
-          },
-          {
-            "name": "Large",
-            "id": "826c-a031-9e42-78a3",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
           },
           {
             "name": "Flesh Whip",
@@ -1997,37 +1988,27 @@
           {"name": "House Unit", "id": "7c6c-750d-e6d6-cf5f", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Tyrant", "id": "603f-9597-5efb-aaca", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
         ],
+        "constraints": [
+          {
+            "id": "9b4c-b107-b3db-057c",
+            "field": "selections",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "scope": "roster",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "modifiers": [
+          {
+            "field": "error",
+            "type": "add",
+            "value": "{this} is not allowed",
+            "conditions": [{"childId": "4e65-8d12-8eab-a6a7", "childName": "Tyrant", "field": "selections", "scope": "parent", "shared": true, "type": "greaterThan", "value": 1}]
+          }
+        ],
         "profiles": [
-          {
-            "name": "Perfect Vessel",
-            "id": "5495-8d9a-b23a-4aeb",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**On hit**: 2 damage (5+) and gain 1 *strength*. \n**Spare Parts**: Gain +1D and 1 max range on the attack if at least one corpse was consumed.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
-          {
-            "name": "Necrogenesis",
-            "id": "9b82-e013-bda4-a6dd",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Spend 2 *mutation* tokens. *Summon* a duplicate of this character in range 1-2 without this ability. Then duplicate all positive tokens on this character and place them on the copy.\n• This ability can only be used once per combat.\n• May destroy all walls in the duplicate’s space before placing it.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
-            ]
-          },
           {
             "name": "Vessel",
             "id": "b00b-f51c-9237-bef2",
@@ -2039,29 +2020,6 @@
               {"name": "Health Points", "$text": "*", "typeId": "27df-97b3-2013-3ca8"},
               {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
               {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
-            ]
-          },
-          {
-            "name": "Large",
-            "id": "e69c-115f-ec24-88d9",
-            "hidden": false,
-            "typeId": "957a-4ad1-8e49-55f3",
-            "typeName": "Traits",
-            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
-          },
-          {
-            "name": "Ecdysis",
-            "id": "83a8-0cec-d11a-17de",
-            "hidden": false,
-            "typeId": "fbdf-1d03-d885-5e61",
-            "typeName": "ACT Ability",
-            "characteristics": [
-              {"name": "Tag", "$text": "Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Create a wall in range. The wall also counts as two corpses. If both corpses are consumed, remove the wall.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
             ]
           },
           {
@@ -2083,6 +2041,59 @@
                 "name": "Description",
                 "$text": "This unit’s HP equals the number of *mutation* tokens it has (max 6). When it takes damage, it discards that many *mutation* tokens instead. If at start or end of any turn it has 0 *mutation* tokens, it is slain.",
                 "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Large",
+            "id": "e69c-115f-ec24-88d9",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Perfect Vessel",
+            "id": "5495-8d9a-b23a-4aeb",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**On hit**: 2 damage (5+) and gain 1 *strength*. \n**Spare Parts**: Gain +1D and 1 max range on the attack if at least one corpse was consumed.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Ecdysis",
+            "id": "83a8-0cec-d11a-17de",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Create a wall in range. The wall also counts as two corpses. If both corpses are consumed, remove the wall.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Necrogenesis",
+            "id": "9b82-e013-bda4-a6dd",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {
+                "name": "Description",
+                "$text": "**Effect**: Spend 2 *mutation* tokens. *Summon* a duplicate of this character in range 1-2 without this ability. Then duplicate all positive tokens on this character and place them on the copy.\n• This ability can only be used once per combat.\n• May destroy all walls in the duplicate’s space before placing it.",
+                "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
           }
