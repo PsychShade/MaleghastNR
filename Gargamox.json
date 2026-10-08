@@ -7,6 +7,2155 @@
     "gameSystemRevision": 1,
     "library": false,
     "revision": 1,
-    "type": "catalogue"
+    "type": "catalogue",
+    "catalogueLinks": [
+      {"name": "Campaign Rules", "id": "84a1-8393-cb2a-0872", "importRootEntries": true, "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
+      {"name": "Heresy", "id": "d1fa-ecab-abac-26d3", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+    ],
+    "rules": [
+      {
+        "name": "Plague",
+        "id": "131c-5ecc-0dca-c84a",
+        "description": "Units affected by plague take 1 toxic damage at the end of their turn, then that unit discards a plague token. This damage cannot be reduced or ignored in any way (by tokens or armor) but cannot slay a unit. Gargamox units don’t take damage from plague and don’t remove plague tokens, but can still be affected by plague.",
+        "hidden": false,
+        "alias": ["plagued"]
+      },
+      {
+        "name": "Infest",
+        "id": "e7a3-9e00-c4dc-9c86",
+        "description": "Jumps from the original target up to three times to up to three different characters, as long as each new character is adjacent to the previous.",
+        "hidden": false
+      },
+      {"name": "Deathburst", "id": "b034-060c-ff0c-0aeb", "description": "Effect that triggers when this unit is slain.", "hidden": false, "alias": ["death burst"]}
+    ],
+    "selectionEntries": [
+      {
+        "name": "Plaguelord",
+        "id": "8006-7d62-460b-3f96",
+        "defaultAmount": "1",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 0,
+        "type": "unit",
+        "categoryLinks": [{"name": "Necromancer", "id": "8392-ad66-c410-3960", "hidden": false, "primary": true, "targetId": "51aa-2972-b4d9-be05"}],
+        "profiles": [
+          {
+            "name": "Plaguelord",
+            "id": "53cc-6eaf-b951-674d",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "10", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Blessed with Filth",
+            "id": "580b-5ea1-c0b1-547e",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "Immune to hazards. At turn start, gain 1 *plague*, then may distribute any number of *plague* tokens on this unit to any other units in range 2.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Virulence",
+            "id": "321f-9efc-c937-c24a",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "1 damage and inflict 1 *plague*. Then, may immediately remove a *plague* token on target to\ndeal 1 toxic damage, again (effect: 3+) once more, (5+) once more.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Infest",
+            "id": "db0b-f337-ab98-d1b8",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+              {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+              {"name": "Effect", "$text": "Grant 2 *plague* tokens to a unit in range.", "typeId": "07d2-d978-e8e2-acb2"}
+            ]
+          },
+          {
+            "name": "Slime Form",
+            "id": "04bf-5300-358d-dac3",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+              {
+                "name": "Effect",
+                "$text": "MOVE with *free movement*. Can pass through walls and units during this movement. After the movement finishes, push or pull all units in range 2 one space (5+) two spaces.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Starting Upgrades",
+            "id": "5b10-6220-df3a-db33",
+            "collapsible": true,
+            "hidden": false,
+            "sortIndex": 1,
+            "constraints": [{"id": "78d4-977d-420c-041a", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 2}],
+            "selectionEntryGroups": [
+              {
+                "name": "Bonus Traits",
+                "id": "c046-9711-eb5c-50ae",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "5a57-00bc-abd0-8d4c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Corruptor",
+                    "id": "6766-d8e8-1e92-3c60",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "9f08-fbdf-c332-c054", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Corruptor",
+                        "id": "8d42-5db6-e869-5e8b",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "After you MOVE, create a hazard in an adjacent space.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Pollution shroud",
+                    "id": "6865-d543-003a-7c11",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "4cc2-a7df-299e-00c0", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Pollution shroud",
+                        "id": "b655-42ed-32d6-57ab",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "While standing in a hazard, you have cover from all directions and are *curseproof*.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Spreader",
+                    "id": "4e62-d2b6-f5ff-0510",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [{"id": "d6f5-5d62-0618-54b1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Spreader",
+                        "id": "0b30-e27a-972e-2e46",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Infect* abilities that you use or that target you may jump an extra time.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "166b-7239-4369-3a72",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "Melt",
+                    "id": "4808-ad63-23fb-b0ba",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "08cd-dccc-6971-8b4f", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Melt",
+                        "id": "f510-a35b-3ff4-30e7",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Unit takes 1 devil damage. If this reduces it to 0 hp, it is *obliterated* and it melts, creating a hazard in its space.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Corpse Explosion",
+                    "id": "9fb4-ffbc-a938-8c6c",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "a456-20ff-d615-4674", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Corpse Explosion",
+                        "id": "e089-bf3e-cfe1-cdb3",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": " Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Choose a corpse in range. It explodes for a splash effect centered on it for 1 *plague* and push 1. Then remove it and replace it with a hazard.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Vermin Form",
+                    "id": "d604-883a-0580-530d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "8e7f-3936-7156-fc53", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Vermin Form",
+                        "id": "acdf-e220-1ac2-2ce6",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-6", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Choose a corpse or a hazard in range and and swap places with it. You push all adjacent units 1 and become *curseproof* until the end of your next turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Ceaseless Spew",
+                    "id": "c967-3f2c-d7b7-0ea9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "1247-23e2-009e-4a3b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Ceaseless Spew",
+                        "id": "ce7c-e623-a400-b927",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Line 5", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 *plague* (6+) or 2 *plague*. Already *plagued* foes take 1 toxic damage. Pull all affected units 1.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Flesh Feeder Blade",
+                    "id": "c20e-ebff-d8b8-9988",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "db4f-32fc-509d-0f1d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Flesh Feeder Blade",
+                        "id": "1629-da2f-c8a0-9371",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 damage and *Infect*: 1 *plague* to foes and 1 *strength* to self or allied units. Double this effect if it slays a foe.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Scourge",
+                    "id": "dfe0-aec1-4ef5-8e6d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "2776-688a-a4ba-ff38", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Scourge",
+                        "id": "d7d4-a66e-0e15-9ee3",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "On hit: 1 damage, create a hazard under target and (effect: 3+) *slow* them (5+) twice.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Necrocide",
+                    "id": "6b5d-a214-16a1-14f6",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e2a6-db2a-1494-b278", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Necrocide",
+                        "id": "0a85-e70b-c75b-3d60",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 toxic damage. *Infect*: 1 toxic damage. \nAfter this ability resolves, gain 1 *plague* on self for each unit affected.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "65f5-745e-3ff2-dcdf",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Purge Guts",
+                    "id": "41b0-238e-d81b-f6fa",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "883e-cf0e-7eda-3e8d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Purge Guts",
+                        "id": "80dc-e4a9-c9ef-84ab",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self or Allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Remove up to three *plague* tokens from self or allied unit and grant them to any other adjacent unit to target. Then, remove a negative token on the target for each *plague* token removed.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Insides Out",
+                    "id": "69c7-cbc2-7524-be14",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "713e-1e13-c0a0-34b3", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Insides Out",
+                        "id": "7c32-fbb6-c2fb-c6c2",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse, Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Unit gains 1 *slow* and creates a hazard under themselves at the end of this turn.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Fecundity",
+                    "id": "ba17-922c-8f34-dbc6",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "7b94-e791-da04-cefb", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Fecundity",
+                        "id": "366f-86a5-dd20-9824",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn,  Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3.", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn Start.", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Double all *plague* tokens on a unit. If this puts them at 5 or more tokens, they also explode with *splash (target)*: 1 toxic damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Unholy Vapors",
+                    "id": "9f5f-b2fa-6450-64cf",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ec9d-74c8-3439-08c3", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Unholy Vapors",
+                        "id": "dee1-d55c-4754-b535",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse, Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Target turn Start", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "At the end of the targeted unit’s turn, targeted unit takes 1 *piercing* toxic damage, for every hazard in range 2 of them.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Praise the Filth",
+                    "id": "8f71-5865-25d4-5547",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "1ec6-a9ec-1d07-22e6", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Praise the Filth",
+                        "id": "be77-f131-66f9-ee5f",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-2", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Place one hazard in range for every other hazard in range.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Devil Impact ",
+                    "id": "620d-6f21-ebbc-1bbf",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "bf06-1f7e-fb77-5044", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Mox Populi",
+                        "id": "38c1-6f8c-f77c-ef27",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Remove up to four corpse tokens or hazards anywhere and summon a SCUM unit for each. Then *splash (target)* on all scum created this way for 1 *plague*. Characters can only gain *plague* once from this effect.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Dark Power Upgrades",
+            "id": "eada-3fcd-e1dc-0636",
+            "collapsible": true,
+            "hidden": false,
+            "sortIndex": 2,
+            "selectionEntryGroups": [
+              {
+                "name": "Bonus Traits",
+                "id": "3a7d-8dc5-d352-90d7",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "330f-a3c7-9431-3792", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Corruptor",
+                    "id": "ca04-954a-0453-1324",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "1462-8b2e-8bac-e04d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Corruptor",
+                        "id": "888f-0275-5656-64c7",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "After you MOVE, create a hazard in an adjacent space.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Pollution shroud",
+                    "id": "a909-60f6-28b4-cf69",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "bc59-07ec-ad3d-218d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Pollution shroud",
+                        "id": "d1e7-9c6a-e8a4-d1a5",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "While standing in a hazard, you have cover from all directions and are *curseproof*.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Spreader",
+                    "id": "b955-175b-cf28-7359",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "9b10-07ee-7bf9-42e2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Spreader",
+                        "id": "e671-1a9d-b7c7-5ad0",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Infect* abilities that you use or that target you may jump an extra time.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "4c6f-badf-9e79-c44f",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "Melt",
+                    "id": "ad1f-5842-183b-3eb7",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "54a4-7ddf-6f2e-a559", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Melt",
+                        "id": "af9b-7fc7-2e5a-fc71",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Unit takes 1 devil damage. If this reduces it to 0 hp, it is *obliterated* and it melts, creating a hazard in its space.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Corpse Explosion",
+                    "id": "e3f7-86b5-6cf4-0ba9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3dbe-5a63-d108-c41c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Corpse Explosion",
+                        "id": "2031-2f8b-c4b9-5af3",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": " Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Choose a corpse in range. It explodes for a splash effect centered on it for 1 *plague* and push 1. Then remove it and replace it with a hazard.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Vermin Form",
+                    "id": "01dd-a744-9183-967d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "eca7-f4b4-4aaf-97de", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Vermin Form",
+                        "id": "4cff-2fd9-9b85-a68b",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-6", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Effect: Choose a corpse or a hazard in range and and swap places with it. You push all adjacent units 1 and become *curseproof* until the end of your next turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Ceaseless Spew",
+                    "id": "5181-26bf-b90c-2fea",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "5098-f7c4-1182-6705", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Ceaseless Spew",
+                        "id": "9a1c-6f4e-639c-cd43",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Line 5", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 *plague* (6+) or 2 *plague*. Already *plagued* foes take 1 toxic damage. Pull all affected units 1.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Flesh Feeder Blade",
+                    "id": "3f91-e30d-aa3b-702e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "9e8c-db08-5ec6-6a27", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Flesh Feeder Blade",
+                        "id": "7164-a163-4e38-311f",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 damage and *Infect*: 1 *plague* to foes and 1 *strength* to self or allied units. Double this effect if it slays a foe.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Scourge",
+                    "id": "cd17-fc03-4115-1a24",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e97b-90ed-1167-1ffe", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Scourge",
+                        "id": "13c3-b1d4-ab12-2566",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "On hit: 1 damage, create a hazard under target and (effect: 3+) *slow* them (5+) twice.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Necrocide",
+                    "id": "3c8b-fdfb-f233-a8e1",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "2655-3700-0b88-61fe", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Necrocide",
+                        "id": "adb4-9ff2-4687-a39b",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 toxic damage. *Infect*: 1 toxic damage. \nAfter this ability resolves, gain 1 *plague* on self for each unit affected.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "41c2-6977-f5f4-b5ca",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Purge Guts",
+                    "id": "a458-c466-a339-f02f",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ec91-72b3-e730-9e4c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Purge Guts",
+                        "id": "2a96-9b48-7973-2f60",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self or Allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Remove up to three *plague* tokens from self or allied unit and grant them to any other adjacent unit to target. Then, remove a negative token on the target for each *plague* token removed.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Insides Out",
+                    "id": "839f-99aa-3721-dc40",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "34c6-7ddb-d3e8-6e6e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Insides Out",
+                        "id": "ba22-a9a3-b1cb-b67b",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse, Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Unit gains 1 *slow* and creates a hazard under themselves at the end of this turn.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Fecundity",
+                    "id": "7fb3-d41d-206d-8ffc",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "cc27-f8c8-b5a8-b4d1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Fecundity",
+                        "id": "04f3-9004-a17f-961f",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn,  Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3.", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn Start.", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Double all *plague* tokens on a unit. If this puts them at 5 or more tokens, they also explode with *splash (target)*: 1 toxic damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Unholy Vapors",
+                    "id": "6fb8-b326-e49c-e72a",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "0aec-62fe-e911-8d5d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Unholy Vapors",
+                        "id": "825b-1ab4-9063-991a",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse, Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Target turn Start", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "At the end of the targeted unit’s turn, targeted unit takes 1 *piercing* toxic damage, for every hazard in range 2 of them.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Praise the Filth",
+                    "id": "8c9d-5c01-ab55-1136",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "5e0a-77a1-03b5-9a32", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Praise the Filth",
+                        "id": "8c3b-0afb-4398-66a9",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-2", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Place one hazard in range for every other hazard in range.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Devil Impact ",
+                    "id": "5eb6-59ad-d2ac-0b53",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "645c-705f-aaae-13f8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Mox Populi",
+                        "id": "f90f-c83e-b35a-233d",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Remove up to four corpse tokens or hazards anywhere and summon a SCUM unit for each. Then *splash (target)* on all scum created this way for 1 *plague*. Characters can only gain *plague* once from this effect.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scum",
+        "id": "ab60-e949-a49a-1e65",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 1,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "33b9-c832-cb2e-e6b8", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Thrall", "id": "7bd7-ce64-eea5-4515", "hidden": false, "primary": false, "targetId": "b1b6-295a-b637-9c4c"}
+        ],
+        "profiles": [
+          {
+            "name": "Scum",
+            "id": "6491-9105-3222-5148",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "1", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "SUPER", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Toxic Revenge",
+            "id": "c237-31ff-2172-0bd2",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {"name": "Description", "$text": "Has *Deathburst*: *Splash (self)*: 1 plague, and 1 toxic damage to already *plagued* foes.", "typeId": "14fe-a261-4f47-6f40"}
+            ]
+          },
+          {
+            "name": "Thrall",
+            "id": "bb46-ed1e-c6ac-33c1",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Pseudopod",
+            "id": "0b21-8c05-8640-96fd",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Pull unit one space. May spend plague tokens to gain +1 max range and pull for each plague token spent, up to 3.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Shamble",
+            "id": "5d06-d059-fd34-dc37",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage and 1 plague.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "2408-11a1-6e0a-51d3",
+            "hidden": false,
+            "constraints": [{"id": "0316-4ba1-a7ec-55f5", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "0316-4ba1-a7ec-55f5",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "0316-4ba1-a7ec-55f5",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Aftermath",
+                "id": "8c00-043d-a14c-30c7",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "362f-8eb5-03b9-6642", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Aftermath",
+                    "id": "2a5c-fd02-64f7-484d",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Toxic Revenge leaves a hazard instead of a corpse.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Bloat",
+                "id": "2599-5514-3a07-deb4",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "3585-fd2f-7ae4-4651", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Bloat",
+                    "id": "67a4-498f-d4ad-931e",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Toxic Revenge’s splash effect pushes 1 if this unit is *plagued*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Tentacle Whip",
+                "id": "05a6-044f-3bea-fae3",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "8e5a-f526-dd70-6528", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Tentacle Whip",
+                    "id": "065a-a1ff-d6b3-2677",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Pseudopod inflicts 1 slow on *plagued* units.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rotten",
+        "id": "0b14-8ac1-8a07-b115",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 3,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "fcc6-f79e-714b-f61b", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Scion", "id": "01e3-c711-8ff1-5caf", "hidden": false, "primary": false, "targetId": "fa04-6df6-fc81-7d88"}
+        ],
+        "constraints": [{"id": "c361-7c09-43e6-df15", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 3}],
+        "profiles": [
+          {
+            "name": "Rotten",
+            "id": "2e60-04b9-0c05-1213",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "PHYS", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Plaguebearer",
+            "id": "3f6b-9c58-67f3-4bbf",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Immune to hazards. May treat *plague* tokens as *strength*.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Pustulate",
+            "id": "6f36-fa58-cf3b-99dc",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Create a hazard in free space in range 3 and inflict *plague* on an adjacent unit to the hazard (4+) two adjacent units (6+) all adjacent units.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Vomitous Mass",
+            "id": "01c9-0693-c5a0-f958",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Line 4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 *plague*. Already plagued foes gain 1 *slow*.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Rotblade",
+            "id": "de5b-95fa-e6de-93f4",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 toxic damage and *infect*: 1 toxic damage.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "f573-8c11-a4b3-e9d7",
+            "hidden": false,
+            "constraints": [{"id": "5329-8e31-d9a7-6ea4", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "5329-8e31-d9a7-6ea4",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "5329-8e31-d9a7-6ea4",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Smog Shroud",
+                "id": "1659-5c0a-1877-bdd6",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "a093-540b-b6f6-3e91", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Smog Shroud",
+                    "id": "d9ee-f66d-370b-ca63",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "*Curseproof* and cover from all directions while standing in a hazard.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Catalyze",
+                "id": "c5d6-5d83-27b4-09be",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "3e64-662b-3b26-80db", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Catalyze",
+                    "id": "d6eb-0618-6780-3686",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Vomitous mass deals 1 toxic damage to units standing in hazards.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Invigorating Viscera",
+                "id": "9ada-67be-5739-7692",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "e9af-7dcd-ec59-88d9", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Invigorating Viscera",
+                    "id": "1e88-316d-7836-8c6c",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Gain death burst: *splash (self)*: Up to three allies in the area gain 1 *strength*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Slime",
+        "id": "efff-53a0-92b8-e267",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 6,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "d62e-6cde-cac5-0c4c", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Horror", "id": "69e9-684a-70f4-c03d", "hidden": false, "primary": false, "targetId": "88fe-98a4-c63f-2c4e"}
+        ],
+        "constraints": [{"id": "9cb5-dbc7-fc49-3d26", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Slime",
+            "id": "641d-e4d3-e6b7-b642",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Vile Rupture",
+            "id": "014d-3b57-e8ad-6b3f",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "This unit has *deathburst*: Remove up to three *plague* tokens on this unit, then *splash (self)*: 1 toxic damage, once, per *plague* token removed.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Percolate",
+            "id": "a22a-02fa-08f2-c4e5",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Inflict two, (5+) or three *plague* on self, then may inflict 1 *slow* on an adjacent unit per *plague* token gained.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Surge",
+            "id": "bcd6-950b-cd2e-e3cb",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Next MOVE has *free movement*. During this move, this unit is immune to hazards and may move through walls and units. Any foe this unit passes through takes 1 toxic damage and this unit may pass off any *plague* tokens on this unit to affected units.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "8480-9d7a-5ce5-948f",
+            "hidden": false,
+            "constraints": [{"id": "d63f-d4a0-602a-b7ec", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "d63f-d4a0-602a-b7ec",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "d63f-d4a0-602a-b7ec",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "The Gunk",
+                "id": "3a20-e2ec-2700-ec0d",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "5676-f650-6db9-48d9", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "The Gunk",
+                    "id": "7579-6b41-8bd1-dc89",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Surge inflicts 2 *slow* on the first unit affected.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Rotten Surge",
+                "id": "2ce9-c64b-2fb9-c712",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "1c39-3eee-8435-9945", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Rotten Surge",
+                    "id": "2c23-f8c4-981e-38c4",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "After Surge, inflict 1 *plague* on self for each unit passed through.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Sticky Trail",
+                "id": "1063-6795-2119-48fc",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "a081-991a-cf23-f550", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Sticky Trail",
+                    "id": "cb8e-e57e-1e0c-2beb",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "During Surge, may create a hazard in one space passed through.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Host",
+        "id": "cefc-394d-98f1-af44",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 5,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "64c2-1ce9-560f-1e80", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Hunter", "id": "0880-92f0-d464-31ba", "hidden": false, "primary": false, "targetId": "8d86-d66c-554d-f5a5"}
+        ],
+        "constraints": [{"id": "7cde-204e-f8eb-7b35", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Host",
+            "id": "2893-a08c-2fce-513b",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Swarm release",
+            "id": "617b-f934-6bae-d449",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Has *deathburst*: create two hazards in free adjacent spaces.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Propagate Swarm",
+            "id": "da27-35fa-36d1-cf62",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Create one, (3+) two, or (5+) three hazards in range. May spend a *plague* token on self to re-roll the effect die once.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Driving Vermin",
+            "id": "a3ef-7df7-0017-54c5",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage, 1 *plague*, then pull 1. *Infect*: 1 *plague*, then pull 1. ", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "3b38-e65e-e6ab-ffe1",
+            "hidden": false,
+            "constraints": [{"id": "6bf3-f439-c502-91f0", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "6bf3-f439-c502-91f0",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "ebda-48f8-bd51-2c2b",
+                    "childName": "Hunter",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "6bf3-f439-c502-91f0",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "ebda-48f8-bd51-2c2b",
+                    "childName": "Hunter",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Defiler",
+                "id": "f212-97d0-7080-5e2b",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "a8fb-5f15-2a17-b995", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Defiler",
+                    "id": "8290-9fce-b51f-d339",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Driving Vermin gains effect (5+) create a hazard under target before the attack.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Overfeed",
+                "id": "52e5-edb4-a7fb-a355",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "b57a-4a25-a95a-e080", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Overfeed",
+                    "id": "d3bc-93d6-1502-d0f8",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "If at 3 or more *plague* tokens, gain +1D on attacks and +1 range on all abilities.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Toxic Avenger",
+                "id": "73ed-7191-fe58-368e",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "f31b-de31-72a9-a16a", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Toxic Avenger",
+                    "id": "bad8-a142-e2e7-8148",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Immune to hazards. While standing in a hazard, gain 1 *plague* at turn start.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Belcher",
+        "id": "df60-8f83-1598-0216",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 2,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "798a-916f-af1f-5554", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Thrall", "id": "e0f3-1a73-bfd2-9035", "hidden": false, "primary": false, "targetId": "b1b6-295a-b637-9c4c"}
+        ],
+        "profiles": [
+          {
+            "name": "Belcher",
+            "id": "e067-24c0-cddd-db1a",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "1", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Burst Guts",
+            "id": "9aed-2267-aebe-9912",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Has *deathburst*: summon a slimelet in a free adjacent space.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Thrall",
+            "id": "6fbc-bd36-0405-e016",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2 of these units are worth 1 unit slot. Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Toxic Spit",
+            "id": "93ca-9701-f23f-948d",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "1 toxic damage (5+) and create a hazard under target. Gains *pierce* against units already in hazards.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Projectile Vomit",
+            "id": "c390-d0e3-d652-b0cc",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Push target unit 1 space, then create one hazard in a space they vacated. If this unit is *plagued*, push 2 instead.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "b295-e639-2a8d-fbdc",
+            "hidden": false,
+            "constraints": [{"id": "3c12-98bd-0050-f918", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "3c12-98bd-0050-f918",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "3c12-98bd-0050-f918",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cea6-4387-7a91-c774",
+                    "childName": "Thralls",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Aftermath",
+                "id": "10ce-6dd0-1172-2cbf",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "9644-eaa9-3f12-00b0", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Stuffed",
+                    "id": "efdd-e7a3-ef11-586b",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "When Burst Guts activates, it has a 5+ effect chance to summon two slimelets instead.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Congealed",
+                "id": "8a17-0574-e314-aeee",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "f234-daeb-8ed1-7b59", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Congealed",
+                    "id": "3d1c-6d46-2eab-f86a",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Slimelets have MAG armor.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Putridity",
+                "id": "50e1-6a85-279e-0a37",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "d913-851a-3d65-cafa", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Putridity",
+                    "id": "d3ae-538f-191b-def1",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "For both units, toxic spit also inflicts 1 *plague* against units already in hazards.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Slimelet",
+        "id": "223d-5fac-5847-7750",
+        "defaultAmount": "1",
+        "hidden": true,
+        "import": true,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "f786-5f6c-56ab-acc6", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Thrall", "id": "8912-51cc-1343-fc7a", "hidden": false, "primary": false, "targetId": "b1b6-295a-b637-9c4c"}
+        ],
+        "modifiers": [
+          {
+            "field": "hidden",
+            "type": "set",
+            "value": false,
+            "conditions": [
+              {
+                "childId": "df60-8f83-1598-0216",
+                "childName": "Belcher",
+                "field": "selections",
+                "includeChildSelections": true,
+                "scope": "force",
+                "shared": true,
+                "type": "atLeast",
+                "value": 1
+              }
+            ]
+          }
+        ],
+        "profiles": [
+          {
+            "name": "Slimelet",
+            "id": "33fd-30a9-8161-2280",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "1", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Summoned Thrall",
+            "id": "5586-9342-aa1b-4b1e",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Can be activated two at a time.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Toxic Spit",
+            "id": "e24c-9d13-8e01-c9f4",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "1 toxic damage (5+) and create a hazard under target. Gains *pierce* against units already in hazards.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Leech",
+        "id": "dddb-4dba-102c-25c8",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 4,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "51fa-440b-9235-bf14", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Freak", "id": "cc4e-0da4-8629-6b51", "hidden": false, "primary": false, "targetId": "19d1-0a3d-46f4-65e9"}
+        ],
+        "constraints": [{"id": "dbf8-bd96-cc6e-a988", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Leech",
+            "id": "f7c3-5a4f-2913-878c",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "MAG", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": " Deathwash",
+            "id": "c717-177b-b5e8-200d",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Has Deathburst: *Splash (self)* Remove any 1 token from all units in the area.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Suppurate",
+            "id": "9400-2f86-34b6-c878",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Unit permanently gains *death burst*: *splash (self)*: 1 toxic damage and 1 *plague*. This effect cannot stack with itself but stacks with other death burst effects.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Evolve Strain",
+            "id": "343f-bc5a-9a7a-fcbc",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Strip all *plague* tokens from a unit in range. Foes take 1 toxic damage. Then, they gain 1 *slow* per token removed. Allies gain 1 *strength* per token removed.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Swell with Corruption",
+            "id": "738f-040c-7dfd-209c",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Unit triggers *deathburst* without being slain.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "031c-198d-eb91-b067",
+            "hidden": false,
+            "constraints": [{"id": "177f-b579-7ac7-da5d", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "177f-b579-7ac7-da5d",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "177f-b579-7ac7-da5d",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Acid Blood",
+                "id": "6b70-7efb-9b9a-a671",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "7d85-0dee-90a6-790a", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Acid Blood",
+                    "id": "6497-e97b-0263-f42d",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Suppurate also grants *deathburst*: Create a hazard instead of a corpse.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Massive Swell",
+                "id": "abfe-2947-53a6-6198",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "eeae-c4cc-95fa-670c", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Massive Swell",
+                    "id": "d6a2-c1b8-e9f3-5422",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Swell with corruption has a 6+ effect chance to trigger twice.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Pandemic",
+                "id": "2153-267d-c736-7644",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "bd75-e8ac-3135-4181", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Pandemic",
+                    "id": "8a01-5991-3974-3be3",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Evolve Strain can choose up to two targets in range, but only removes 1 *plague* token.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

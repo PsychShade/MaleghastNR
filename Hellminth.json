@@ -9,8 +9,8 @@
     "revision": 1,
     "type": "catalogue",
     "catalogueLinks": [
-      {"name": "Campaign Rules", "id": "b66d-94ec-7734-31df", "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
-      {"name": "Heresy", "id": "7d89-2b91-90a8-99c7", "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+      {"name": "Campaign Rules", "id": "b66d-94ec-7734-31df", "importRootEntries": true, "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
+      {"name": "Heresy", "id": "7d89-2b91-90a8-99c7", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
     ],
     "profileTypes": [
       {
@@ -61,10 +61,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 1-2 ", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2 ", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit**: 1 damage. \n**Effect**: May spend up to three *vitality* tokens or adjacent corpses, in any combination, to increase damage on hit by +1 for each token or corpse consumed. If three were spent, gains *pierce*.",
+                "name": "Effect",
+                "$text": "1 damage. May spend up to three *vitality* tokens or adjacent corpses, in any combination, to increase damage on hit by +1 for each token or corpse consumed. If three were spent, gains *pierce*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -76,7 +77,8 @@
             "typeId": "dd79-c1b6-f795-8499",
             "typeName": "SOUL ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
               {"name": "Trigger", "$text": "Turn start.", "typeId": "1168-c65d-8a02-19c3"},
               {"name": "Effect", "$text": "Ally steps 2, then creates a corpse in a free adjacent space.", "typeId": "07d2-d978-e8e2-acb2"}
@@ -89,7 +91,8 @@
             "typeId": "dd79-c1b6-f795-8499",
             "typeName": "SOUL ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Own turn, Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
               {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
               {"name": "Effect", "$text": "Target ally *evolves*.", "typeId": "07d2-d978-e8e2-acb2"}
@@ -232,10 +235,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Ally, Range 1-3. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Ally", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Target ally gains 1 *vitality* at the end of its turns this combat (4+) and clears a negative token. End this effect if this ability is used again.",
+                            "name": "Effect",
+                            "$text": "Target ally gains 1 *vitality* at the end of its turns this combat (4+) and clears a negative token. End this effect if this ability is used again.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -259,8 +263,9 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
+                            "name": "Effect",
                             "$text": "*Splash (self)*: All other units in the area lose 1 or (5+) two tokens of this unit’s choice, then are pushed 2.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
@@ -285,9 +290,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Remove self, then place in any space on the battlefield. When reappearing, remove all units in this units space, then each unit’s owner may place them in free space on any edge, starting ally/foe and alternating if necessary.",
+                            "name": "Effect",
+                            "$text": "Remove self, then place in any space on the battlefield. When reappearing, remove all units in this units space, then each unit’s owner may place them in free space on any edge, starting ally/foe and alternating if necessary.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -310,10 +316,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Line 3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Line 3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: First unit in the line takes 1 *piercing* toxic damage and push 1, no effect on other units. If that unit was in the last space, it takes 2 *piercing* toxic damage instead.",
+                            "name": "Effect",
+                            "$text": "First unit in the line takes 1 *piercing* toxic damage and push 1, no effect on other units. If that unit was in the last space, it takes 2 *piercing* toxic damage instead.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -336,10 +343,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 damage and (4+) 1 toxic damage again (6+) then 1 toxic damage again. **Effect**: Creates two corpses if slaying a foe.",
+                            "name": "Effect",
+                            "$text": "1 damage and (4+) 1 toxic damage again (6+) then 1 toxic damage again. Creates two corpses if slaying a foe.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -362,12 +370,9 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 devil damage. **Effect**: If this slays a unit, *obliterate* them, then summon a page in their space.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "1 devil damage. If this slays a unit, *obliterate* them, then summon a page in their space.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
@@ -388,10 +393,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 2 damage and push one or (5+) three spaces. If moving into the space of another unit or a wall, deal 1 damage again to both. This additional damage can’t be increased.",
+                            "name": "Effect",
+                            "$text": "2 damage and push one or (5+) three spaces. If moving into the space of another unit or a wall, deal 1 damage again to both. This additional damage can’t be increased.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -423,6 +429,7 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
                           {"name": "Trigger", "$text": "You hit an attack. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
@@ -451,6 +458,7 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
                           {"name": "Trigger", "$text": "You hit or miss an attack.", "typeId": "1168-c65d-8a02-19c3"},
                           {
@@ -478,7 +486,8 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
                           {"name": "Trigger", "$text": "Target turn start. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
@@ -506,7 +515,8 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
                           {"name": "Trigger", "$text": "Turn start.", "typeId": "1168-c65d-8a02-19c3"},
                           {
@@ -534,7 +544,8 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Foe or ally turn, Curse, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Foe or ally turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
                           {"name": "Trigger", "$text": "Turn start. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
@@ -563,6 +574,7 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
                           {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {"name": "Effect", "$text": "All other allied units *evolve*. Units already at maximum *evolution* gain 1 *strength*.", "typeId": "07d2-d978-e8e2-acb2"}
@@ -583,23 +595,24 @@
             "selectionEntryGroups": [
               {
                 "name": "Bonus Traits",
-                "id": "6387-cb00-4a2e-d093",
+                "id": "127a-8ea3-8cc8-6e94",
                 "hidden": false,
-                "constraints": [{"id": "29cd-1fb5-e58b-8c9d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "sortIndex": 1,
+                "constraints": [{"id": "a651-f3d4-3a2f-d40b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                 "selectionEntries": [
                   {
                     "name": "Tyrant Ruler",
-                    "id": "a844-80bc-9d1d-17e6",
+                    "id": "0f08-5634-1e25-dd51",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "74a8-78f7-8375-3032", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "af49-29b4-7211-6b17", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Tyrant Ruler",
-                        "id": "5fd1-c0ab-e21b-129a",
+                        "id": "8ab5-d5e3-1669-4a4a",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -615,17 +628,17 @@
                   },
                   {
                     "name": "Revelation",
-                    "id": "b956-7d39-f802-b42e",
+                    "id": "bc23-7eed-71bf-c77b",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "46c5-e65b-0324-138e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "7185-94b3-9b88-02c4", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Revelation",
-                        "id": "6596-9194-6ff0-53e5",
+                        "id": "3bbc-8c07-6c3f-1259",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -635,17 +648,17 @@
                   },
                   {
                     "name": "Talons of Hell",
-                    "id": "3375-82bf-b31c-3207",
+                    "id": "3260-556a-d536-a8fd",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 3,
                     "type": "upgrade",
-                    "constraints": [{"id": "62bf-ab7d-3565-61fd", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "fee5-30c2-4bf0-fe41", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Talons of Hell",
-                        "id": "6cb4-5572-d57f-4f72",
+                        "id": "0a23-0bb6-211e-1fe1",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -657,29 +670,31 @@
               },
               {
                 "name": "ACT Upgrades",
-                "id": "4642-6b79-b11f-1d5f",
+                "id": "4099-4c99-d35c-14b8",
                 "hidden": false,
+                "sortIndex": 2,
                 "selectionEntries": [
                   {
                     "name": "Caul of the Worm Gods",
-                    "id": "fdbf-82ad-6258-e796",
+                    "id": "93c5-c9e2-10db-4994",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "21a7-dcbb-de19-1f1b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "e9cc-20e0-1aa1-dfa1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Caul of the Worm Gods",
-                        "id": "f117-20e0-908b-4aca",
+                        "id": "bd9c-75aa-17d2-f2ec",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Ally, Range 1-3. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Ally", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Target ally gains 1 *vitality* at the end of its turns this combat (4+) and clears a negative token. End this effect if this ability is used again.",
+                            "name": "Effect",
+                            "$text": "Target ally gains 1 *vitality* at the end of its turns this combat (4+) and clears a negative token. End this effect if this ability is used again.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -688,23 +703,24 @@
                   },
                   {
                     "name": "Psychic Scream",
-                    "id": "b5f8-40cd-da16-45e9",
+                    "id": "e685-16d6-cf02-05fb",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "c20c-45a2-2ece-ff7e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "e1c0-7002-1060-fc94", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Psychic Scream",
-                        "id": "1122-01fa-1bf0-2da4",
+                        "id": "efb8-72d5-1eb0-214a",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
+                            "name": "Effect",
                             "$text": "*Splash (self)*: All other units in the area lose 1 or (5+) two tokens of this unit’s choice, then are pushed 2.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
@@ -714,24 +730,25 @@
                   },
                   {
                     "name": "Burrow",
-                    "id": "657b-e9c8-a865-6f94",
+                    "id": "1cdb-b67d-2382-0025",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 3,
                     "type": "upgrade",
-                    "constraints": [{"id": "d734-3481-18cc-da4b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "1757-a214-e27d-0e29", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Burrow",
-                        "id": "3b82-aab2-9e1e-1df5",
+                        "id": "1bd8-c6e8-ab91-9985",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Remove self, then place in any space on the battlefield. When reappearing, remove all units in this units space, then each unit’s owner may place them in free space on any edge, starting ally/foe and alternating if necessary.",
+                            "name": "Effect",
+                            "$text": "Remove self, then place in any space on the battlefield. When reappearing, remove all units in this units space, then each unit’s owner may place them in free space on any edge, starting ally/foe and alternating if necessary.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -740,24 +757,25 @@
                   },
                   {
                     "name": "Acid Jet",
-                    "id": "a184-fa43-4dbd-54cc",
+                    "id": "aa0c-92f1-3a84-26a4",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 4,
                     "type": "upgrade",
-                    "constraints": [{"id": "683f-1837-fd48-3984", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "01c2-68ad-e3dd-29e6", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Acid Jet",
-                        "id": "200e-80ee-12cd-bc50",
+                        "id": "c044-8f02-e26c-f906",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Line 3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Line 3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: First unit in the line takes 1 *piercing* toxic damage and push 1, no effect on other units. If that unit was in the last space, it takes 2 *piercing* toxic damage instead.",
+                            "name": "Effect",
+                            "$text": "First unit in the line takes 1 *piercing* toxic damage and push 1, no effect on other units. If that unit was in the last space, it takes 2 *piercing* toxic damage instead.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -766,24 +784,25 @@
                   },
                   {
                     "name": "Dispassionate Dissection",
-                    "id": "0e5b-54be-ad87-a8ef",
+                    "id": "4e1f-ad44-59e6-6b1b",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 5,
                     "type": "upgrade",
-                    "constraints": [{"id": "f3ca-2e1a-c5ee-81b3", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "e08c-c6ba-3bf3-60b1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Dispassionate Dissection",
-                        "id": "9d36-2925-bf1f-d843",
+                        "id": "5c44-06e6-1775-e4d0",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 damage and (4+) 1 toxic damage again (6+) then 1 toxic damage again. **Effect**: Creates two corpses if slaying a foe.",
+                            "name": "Effect",
+                            "$text": "1 damage and (4+) 1 toxic damage again (6+) then 1 toxic damage again. Creates two corpses if slaying a foe.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -792,50 +811,48 @@
                   },
                   {
                     "name": "The Kiss",
-                    "id": "2ce2-c7b5-8129-e482",
+                    "id": "0c6c-dc0c-e623-282c",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 6,
                     "type": "upgrade",
-                    "constraints": [{"id": "dc5d-6cbf-9467-3227", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "0b53-b7bb-3d65-611a", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "The Kiss",
-                        "id": "3b51-8f09-5fa5-79a8",
+                        "id": "60de-8c69-4236-d990",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 devil damage. **Effect**: If this slays a unit, *obliterate* them, then summon a page in their space.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "1 devil damage. If this slays a unit, *obliterate* them, then summon a page in their space.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
                   },
                   {
                     "name": "Swat Nuisance",
-                    "id": "9664-04b7-5035-8cb4",
+                    "id": "361f-016e-bc9b-6d56",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 7,
                     "type": "upgrade",
-                    "constraints": [{"id": "037e-4587-b363-2b77", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "2450-a440-125a-623d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Swat Nuisance",
-                        "id": "c926-ee8c-90be-ae1f",
+                        "id": "7195-4c5c-bd35-2657",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 2 damage and push one or (5+) three spaces. If moving into the space of another unit or a wall, deal 1 damage again to both. This additional damage can’t be increased.",
+                            "name": "Effect",
+                            "$text": "2 damage and push one or (5+) three spaces. If moving into the space of another unit or a wall, deal 1 damage again to both. This additional damage can’t be increased.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -846,31 +863,33 @@
               },
               {
                 "name": "SOUL Upgrades",
-                "id": "5579-1405-a0d5-7752",
+                "id": "fa56-8d8a-2ebc-a5e5",
                 "hidden": false,
+                "sortIndex": 3,
                 "selectionEntries": [
                   {
                     "name": "Tear Off",
-                    "id": "1719-6e0d-8da3-166e",
+                    "id": "093f-195b-cc90-b86b",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "c6a9-0193-abf3-2a44", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "e5a1-00d5-789e-f5f0", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Tear Off",
-                        "id": "f085-c1fb-ad2f-3988",
+                        "id": "7591-ed0d-633b-0a05",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Trigger", "$text": "You hit an attack. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
                             "name": "Effect",
-                            "$text": "**Trigger**: You hit an attack. \n**Effect**: Create a corpse in a free adjacent space. Create +1 corpse if you slew or *obliterated* the unit.",
+                            "$text": "Create a corpse in a free adjacent space. Create +1 corpse if you slew or *obliterated* the unit.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -879,26 +898,27 @@
                   },
                   {
                     "name": "Taint Blood",
-                    "id": "8709-97de-1b47-2017",
+                    "id": "fad7-b63e-7cde-b728",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "4516-e769-9918-430c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "9ece-211b-6b12-1cec", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Taint Blood",
-                        "id": "beb7-9212-b2af-c522",
+                        "id": "03fa-c88e-f949-f04b",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Trigger", "$text": "You hit or miss an attack.", "typeId": "1168-c65d-8a02-19c3"},
                           {
                             "name": "Effect",
-                            "$text": "**Trigger**: You hit or miss an attack. \n**Effect**: You curse the target. When the target is slain, it grants 1 *vitality* to up to three allies in range 1-2.",
+                            "$text": "You curse the target. When the target is slain, it grants 1 *vitality* to up to three allies in range 1-2.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -907,26 +927,27 @@
                   },
                   {
                     "name": "Demote",
-                    "id": "db07-43ce-240f-ab9e",
+                    "id": "9759-d095-890f-483e",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 3,
                     "type": "upgrade",
-                    "constraints": [{"id": "facc-eebc-3f8d-cbc8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "68c6-16ae-69b2-14a6", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Demote",
-                        "id": "9e3c-b6e9-6d65-705a",
+                        "id": "34e2-f08b-fdac-ccef",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Trigger", "$text": "Target turn start. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
                             "name": "Effect",
-                            "$text": "**Trigger**: Target turn start. \n**Effect**: Remove ally from the battlefield, then replace them with a page and create a corpse in a free adjacent space. They can act normally this turn. They keep all tokens and effects.",
+                            "$text": "Remove ally from the battlefield, then replace them with a page and create a corpse in a free adjacent space. They can act normally this turn. They keep all tokens and effects.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -935,26 +956,27 @@
                   },
                   {
                     "name": "Glider Caul",
-                    "id": "5f48-9e02-97a5-5c48",
+                    "id": "cfa5-1ddf-302a-9526",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 4,
                     "type": "upgrade",
-                    "constraints": [{"id": "dd01-ca2b-d7af-5065", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "ef12-cb94-1201-8616", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Glider Caul",
-                        "id": "89fc-88db-3976-20c0",
+                        "id": "bf40-bbbc-57b1-c38c",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Trigger", "$text": "Turn start.", "typeId": "1168-c65d-8a02-19c3"},
                           {
                             "name": "Effect",
-                            "$text": "**Trigger**: Turn start. \n**Effect**: Acting unit sprouts wings, gaining +2 MV and flying for the rest of combat (Ignores adverse terrain and elevation attack and movement penalties).",
+                            "$text": "Acting unit sprouts wings, gaining +2 MV and flying for the rest of combat (Ignores adverse terrain and elevation attack and movement penalties).",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -963,26 +985,27 @@
                   },
                   {
                     "name": "Blood Drain",
-                    "id": "eb85-6b9e-538e-91cb",
+                    "id": "cbbb-43b1-4adf-b368",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 5,
                     "type": "upgrade",
-                    "constraints": [{"id": "c7e3-1865-103a-de22", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "a5c0-92cb-d8c7-51e6", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Blood Drain",
-                        "id": "dff5-99f3-9ce0-ae17",
+                        "id": "d728-da69-4256-60c6",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Foe or ally turn, Curse, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Foe or ally turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Trigger", "$text": "Turn start. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
                             "name": "Effect",
-                            "$text": "**Trigger**: Turn start. \n**Effect**: At the end of the targeted unit’s turn, remove up to three positive tokens. You gain 1 *vitality* per token removed. If the unit has no positive tokens left, deal 2 toxic damage to it.",
+                            "$text": "At the end of the targeted unit’s turn, remove up to three positive tokens. You gain 1 *vitality* per token removed. If the unit has no positive tokens left, deal 2 toxic damage to it.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -991,28 +1014,25 @@
                   },
                   {
                     "name": "Transcendence",
-                    "id": "65cc-0488-2f8c-f545",
+                    "id": "b107-3522-d3a3-50dd",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 6,
                     "type": "upgrade",
-                    "constraints": [{"id": "4082-d949-43d7-f00b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "4325-716a-f693-390c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Transcendence",
-                        "id": "135f-ae3e-b0fc-3f02",
+                        "id": "ecd2-6033-ce59-6333",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
                           {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
-                          {
-                            "name": "Effect",
-                            "$text": "**Effect**: All other allied units *evolve*. Units already at maximum *evolution* gain 1 *strength*.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Effect", "$text": "All other allied units *evolve*. Units already at maximum *evolution* gain 1 *strength*.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -1063,8 +1083,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Step 1. \n**On hit:** 1 toxic damage (5+) then this unit *evolves*.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Step 1. 1 toxic damage (5+) then this unit *evolves*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1258,8 +1279,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit:** Strip a positive token from the target, then deal 1 damage.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Strip a positive token from the target, then deal 1 damage.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1270,7 +1292,8 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Step 1, then deal 1 toxic damage to an adjacent foe and push them 1.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Step 1, then deal 1 toxic damage to an adjacent foe and push them 1.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1478,10 +1501,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit**: 1 toxic damage and may remove up to two corpses adjacent to the target to deal 1 toxic damage to target again for each corpse removed.",
+                "name": "Effect",
+                "$text": "1 toxic damage and may remove up to two corpses adjacent to the target to deal 1 toxic damage to target again for each corpse removed.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1493,10 +1517,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Foe, Curse, Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Foe, Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Choose a foe in range. At the end of that foe’s next turn, if they ended their turn adjacent to a corpse, they take 2 toxic damage. Then create two corpses in free adjacent spaces to them.",
+                "name": "Effect",
+                "$text": "Choose a foe in range. At the end of that foe’s next turn, if they ended their turn adjacent to a corpse, they take 2 toxic damage. Then create two corpses in free adjacent spaces to them.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1698,8 +1723,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 1 damage then 1 damage again to the same or a different adjacent foe.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage then 1 damage again to the same or a different adjacent foe.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1710,7 +1736,8 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Gain 1 *strength* for every adjacent foe or corpse, up to three times.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Gain 1 *strength* for every adjacent foe or corpse, up to three times.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1890,10 +1917,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: 1 toxic damage and Splash (target): push 1. Then create one, (4+) two or (6+) three corpses in free adjacent spaces to the target.",
+                "name": "Effect",
+                "$text": "1 toxic damage and Splash (target): push 1. Then create one, (4+) two or (6+) three corpses in free adjacent spaces to the target.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1905,10 +1933,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 1-3, Self, Ally", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Self, Ally", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Target self or ally. Remove three *vitality* tokens or adjacent corpses, in any combination. If three were removed, unit *evolves*.",
+                "name": "Effect",
+                "$text": "Target self or ally. Remove three *vitality* tokens or adjacent corpses, in any combination. If three were removed, unit *evolves*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -2104,9 +2133,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: At the start of its next turn, if not slain, this unit drops a corpse in its space, then loses this ability and gains access to *vicious thrashing*.",
+                "name": "Effect",
+                "$text": "At the start of its next turn, if not slain, this unit drops a corpse in its space, then loses this ability and gains access to *vicious thrashing*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -2149,9 +2179,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Special**: Only available if **Shed Flesh** has been used.\n**Effect**: 1 toxic damage, then 1 toxic damage to one or two different adjacent foes.",
+                "name": "Effect",
+                "$text": "Only available if **Shed Flesh** has been used.\n1 toxic damage, then 1 toxic damage to one or two different adjacent foes.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]

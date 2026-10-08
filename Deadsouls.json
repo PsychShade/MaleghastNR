@@ -9,8 +9,24 @@
     "revision": 1,
     "type": "catalogue",
     "catalogueLinks": [
-      {"name": "Campaign Rules", "id": "d1e4-4089-5087-f148", "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
-      {"name": "Heresy", "id": "659c-fad2-9cec-b2de", "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+      {"name": "Campaign Rules", "id": "d1e4-4089-5087-f148", "importRootEntries": true, "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
+      {"name": "Heresy", "id": "659c-fad2-9cec-b2de", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+    ],
+    "rules": [
+      {
+        "name": "Isolation",
+        "id": "6c08-345e-2048-0abd",
+        "description": "Gains extra effects against units with no allies adjacent.",
+        "hidden": false,
+        "alias": ["isolates", "isolated"]
+      },
+      {
+        "name": "Doom",
+        "id": "5cd2-dd7e-3ae5-1475",
+        "description": "Any unit affected by at least one Doom token takes 4 devil damage at the end of round 4. A unit can only clear a Doom token by slaying another unit.",
+        "hidden": false,
+        "alias": ["doomed"]
+      }
     ],
     "selectionEntries": [
       {
@@ -57,10 +73,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 1-2 ", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2 ", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit**: 1 curse damage and *Doom* *isolated* foes. **Effect**: +1 damage on hit and +1D on attacks against *doomed* foes.",
+                "name": "Effect",
+                "$text": "1 curse damage and *Doom* *isolated* foes. **Effect**: +1 damage on hit and +1D on attacks against *doomed* foes.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -72,13 +89,11 @@
             "typeId": "dd79-c1b6-f795-8499",
             "typeName": "SOUL ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Own or Allied Turn. Range 2-3", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Tag", "$text": "Own or Allied Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-              {
-                "name": "Description",
-                "$text": "**Trigger**: Start of turn. \n**Effect**: Create a wall in range and (4+) and inflict 1 *weak* on an adjacent foe to the wall.",
-                "typeId": "07d2-d978-e8e2-acb2"
-              }
+              {"name": "Trigger", "$text": "Start of turn. ", "typeId": "1168-c65d-8a02-19c3"},
+              {"name": "Effect", "$text": "Create a wall in range and (4+) and inflict 1 *weak* on an adjacent foe to the wall.", "typeId": "07d2-d978-e8e2-acb2"}
             ]
           },
           {
@@ -88,11 +103,13 @@
             "typeId": "dd79-c1b6-f795-8499",
             "typeName": "SOUL ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Self or Allied Turn. Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Tag", "$text": "Self or Allied Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
               {
-                "name": "Description",
-                "$text": "**Effect**: All *isolated* or *doomed* foes in range take 1 curse damage, gain 1 *weak*, and this unit gains 1 *strength* for each of these foes.",
+                "name": "Effect",
+                "$text": "All *isolated* or *doomed* foes in range take 1 curse damage, gain 1 *weak*, and this unit gains 1 *strength* for each of these foes.",
                 "typeId": "07d2-d978-e8e2-acb2"
               }
             ]
@@ -203,10 +220,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Curse, Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Pull 2. Ignores line of sight. If the unit is an ally, may then pull another allied unit and clear a token on both allies.",
+                            "name": "Effect",
+                            "$text": "Pull 2. Ignores line of sight. If the unit is an ally, may then pull another allied unit and clear a token on both allies.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -230,9 +248,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: MOVE with *free movement*, moving through walls and units. Foes passed through gain 1 *weak*. *Doomed* foes take 1 curse damage.",
+                            "name": "Effect",
+                            "$text": "MOVE with *free movement*, moving through walls and units. Foes passed through gain 1 *weak*. *Doomed* foes take 1 curse damage.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -255,10 +274,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Curse, Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Unit takes 1 curse damage. Then, it gains 1 *weak* for every 1 hp it is missing, up to 3 *weak*. If it’s missing more than half its hp, it is then *Doomed*.",
+                            "name": "Effect",
+                            "$text": "Unit takes 1 curse damage. Then, it gains 1 *weak* for every 1 hp it is missing, up to 3 *weak*. If it’s missing more than half its hp, it is then *Doomed*.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -281,10 +301,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Create up to three spaces of adverse terrain in range. Units already standing in adverse terrain in range take 1 *piercing* damage.",
+                            "name": "Effect",
+                            "$text": "Create up to three spaces of adverse terrain in range. Units already standing in adverse terrain in range take 1 *piercing* damage.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -307,8 +328,9 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {"name": "Description", "$text": "**On hit**: 1 damage. **Effect**: At round 4 or later, deals 4 curse damage on hit instead.", "typeId": "4ce0-5160-a645-5c3d"}
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "1 damage. At round 4 or later, deals 4 curse damage on hit instead.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
@@ -329,10 +351,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 2-2", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-2", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 damage. **Effect**: Pull all foes in range 1 space, then *splash (self)*: 1 curse damage. Against *doomed* units, gains *pierce*.",
+                            "name": "Effect",
+                            "$text": "1 damage. Pull all foes in range 1 space, then *splash (self)*: 1 curse damage. Against *doomed* units, gains *pierce*.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -355,10 +378,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 curse damage. **Effect**: Cannot benefit from *strength*. Instead, may remove up to three *weak* tokens from target to increase curse damage by +1 per *weak* token removed.",
+                            "name": "Effect",
+                            "$text": "1 curse damage. Cannot benefit from *strength*. Instead, may remove up to three *weak* tokens from target to increase curse damage by +1 per *weak* token removed.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -390,8 +414,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Curse, Any turn. Range 2-4. ", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Description", "$text": "**Trigger**: Start of turn.\n **Effect**: Pull unit 1 in any direction.", "typeId": "07d2-d978-e8e2-acb2"}
+                          {"name": "Trigger", "$text": "Turn Start", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Pull unit 1 in any direction.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -412,11 +438,13 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Foe turn, Curse, Range 1-4", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Foe turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn start.\n**Effect**: At the end of their turn, foe inflicts *splash (self)* 1 curse damage and 1 *weak*, only affecting their allies.",
+                            "name": "Effect",
+                            "$text": "At the end of their turn, foe inflicts *splash (self)* 1 curse damage and 1 *weak*, only affecting their allies.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -439,10 +467,12 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn. Range 1-4", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
+                            "name": "Effect",
                             "$text": "**Effect**: Remove self and an adjacent allied unit, then place self in free space in range, then place ally adjacent. If there is no room to place allies, return them at their original location.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
@@ -467,12 +497,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": " Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: A unit is slain. \n**Effect**: Transfer all negative tokens to a different unit anywhere, then increase those tokens by 1.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "A unit is slain", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Transfer all negative tokens to a different unit anywhere, then increase those tokens by 1.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -494,10 +522,12 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Scour the battlefield with frozen wind, pulling all foes 2 spaces in the same direction. Foes that would be pulled into walls or adverse terrain for the first time during this pull take 1 damage.",
+                            "name": "Effect",
+                            "$text": "Scour the battlefield with frozen wind, pulling all foes 2 spaces in the same direction. Foes that would be pulled into walls or adverse terrain for the first time during this pull take 1 damage.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -520,11 +550,13 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own turn, Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-2", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: *Doom* all enemy units in range. All *Doomed* enemy units instead take 1 curse damage, +1 per *Doom* token they have.",
+                            "name": "Effect",
+                            "$text": "*Doom* all enemy units in range. All *Doomed* enemy units instead take 1 curse damage, +1 per *Doom* token they have.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -543,24 +575,199 @@
             "sortIndex": 2,
             "selectionEntryGroups": [
               {
-                "name": "Bonus Traits",
-                "id": "51a8-c907-70bf-4f37",
+                "name": "SOUL Upgrades",
+                "id": "27fa-2d2b-b47e-64be",
                 "hidden": false,
-                "constraints": [{"id": "2d67-632a-0389-934f", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "sortIndex": 3,
                 "selectionEntries": [
                   {
-                    "name": "Puppet Master",
-                    "id": "1028-ac52-77d5-86d4",
+                    "name": "Twist Sinews ",
+                    "id": "bac7-a965-b544-e99c",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "0824-a163-8299-2da5", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Twist Sinews ",
+                        "id": "7afd-3a03-b69c-9423",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse, Any turn. Range 2-4. ", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn Start", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Pull unit 1 in any direction.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Writhing Curse ",
+                    "id": "95b1-959a-4344-29bc",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "0f33-3bc8-9a97-8d49", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "9a21-1000-b162-b5be", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Writhing Curse ",
+                        "id": "9c3d-8677-e41e-4abd",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Foe turn, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "At the end of their turn, foe inflicts *splash (self)* 1 curse damage and 1 *weak*, only affecting their allies.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Disincorporate ",
+                    "id": "bc39-8041-4f49-ef2b",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "b73e-4f4d-278d-210f", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Disincorporate ",
+                        "id": "0c69-f1e1-41fe-b80c",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "**Effect**: Remove self and an adjacent allied unit, then place self in free space in range, then place ally adjacent. If there is no room to place allies, return them at their original location.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Eternal Curse ",
+                    "id": "c2f3-1cc1-8471-9170",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c687-3301-3976-7386", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Eternal Curse ",
+                        "id": "0f7e-3d65-d044-6c42",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": " Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "A unit is slain", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Transfer all negative tokens to a different unit anywhere, then increase those tokens by 1.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Malebolge ",
+                    "id": "591c-97d6-305f-3f63",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "fb48-524a-db2f-46d7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Malebolge ",
+                        "id": "64b7-88cf-aa72-92b7",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Scour the battlefield with frozen wind, pulling all foes 2 spaces in the same direction. Foes that would be pulled into walls or adverse terrain for the first time during this pull take 1 damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Devil Impact ",
+                    "id": "f39b-7164-1aea-230f",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "6bc2-d3b0-31ed-277d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Great Satania",
+                        "id": "379b-85f6-d380-e476",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-2", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "*Doom* all enemy units in range. All *Doomed* enemy units instead take 1 curse damage, +1 per *Doom* token they have.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Bonus Traits",
+                "id": "487a-e3dd-41b5-4389",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "6468-df6d-8644-3873", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Puppet Master",
+                    "id": "ab2f-1b38-7e29-a5f7",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3b3b-ace8-17b1-167e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Puppet Master",
-                        "id": "1ca6-2e30-eb08-8cb4",
+                        "id": "0153-6976-ce5f-6bfd",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -570,17 +777,17 @@
                   },
                   {
                     "name": "Teleport",
-                    "id": "20cd-5d3e-80df-bfca",
+                    "id": "7692-8505-386c-7b1b",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "fb4e-1b92-de63-2d69", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "f14e-ac33-01f5-0f84", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Teleport",
-                        "id": "971e-8a1e-3cee-c29b",
+                        "id": "4694-48f2-b9c5-a71e",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -596,16 +803,16 @@
                   },
                   {
                     "name": "Maggot Destroyer",
-                    "id": "6e55-0d2f-7e82-7ebe",
+                    "id": "f6be-ab6d-c993-a8d6",
                     "hidden": false,
                     "import": true,
                     "type": "upgrade",
-                    "constraints": [{"id": "f08a-94c9-3167-72ea", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "8fc3-ac01-2239-2e0d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Maggot Destroyer",
-                        "id": "94c2-d951-41e7-1bd4",
+                        "id": "3d65-f85d-e13a-b3ad",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -617,29 +824,31 @@
               },
               {
                 "name": "ACT Upgrades",
-                "id": "a6d2-0c19-8ed2-c062",
+                "id": "a8a4-9368-693f-fdd2",
                 "hidden": false,
+                "sortIndex": 2,
                 "selectionEntries": [
                   {
                     "name": "Unholy Summoning",
-                    "id": "c0bd-0c3b-b2fc-c990",
+                    "id": "ead3-56df-607c-a34b",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "d548-ea61-08f4-8655", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "d474-a45d-7f4c-c49f", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Unholy Summoning",
-                        "id": "1dee-3a71-7075-74a4",
+                        "id": "124f-8bb0-6b1c-50e4",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Curse, Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Pull 2. Ignores line of sight. If the unit is an ally, may then pull another allied unit and clear a token on both allies.",
+                            "name": "Effect",
+                            "$text": "Pull 2. Ignores line of sight. If the unit is an ally, may then pull another allied unit and clear a token on both allies.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -648,24 +857,25 @@
                   },
                   {
                     "name": "Vapor Form",
-                    "id": "fd73-8d81-ad71-604e",
+                    "id": "ac0a-43ed-14f8-efdd",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "e8ba-1863-92a7-b426", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "8b1f-214e-0e30-3360", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Vapor Form",
-                        "id": "3a4e-56c8-0b57-7e1c",
+                        "id": "d08c-e27e-5448-ff95",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: MOVE with *free movement*, moving through walls and units. Foes passed through gain 1 *weak*. *Doomed* foes take 1 curse damage.",
+                            "name": "Effect",
+                            "$text": "MOVE with *free movement*, moving through walls and units. Foes passed through gain 1 *weak*. *Doomed* foes take 1 curse damage.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -674,24 +884,25 @@
                   },
                   {
                     "name": "Tear Soul",
-                    "id": "6f8d-2650-81fc-fcaf",
+                    "id": "0202-3666-7570-09e7",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 3,
                     "type": "upgrade",
-                    "constraints": [{"id": "b425-13c4-1fa2-8e55", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "b7c4-8342-35dd-fbc7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Tear Soul",
-                        "id": "6284-087e-1661-b76f",
+                        "id": "d829-5a3b-93f1-077f",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Curse, Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Unit takes 1 curse damage. Then, it gains 1 *weak* for every 1 hp it is missing, up to 3 *weak*. If it’s missing more than half its hp, it is then *Doomed*.",
+                            "name": "Effect",
+                            "$text": "Unit takes 1 curse damage. Then, it gains 1 *weak* for every 1 hp it is missing, up to 3 *weak*. If it’s missing more than half its hp, it is then *Doomed*.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -700,24 +911,25 @@
                   },
                   {
                     "name": "Frozen Hell",
-                    "id": "11b8-890a-cda9-f4d7",
+                    "id": "3760-717f-f511-ee4f",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 4,
                     "type": "upgrade",
-                    "constraints": [{"id": "c65a-c4fa-5956-f500", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "5bca-a1e7-101e-3ba1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Frozen Hell",
-                        "id": "da73-dbb0-2158-232a",
+                        "id": "17d2-8e16-d5db-6150",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Create up to three spaces of adverse terrain in range. Units already standing in adverse terrain in range take 1 *piercing* damage.",
+                            "name": "Effect",
+                            "$text": "Create up to three spaces of adverse terrain in range. Units already standing in adverse terrain in range take 1 *piercing* damage.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -726,46 +938,48 @@
                   },
                   {
                     "name": "Great Urgal Blade",
-                    "id": "91bc-2b95-705a-ac55",
+                    "id": "85fc-bbea-ae68-5c18",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 5,
                     "type": "upgrade",
-                    "constraints": [{"id": "5615-c1eb-48cd-4a1c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "ed3d-3b6e-78fc-066c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Great Urgal Blade",
-                        "id": "2f21-c3a5-e115-e98e",
+                        "id": "8c95-caab-423c-2289",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {"name": "Description", "$text": "**On hit**: 1 damage. **Effect**: At round 4 or later, deals 4 curse damage on hit instead.", "typeId": "4ce0-5160-a645-5c3d"}
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "1 damage. At round 4 or later, deals 4 curse damage on hit instead.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
                   },
                   {
                     "name": "Bloody Flail",
-                    "id": "291b-405f-7078-c1d4",
+                    "id": "1dbd-bec3-10a5-9151",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 6,
                     "type": "upgrade",
-                    "constraints": [{"id": "87ab-c212-f072-b490", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "8ba7-46d8-08a6-11c7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Bloody Flail",
-                        "id": "77e8-ebb2-caa7-fe1e",
+                        "id": "9338-6648-ae06-e31d",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 2-2", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-2", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 damage. **Effect**: Pull all foes in range 1 space, then *splash (self)*: 1 curse damage. Against *doomed* units, gains *pierce*.",
+                            "name": "Effect",
+                            "$text": "1 damage. Pull all foes in range 1 space, then *splash (self)*: 1 curse damage. Against *doomed* units, gains *pierce*.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -774,190 +988,26 @@
                   },
                   {
                     "name": "Lathean Devil Whip",
-                    "id": "417e-b479-1774-d227",
+                    "id": "f13f-224c-73f0-0bc5",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 7,
                     "type": "upgrade",
-                    "constraints": [{"id": "76b3-d095-34ce-ef4a", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "6ad8-defd-21c9-15a1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Lathean Devil Whip",
-                        "id": "798a-bcc0-170d-e0cb",
+                        "id": "0498-9cd3-ab56-952f",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 curse damage. **Effect**: Cannot benefit from *strength*. Instead, may remove up to three *weak* tokens from target to increase curse damage by +1 per *weak* token removed.",
+                            "name": "Effect",
+                            "$text": "1 curse damage. Cannot benefit from *strength*. Instead, may remove up to three *weak* tokens from target to increase curse damage by +1 per *weak* token removed.",
                             "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "SOUL Upgrades",
-                "id": "74e3-50e1-e2c0-d1b1",
-                "hidden": false,
-                "selectionEntries": [
-                  {
-                    "name": "Twist Sinews ",
-                    "id": "35a4-1850-b409-f727",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 1,
-                    "type": "upgrade",
-                    "constraints": [{"id": "983b-2ac6-38e7-d7cd", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Twist Sinews ",
-                        "id": "dc37-121d-8f39-cb5b",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Curse, Any turn. Range 2-4. ", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Description", "$text": "**Trigger**: Start of turn.\n **Effect**: Pull unit 1 in any direction.", "typeId": "07d2-d978-e8e2-acb2"}
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Writhing Curse ",
-                    "id": "7650-813a-7292-d969",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 2,
-                    "type": "upgrade",
-                    "constraints": [{"id": "4802-94f7-ce03-43da", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Writhing Curse ",
-                        "id": "cc13-d4cc-224f-5a9b",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Foe turn, Curse, Range 1-4", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn start.\n**Effect**: At the end of their turn, foe inflicts *splash (self)* 1 curse damage and 1 *weak*, only affecting their allies.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Disincorporate ",
-                    "id": "4300-abaa-d9e1-f2c1",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 3,
-                    "type": "upgrade",
-                    "constraints": [{"id": "9be4-e9f6-9de0-3fa2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Disincorporate ",
-                        "id": "1059-3970-d474-dc95",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn. Range 1-4", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Remove self and an adjacent allied unit, then place self in free space in range, then place ally adjacent. If there is no room to place allies, return them at their original location.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Eternal Curse ",
-                    "id": "c55c-eb8d-c791-9c75",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 4,
-                    "type": "upgrade",
-                    "constraints": [{"id": "8ef4-a555-cb6e-3721", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Eternal Curse ",
-                        "id": "6d7d-1e58-2ebb-5b27",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": " Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: A unit is slain. \n**Effect**: Transfer all negative tokens to a different unit anywhere, then increase those tokens by 1.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Malebolge ",
-                    "id": "ad7f-67fa-8239-483c",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 5,
-                    "type": "upgrade",
-                    "constraints": [{"id": "6998-1763-8659-9975", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Malebolge ",
-                        "id": "5b50-b274-ca22-508a",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Scour the battlefield with frozen wind, pulling all foes 2 spaces in the same direction. Foes that would be pulled into walls or adverse terrain for the first time during this pull take 1 damage.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Devil Impact ",
-                    "id": "f983-c954-d57d-37b4",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 6,
-                    "type": "upgrade",
-                    "constraints": [{"id": "30f1-42eb-d5dc-6535", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Great Satania",
-                        "id": "a225-20a7-d101-874a",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own turn, Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: *Doom* all enemy units in range. All *Doomed* enemy units instead take 1 curse damage, +1 per *Doom* token they have.",
-                            "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
                       }
@@ -1023,8 +1073,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Pull 1 or (5+) 2 spaces. Ignores line of sight.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Pull 1 or (5+) 2 spaces. Ignores line of sight.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1034,8 +1085,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 1 damage and (4+) *Dooms* unit.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage and (4+) *Dooms* unit.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1157,7 +1209,7 @@
           {"name": "House Unit", "id": "39fd-244d-231f-3029", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Scion", "id": "eb2f-b5c8-face-f88b", "hidden": false, "primary": false, "targetId": "fa04-6df6-fc81-7d88"}
         ],
-        "constraints": [{"id": "725b-712f-cd70-86f9", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "constraints": [{"id": "725b-712f-cd70-86f9", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 3}],
         "profiles": [
           {
             "name": "Chosen",
@@ -1187,12 +1239,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Create a wall in range (3+) then create adverse terrain (5+) then create adverse terrain again.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Tag", "$text": "Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Create a wall in range (3+) then create adverse terrain (5+) then create adverse terrain again.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1202,10 +1251,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Curse, Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Pull 1, ignoring line of sight. If pulling a unit into a wall, pull 3 instead and the kidnapped unit can pass through walls and units during this pull.",
+                "name": "Effect",
+                "$text": "Pull 1, ignoring line of sight. If pulling a unit into a wall, pull 3 instead and the kidnapped unit can pass through walls and units during this pull.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1217,8 +1267,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 2 damage, then *Doom* *isolated* units. *Doomed* units gain 1 *weak*.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "2 damage, then *Doom* *isolated* units. *Doomed* units gain 1 *weak*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1377,8 +1428,9 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Curse, Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
+                "name": "Effect",
                 "$text": "*Curse: Splash (self)*: foes gain 1 *weak*. (5+): and are *Doomed*. *Doomed* units take 1 curse damage.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
@@ -1391,12 +1443,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**On hit**: 2 curse damage. \n**Effect**: Against *isolated* units, gain 1 *strength* and may then MOVE again.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "2 curse damage. Against *isolated* units, gain 1 *strength* and may then MOVE again.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1520,7 +1569,7 @@
         ],
         "constraints": [{"id": "2390-3ede-023e-70dd", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
-        {
+          {
             "name": "Banshee",
             "id": "f96e-40e8-e3e5-0414",
             "hidden": false,
@@ -1548,10 +1597,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Line 4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Line 4", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Line: 1 curse damage. *Isolated* or *Doomed* units take 1 curse damage again. May penetrate walls and does not damage walls.\n**Effect**: If this line passes through a wall, this unit gains 1 *strength*.",
+                "name": "Effect",
+                "$text": "1 curse damage. *Isolated* or *Doomed* units take 1 curse damage again. May penetrate walls and does not damage walls.\nIf this line passes through a wall, this unit gains 1 *strength*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1563,8 +1613,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Create a wall in range and (5+) adjacent foes to the wall gain 1 *weak*.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Create a wall in range and (5+) adjacent foes to the wall gain 1 *weak*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1730,12 +1781,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Pull 1 before making attack.\n**On hit**: 2 damage. Against *isolated* units, inflicts 1 *weak*.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Pull 1 before making attack.\n2 damage. Against *isolated* units, inflicts 1 *weak*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1745,10 +1793,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 2-3, Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Target unit gains 1 or (5+) 2 *weak*. At the end of their turn, create a wall in a free adjacent space to them.",
+                "name": "Effect",
+                "$text": "Target unit gains 1 or (5+) 2 *weak*. At the end of their turn, create a wall in a free adjacent space to them.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1905,7 +1954,7 @@
           }
         ],
         "profiles": [
-        {
+          {
             "name": "Bound Devil",
             "id": "0fa9-b8d6-cdd8-de93",
             "hidden": false,
@@ -1947,10 +1996,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Curse, Range 1-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: A unit in range gains 2 *weak*. The first time it MOVEs or steps before the end of its next turn, it becomes *Doomed*.",
+                "name": "Effect",
+                "$text": "A unit in range gains 2 *weak*. The first time it MOVEs or steps before the end of its next turn, it becomes *Doomed*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1962,12 +2012,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Unit gains 1 *weak* and is pulled 1. Double these effects if they are *isolated*.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Unit gains 1 *weak* and is pulled 1. Double these effects if they are *isolated*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1977,10 +2024,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit**: Deals 1 damage, +1 for each of the following that is true about the target: *Doomed*, *Isolated*, *Weak*, In adverse terrain, Adjacent to a wall.",
+                "name": "Effect",
+                "$text": "Deals 1 damage, +1 for each of the following that is true about the target: *Doomed*, *Isolated*, *Weak*, In adverse terrain, Adjacent to a wall.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]

@@ -9,8 +9,23 @@
     "revision": 1,
     "type": "catalogue",
     "catalogueLinks": [
-      {"name": "Campaign Rules", "id": "032a-3485-95bb-da22", "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
-      {"name": "Heresy", "id": "9188-d2e6-624a-43a0", "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+      {"name": "Campaign Rules", "id": "032a-3485-95bb-da22", "importRootEntries": true, "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
+      {"name": "Heresy", "id": "9188-d2e6-624a-43a0", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+    ],
+    "rules": [
+      {
+        "name": "Berserk",
+        "id": "bf36-d126-1d6c-523f",
+        "description": "After a berserk unit ACTs, it splashes (self) 1 damage, then discards a berserk token. This damage can’t be increased in any way. If this effect does not damage any other characters, it deals 1 piercing damage to itself instead. Berserk counts as a positive and a negative token.",
+        "hidden": false
+      },
+      {"name": "Charge", "id": "53ef-50b4-edaa-6bfd", "description": "Cannot be used round 1.", "hidden": false},
+      {
+        "name": "Retaliation",
+        "id": "9bfb-65cb-11c1-b5e5",
+        "description": "Deal 1 damage after any ability resolves that damages this unit, to whichever unit damaged them, even if this unit is slain.",
+        "hidden": false
+      }
     ],
     "selectionEntries": [
       {
@@ -71,8 +86,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 1 damage and (4+): 1 fire damage again, (6+): 1 fire damage again.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage and (4+): 1 fire damage again, (6+): 1 fire damage again.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -82,11 +98,13 @@
             "typeId": "dd79-c1b6-f795-8499",
             "typeName": "SOUL ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Own or allied turn start, Curse, Range 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Tag", "$text": "Own or allied turn start, Curse", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Deal 1 *piercing* fire damage to self or a unit in range. That damage cannot slay them. Unit gains 1 *berserk*, and 1 *speed*.",
+                "name": "Effect",
+                "$text": "Deal 1 *piercing* fire damage to self or a unit in range. That damage cannot slay them. Unit gains 1 *berserk*, and 1 *speed*.",
                 "typeId": "07d2-d978-e8e2-acb2"
               }
             ]
@@ -99,8 +117,10 @@
             "typeName": "SOUL ability",
             "characteristics": [
               {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-              {"name": "Description", "$text": "**Effect**: *Obliterate* an adjacent unit at 1 hp or lower. Gain 2 *strength*, then step 2.", "typeId": "07d2-d978-e8e2-acb2"}
+              {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+              {"name": "Effect", "$text": "*Obliterate* an adjacent unit at 1 hp or lower. Gain 2 *strength*, then step 2.", "typeId": "07d2-d978-e8e2-acb2"}
             ]
           }
         ],
@@ -204,9 +224,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Convert up to 3 negative tokens on self or adjacent allies to *speed* or *strength* tokens. Then this unit becomes *curseproof* until the start of its next turn.",
+                            "name": "Effect",
+                            "$text": "Convert up to 3 negative tokens on self or adjacent allies to *speed* or *strength* tokens. Then this unit becomes *curseproof* until the start of its next turn.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -229,8 +250,9 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {"name": "Description", "$text": "Pull a unit in range 2 spaces, then (3+): pull another unit and (5+): pull another unit.", "typeId": "4ce0-5160-a645-5c3d"}
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "Pull a unit in range 2 spaces, then (3+): pull another unit and (5+): pull another unit.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
@@ -252,9 +274,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Destroy all adjacent walls. Then, self and two other adjacent units may step 1 and gain 1 speed.",
+                            "name": "Effect",
+                            "$text": "Destroy all adjacent walls. Then, self and two other adjacent units may step 1 and gain 1 *speed*.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -278,11 +301,8 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Gain 1 *strength* and 1 *berserk*, then double all *berserk* and *strength* tokens.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "Gain 1 *strength* and 1 *berserk*, then double all *berserk* and *strength* tokens.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
@@ -303,10 +323,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 2 damage, then 1 fire damage again. **Effect**: This attack rolls -1D. Ignore this penalty against large units.",
+                            "name": "Effect",
+                            "$text": "2 damage, then 1 fire damage again. This attack rolls -1D. Ignore this penalty against large units.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -329,10 +350,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Line 4", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Line 4", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "*Line*: 1 damage. If only one unit is caught in the area, damage gains *piercing* and this line passes through and destroys walls.",
+                            "name": "Effect",
+                            "$text": "1 damage. If only one unit is caught in the area, damage gains *piercing* and this line passes through and destroys walls.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -355,10 +377,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 fire damage. **Effect**: Increase this damage by +1 on hit for every 3 hp this unit is missing. If this unit is at 0 hp, this damage *obliterates* its target if it slays them.",
+                            "name": "Effect",
+                            "$text": "1 fire damage. Increase this damage by +1 on hit for every 3 hp this unit is missing. If this unit is at 0 hp, this damage *obliterates* its target if it slays them.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -389,13 +412,11 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Self or unit in range gains 2 *speed*. If the unit is at 0 hp, *splash (target)*: 1 fire damage.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Self or unit in range gains 2 *speed*. If the unit is at 0 hp, *splash (target)*: 1 fire damage.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -417,12 +438,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: You slay a unit. \n**Effect**: Step 1. All allied units in range 1-2 may step 1.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "You slay a unit. ", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Step 1. All allied units in range 1-2 may step 1.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -444,8 +463,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Description", "$text": "**Effect**: MOVE in a straight line, then deal 1 fire damage to an adjacent foe.", "typeId": "07d2-d978-e8e2-acb2"}
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "MOVE in a straight line, then deal 1 fire damage to an adjacent foe.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -467,10 +488,12 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "After a unit ACTs. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: After a unit ACTs. \n**Effect**: Step 1, then deal 1 *piercing* damage to an adjacent unit. *Speed* can be spent to extend this step by +2. If that unit is slain, repeat this effect. It can repeat any number of times.",
+                            "name": "Effect",
+                            "$text": "Step 1, then deal 1 *piercing* damage to an adjacent unit. *Speed* can be spent to extend this step by +2. If that unit is slain, repeat this effect. It can repeat any number of times.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -494,10 +517,12 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Unit is slain. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: Unit is slain. \n**Effect**: Unit is not slain but remains at 0 hp and becomes immune to all damage. At the end of its next turn, it explodes, *obliterating* it, and dealing *splash (self)*: 1 fire damage.",
+                            "name": "Effect",
+                            "$text": "Unit is not slain but remains at 0 hp and becomes immune to all damage. At the end of its next turn, it explodes, *obliterating* it, and dealing *splash (self)*: 1 fire damage.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -521,12 +546,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: You deal damage to an adjacent foe. \n**Effect**: Deal 6 devil damage to that foe. Then deal 6 devil damage to yourself.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "You deal damage to an adjacent foe. ", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Deal 6 devil damage to that foe. Then deal 6 devil damage to yourself.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -543,374 +566,25 @@
             "sortIndex": 2,
             "selectionEntryGroups": [
               {
-                "name": "SOUL Upgrades",
-                "id": "9806-0eae-fe43-38a7",
-                "hidden": false,
-                "selectionEntries": [
-                  {
-                    "name": "Overclock ",
-                    "id": "7c72-5636-3cce-edc8",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 1,
-                    "type": "upgrade",
-                    "constraints": [{"id": "16b0-7ad1-138a-7418", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Overclock ",
-                        "id": "13ad-b64c-ea98-77fc",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn, Range 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Self or unit in range gains 2 *speed*. If the unit is at 0 hp, *splash (target)*: 1 fire damage.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Gorebather",
-                    "id": "4ddd-7003-7656-800a",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 2,
-                    "type": "upgrade",
-                    "constraints": [{"id": "36de-4cb8-5ce6-50e0", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Gorebather",
-                        "id": "9d55-0dc6-79ff-e25c",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: You slay a unit. \n**Effect**: Step 1. All allied units in range 1-2 may step 1.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Hellrider Kick ",
-                    "id": "30d2-0154-adde-b72a",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 3,
-                    "type": "upgrade",
-                    "constraints": [{"id": "5518-a310-8ea0-9ce3", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Hellrider Kick ",
-                        "id": "a77e-a020-f1c2-6f65",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Description", "$text": "**Effect**: MOVE in a straight line, then deal 1 fire damage to an adjacent foe.", "typeId": "07d2-d978-e8e2-acb2"}
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Killing Spree",
-                    "id": "664c-318b-c15e-1137",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 4,
-                    "type": "upgrade",
-                    "constraints": [{"id": "ebf6-742e-a130-150e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Killing Spree",
-                        "id": "c8ab-2730-e20c-d504",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: After a unit ACTs. \n**Effect**: Step 1, then deal 1 *piercing* damage to an adjacent unit. *Speed* can be spent to extend this step by +2. If that unit is slain, repeat this effect. It can repeat any number of times.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Blood Boil",
-                    "id": "f9c1-882e-f919-dd79",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 5,
-                    "type": "upgrade",
-                    "constraints": [{"id": "4541-a71b-6b05-2712", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Blood Boil",
-                        "id": "273e-cb0f-67c8-d8da",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: Unit is slain. \n**Effect**: Unit is not slain but remains at 0 hp and becomes immune to all damage. At the end of its next turn, it explodes, *obliterating* it, and dealing *splash (self)*: 1 fire damage.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Devil Impact ",
-                    "id": "6290-32ec-cffc-6486",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 6,
-                    "type": "upgrade",
-                    "constraints": [{"id": "3816-2405-4be9-5ef8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Devil Impact ",
-                        "id": "91e4-2b82-a265-a2e4",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: You deal damage to an adjacent foe. \n**Effect**: Deal 6 devil damage to that foe. Then deal 6 devil damage to yourself.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "ACT Upgrades",
-                "id": "27d9-a9eb-4240-99d4",
-                "hidden": false,
-                "selectionEntries": [
-                  {
-                    "name": "Quench",
-                    "id": "573b-52af-ab36-a0dc",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 1,
-                    "type": "upgrade",
-                    "constraints": [{"id": "a9e7-72dd-edf2-a7bb", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Quench",
-                        "id": "8f67-00ca-0b05-5ec4",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Convert up to 3 negative tokens on self or adjacent allies to *speed* or *strength* tokens. Then this unit becomes *curseproof* until the start of its next turn.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Frenzy Chain",
-                    "id": "0aa4-0f8f-ceed-4dbc",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 2,
-                    "type": "upgrade",
-                    "constraints": [{"id": "d341-03c2-594a-40a2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Frenzy Chain",
-                        "id": "be09-a298-b36a-2d62",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {"name": "Description", "$text": "Pull a unit in range 2 spaces, then (3+): pull another unit and (5+): pull another unit.", "typeId": "4ce0-5160-a645-5c3d"}
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Furious Roar",
-                    "id": "e125-5fea-e1bc-fc96",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 3,
-                    "type": "upgrade",
-                    "constraints": [{"id": "3259-e251-c3c2-c0ab", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Furious Roar",
-                        "id": "d37e-67ce-bda8-4161",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Destroy all adjacent walls. Then, self and two other adjacent units may step 1 and gain 1 speed.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Apoplexy",
-                    "id": "e450-a1a7-32d2-bf5e",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 4,
-                    "type": "upgrade",
-                    "constraints": [{"id": "f260-bc50-cd88-0ed7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Apoplexy",
-                        "id": "76df-9e4a-2239-381b",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Gain 1 *strength* and 1 *berserk*, then double all *berserk* and *strength* tokens.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Pilebunker",
-                    "id": "c8ba-57f3-4210-dc42",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 5,
-                    "type": "upgrade",
-                    "constraints": [{"id": "7a29-d872-8a57-bfe2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Pilebunker",
-                        "id": "62f1-8be8-eef9-4cc2",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**On hit**: 2 damage, then 1 fire damage again. **Effect**: This attack rolls -1D. Ignore this penalty against large units.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Saw Toothed Slayer Axe",
-                    "id": "cd9a-b363-fd0c-66a0",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 6,
-                    "type": "upgrade",
-                    "constraints": [{"id": "a155-2888-ce06-3b3d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Saw Toothed Slayer Axe",
-                        "id": "c11d-6e47-deda-a0fe",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Line 4", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "*Line*: 1 damage. If only one unit is caught in the area, damage gains *piercing* and this line passes through and destroys walls.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Spine Devil Blade",
-                    "id": "2e9b-4ca7-3087-cd31",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 7,
-                    "type": "upgrade",
-                    "constraints": [{"id": "7a71-fae0-a79c-9cd4", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Spine Devil Blade",
-                        "id": "93ab-d5ee-5be6-d54b",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 fire damage. **Effect**: Increase this damage by +1 on hit for every 3 hp this unit is missing. If this unit is at 0 hp, this damage *obliterates* its target if it slays them.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
                 "name": "Bonus Traits",
-                "id": "b7a2-d2fe-dd4d-9382",
+                "id": "8f75-2b31-bba8-fd43",
                 "hidden": false,
-                "constraints": [{"id": "089a-cbc6-c045-e7c7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "sortIndex": 1,
+                "constraints": [{"id": "3ffa-3f23-fc86-c743", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                 "selectionEntries": [
                   {
                     "name": "Blood Drinker",
-                    "id": "4c55-9467-6a79-8f32",
+                    "id": "e094-220d-a6c1-59b7",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "ef07-435c-8b72-5354", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "41fd-be8c-4e94-8822", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Blood Drinker",
-                        "id": "7b6e-802f-ad9d-f565",
+                        "id": "f9ef-dfd1-19f8-118a",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -920,17 +594,17 @@
                   },
                   {
                     "name": "Nerve Twitch",
-                    "id": "ee4d-cf89-f96a-93f1",
+                    "id": "e1c6-e798-d92e-4796",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "f038-44d6-0e72-39d8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "c9c7-eccc-cba9-4021", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Nerve Twitch",
-                        "id": "f7be-d8c4-e945-da6b",
+                        "id": "3566-c00b-9182-d3d3",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -940,20 +614,375 @@
                   },
                   {
                     "name": "Blood Rush",
-                    "id": "94c0-0cad-2242-0565",
+                    "id": "9a0c-117f-1020-7632",
                     "hidden": false,
                     "import": true,
                     "type": "upgrade",
-                    "constraints": [{"id": "23e8-991d-597f-1e49", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "3093-a6de-6bba-24fd", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Blood Rush",
-                        "id": "f2a8-2c40-395a-a73b",
+                        "id": "4d18-6bd5-d930-ccea",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
                         "characteristics": [{"name": "Description", "$text": "At 3 hp or lower, gain *retaliation*.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "314a-ea60-569f-42c3",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "Quench",
+                    "id": "0077-16b1-2865-ef49",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3e4e-6091-8a93-5185", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Quench",
+                        "id": "b4f4-02c6-b0ec-3fd4",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Convert up to 3 negative tokens on self or adjacent allies to *speed* or *strength* tokens. Then this unit becomes *curseproof* until the start of its next turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Frenzy Chain",
+                    "id": "a5a6-ebc4-853e-1010",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "a6e3-b4f3-b94d-50fc", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Frenzy Chain",
+                        "id": "93bf-860d-c48e-516d",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "Pull a unit in range 2 spaces, then (3+): pull another unit and (5+): pull another unit.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Furious Roar",
+                    "id": "b4a2-b01e-fdcb-f83c",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "1961-6f54-9a53-384e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Furious Roar",
+                        "id": "bb42-8478-0b81-8219",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Destroy all adjacent walls. Then, self and two other adjacent units may step 1 and gain 1 *speed*.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Apoplexy",
+                    "id": "3b58-0a8d-a9de-1d06",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "5c48-6446-dfa0-cd0b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Apoplexy",
+                        "id": "72ea-2870-490e-f215",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "Gain 1 *strength* and 1 *berserk*, then double all *berserk* and *strength* tokens.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Pilebunker",
+                    "id": "f81a-caeb-bd5a-2aeb",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "1763-af4d-65eb-5296", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Pilebunker",
+                        "id": "233f-6518-b1a1-062e",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "2 damage, then 1 fire damage again. This attack rolls -1D. Ignore this penalty against large units.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Saw Toothed Slayer Axe",
+                    "id": "fd49-8753-b095-344e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "f5ec-64cf-7492-ef70", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Saw Toothed Slayer Axe",
+                        "id": "b2cd-0d8b-4372-cec4",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Line 4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 damage. If only one unit is caught in the area, damage gains *piercing* and this line passes through and destroys walls.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Spine Devil Blade",
+                    "id": "426b-2021-93f2-8e4e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "1860-e19a-96ab-9ed8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Spine Devil Blade",
+                        "id": "4c15-1482-9f0d-4590",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 fire damage. Increase this damage by +1 on hit for every 3 hp this unit is missing. If this unit is at 0 hp, this damage *obliterates* its target if it slays them.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "6154-3c32-ea2e-df23",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Overclock ",
+                    "id": "e5c8-679f-99cd-057c",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "b0d1-c38b-1f0a-f194", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Overclock ",
+                        "id": "da41-481f-bf08-3fc3",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Self or unit in range gains 2 *speed*. If the unit is at 0 hp, *splash (target)*: 1 fire damage.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Gorebather",
+                    "id": "2f07-8d78-3e9a-a61d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "0b9c-c8bd-ac29-8ea2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Gorebather",
+                        "id": "347d-a083-b2d6-ce0f",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You slay a unit. ", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Step 1. All allied units in range 1-2 may step 1.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Hellrider Kick ",
+                    "id": "9183-c912-f097-b4b8",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "4bb4-07d7-3e79-dfb9", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Hellrider Kick ",
+                        "id": "b46a-f7d8-fad0-6969",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "MOVE in a straight line, then deal 1 fire damage to an adjacent foe.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Killing Spree",
+                    "id": "0f67-3e64-2431-100a",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c19d-53be-de80-e5fe", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Killing Spree",
+                        "id": "6c48-adce-a91c-fe21",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or allied turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "After a unit ACTs. ", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Step 1, then deal 1 *piercing* damage to an adjacent unit. *Speed* can be spent to extend this step by +2. If that unit is slain, repeat this effect. It can repeat any number of times.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Blood Boil",
+                    "id": "0853-5b70-1cc3-42ce",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "40b3-f372-eba4-e2ed", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Blood Boil",
+                        "id": "5be8-3409-ec28-6a89",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Unit is slain. ", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Unit is not slain but remains at 0 hp and becomes immune to all damage. At the end of its next turn, it explodes, *obliterating* it, and dealing *splash (self)*: 1 fire damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Devil Impact ",
+                    "id": "df7e-cc28-2a07-5d18",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "20c4-34e9-5a9e-7a3c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Devil Impact ",
+                        "id": "3a43-3361-2d1e-b9a7",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You deal damage to an adjacent foe. ", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Deal 6 devil damage to that foe. Then deal 6 devil damage to yourself.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
                       }
                     ]
                   }
@@ -1018,9 +1047,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Next MOVE goes as far as possible in a straight line, passing through and dealing 1 damage to any units passed through.",
+                "name": "Effect",
+                "$text": "Next MOVE goes as far as possible in a straight line, passing through and dealing 1 damage to any units passed through.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1032,8 +1062,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 1 damage and 1 damage to another adjacent unit.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage and 1 damage to another adjacent unit.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1155,7 +1186,7 @@
           {"name": "House Unit", "id": "7fe3-7b45-b663-0b50", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Scion", "id": "f45e-e331-2904-7a89", "hidden": false, "primary": false, "targetId": "fa04-6df6-fc81-7d88"}
         ],
-        "constraints": [{"id": "26b6-7738-3dfe-5531", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "constraints": [{"id": "26b6-7738-3dfe-5531", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 3}],
         "profiles": [
           {
             "name": "Carnifex",
@@ -1192,11 +1223,8 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Gain 1 *strength* and *speed* (4+) and *retaliation* until the start of this unit’s next turn.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Gain 1 *strength* and *speed* (4+) and *retaliation* until the start of this unit’s next turn.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1206,8 +1234,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 1 damage, and (effect: 4+): 1 damage again, (6+): 1 damage again.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage, and (effect: 4+): 1 damage again, (6+): 1 damage again.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1218,9 +1247,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Next MOVE goes as far as possible in a straight line, passing through units. Then, all units moved through take 1 fire damage. If no units were moved though, gain *retaliation*.",
+                "name": "Effect",
+                "$text": "Next MOVE goes as far as possible in a straight line, passing through units. Then, all units moved through take 1 fire damage. If no units were moved though, gain *retaliation*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1380,8 +1410,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Curse, Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Unit gains 2 *berserk* or 2 *speed*.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Unit gains 2 *berserk* or 2 *speed*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1391,10 +1422,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Curse, Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Curse, ", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Clear all negative tokens on self or a unit, then deal 1 *piercing* fire damage to them. This damage can’t slay a unit.",
+                "name": "Effect",
+                "$text": "Clear all negative tokens on self or a unit, then deal 1 *piercing* fire damage to them. This damage can’t slay a unit.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1406,8 +1438,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Pull, Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Pull unit 3", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Pull", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Pull unit 3", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1550,7 +1583,7 @@
           }
         ],
         "profiles": [
-        {
+          {
             "name": "Berserker",
             "id": "8722-94b6-f6fa-6490",
             "hidden": false,
@@ -1607,9 +1640,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Pull all units in range 2 one space towards this unit. Then *splash (self)*: 1 fire damage and destroy all adjacent walls.",
+                "name": "Effect",
+                "$text": "Pull all units in range 2 one space towards this unit. Then *splash (self)*: 1 fire damage and destroy all adjacent walls.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1622,9 +1656,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Gain 1 *strength* and 1 *berserk*, (4+) then gain *retaliation* until start of this unit’s next turn.",
+                "name": "Effect",
+                "$text": "Gain 1 *strength* and 1 *berserk*, (4+) then gain *retaliation* until start of this unit’s next turn.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1636,10 +1671,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit**: 2 damage. Deal 1 damage again if this unit has 3 or less hp, then deal 1 damage again if it is at 1 hp or less.",
+                "name": "Effect",
+                "$text": " 2 damage. Deal 1 damage again if this unit has 3 or less hp, then deal 1 damage again if it is at 1 hp or less.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1799,8 +1835,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 1 damage and (4+) 1 damage again. (6+) 1 damage again.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage and (4+) 1 damage again. (6+) 1 damage again.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1811,9 +1848,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Unit MOVEs as far as possible in a straight line until it would enter the space of an unit, or it runs out of movement. That unit takes 1 fire damage. Then this unit gains 2 *speed*.",
+                "name": "Effect",
+                "$text": "Unit MOVEs as far as possible in a straight line until it would enter the space of an unit, or it runs out of movement. That unit takes 1 fire damage. Then this unit gains 2 *speed*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1973,10 +2011,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Tinker with an adjacent unit. Unit gains 1 *berserk*, then roll the effect die (1-3): Increase unit’s MV stat by +1 this battle, (4-5): increase a unit’s DF stat by +1 this battle, to a max of 6+, (6+): Increase unit’s current and max hp by 1 this battle.",
+                "name": "Effect",
+                "$text": "Tinker with an adjacent unit. Unit gains 1 *berserk*, then roll the effect die (1-3): Increase unit’s MV stat by +1 this battle, (4-5): increase a unit’s DF stat by +1 this battle, to a max of 6+, (6+): Increase unit’s current and max hp by 1 this battle.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1988,10 +2027,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Self or a unit in range gains 2 *speed*. If target is at 0 hp or lower, splash (target) 1 fire damage.",
+                "name": "Effect",
+                "$text": "Self or a unit in range gains 2 *speed*. If target is at 0 hp or lower, splash (target) 1 fire damage.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -2003,8 +2043,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Ally, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Self or an adjacent ally has their hp set to 1.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Ally", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Self or an adjacent ally has their hp set to 1.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],

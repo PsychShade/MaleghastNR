@@ -9,8 +9,22 @@
     "revision": 1,
     "type": "catalogue",
     "catalogueLinks": [
-      {"name": "Campaign Rules", "id": "8e03-aa83-94a9-e500", "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
-      {"name": "Heresy", "id": "60ca-d352-9c78-72d5", "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+      {"name": "Campaign Rules", "id": "8e03-aa83-94a9-e500", "importRootEntries": true, "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
+      {"name": "Heresy", "id": "60ca-d352-9c78-72d5", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+    ],
+    "rules": [
+      {
+        "name": "Miracle",
+        "id": "61cc-9eb7-c792-cb46",
+        "description": "Abhorrer faction tag. When a unit with miracle is slain, it has a 5+ effect chance to return to life at the end of that turn with 1 hp, clearing all tokens.",
+        "hidden": false
+      },
+      {
+        "name": "Stance",
+        "id": "def1-f0d5-bdbb-1cc9",
+        "description": "An ability with stance gains different effects on odd, even, or special numbered rounds.",
+        "hidden": false
+      }
     ],
     "selectionEntries": [
       {
@@ -51,10 +65,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit**: 1 damage. *Stance (Odd)*: and step 2, *Stance (Even)*: and gain 1 *vitality*, *Stance (Round 5+)*: Increase damage to 3.",
+                "name": "Effect",
+                "$text": "1 damage. *Stance (Odd)*: and step 2, *Stance (Even)*: and gain 1 *vitality*, *Stance (Round 5+)*: Increase damage to 3.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -66,11 +81,13 @@
             "typeId": "dd79-c1b6-f795-8499",
             "typeName": "SOUL ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Any turn\nRange 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Tag", "$text": "Any turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
               {
-                "name": "Description",
-                "$text": "**Trigger**: Turn start. \n**Effect**: Self takes 1 piercing damage, which cannot slay self. One allied unit in range gains one, (4+) two, or (6+) three *vitality*.",
+                "name": "Effect",
+                "$text": " Self takes 1 *piercing* damage, which cannot slay self. One allied unit in range gains one, (4+) two, or (6+) three *vitality*.",
                 "typeId": "07d2-d978-e8e2-acb2"
               }
             ]
@@ -82,11 +99,13 @@
             "typeId": "dd79-c1b6-f795-8499",
             "typeName": "SOUL ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Own or Allied Turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Tag", "$text": "Own or Allied Turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Trigger", "$text": "Turn start. ", "typeId": "1168-c65d-8a02-19c3"},
               {
-                "name": "Description",
-                "$text": "**Trigger**: Turn start. \n**Effect**: For this turn only, self or allied unit in range may treat the current round number as either 2 or 5.",
+                "name": "Effect",
+                "$text": "For this turn only, self or allied unit in range may treat the current round number as either 2 or 5.",
                 "typeId": "07d2-d978-e8e2-acb2"
               }
             ]
@@ -192,11 +211,8 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: *Splash (self)*. Self and allies in the area may convert any number of *vitality* to *strength*.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "*Splash (self)*. Self and allies in the area may convert any number of *vitality* to *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
@@ -217,10 +233,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-4", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Remove all negative tokens on an ally, then transfer to self. That ally gains 1 *vitality* per negative token removed (up to 3 times) and becomes *curseproof* until the start of its next turn.",
+                            "name": "Effect",
+                            "$text": "Remove all negative tokens on an ally, then transfer to self. That ally gains 1 *vitality* per negative token removed (up to 3 times) and becomes *curseproof* until the start of its next turn.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -244,9 +261,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Gain 1 *vitality*. Until end of next turn, self and adjacent allies may spend this unit’s hp as if it were *vitality* tokens.",
+                            "name": "Effect",
+                            "$text": "Gain 1 *vitality*. Until end of next turn, self and adjacent allies may spend this unit’s hp as if it were *vitality* tokens.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -270,9 +288,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Curse, Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Until end of this unit’s next turn, foes ending their turn in range 2 of this unit have a hazard created under them, then are pushed 1.",
+                            "name": "Effect",
+                            "$text": "Until end of this unit’s next turn, foes ending their turn in range 2 of this unit have a hazard created under them, then are pushed 1.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -295,10 +314,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 2-2. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-2", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 holy damage and *splash (target)*: 1 holy damage. *Stance (Round 3+)*: and create a hazard under primary target (round 5+) all units in the area.",
+                            "name": "Effect",
+                            "$text": "1 holy damage and *splash (target)*: 1 holy damage. *Stance (Round 3+)*: and create a hazard under primary target (round 5+) all units in the area.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -321,10 +341,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 2 damage. *Stance*: May step spaces up to the round number with *free movement*, in a straight line, before the attack. On hit, push target half that many spaces.",
+                            "name": "Effect",
+                            "$text": "2 damage. *Stance*: May step spaces up to the round number with *free movement*, in a straight line, before the attack. On hit, push target half that many spaces.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -347,10 +368,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, range 2-4. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 damage. *Stance*: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead.",
+                            "name": "Effect",
+                            "$text": "1 damage. *Stance*: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -382,12 +404,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn end. \n**Effect**: Stance: Step spaces equal to 1 + the round number, then push an adjacent unit 1.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "Turn end", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "*Stance*: Step spaces equal to 1 + the round number, then push an adjacent unit 1.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -408,11 +428,13 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or Allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or Allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn start. \n**Effect**: Unit becomes *curseproof* until end of its next turn and attacks against it gain -1D for the duration.",
+                            "name": "Effect",
+                            "$text": "Unit becomes *curseproof* until end of its next turn and attacks against it gain -1D for the duration.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -435,11 +457,13 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own turn\nLine", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own turn, Line", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn start.\n**Effect**: Step 1, then cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1. *Stance (R5+)*: This damage becomes Devil Damage.",
+                            "name": "Effect",
+                            "$text": "Step 1, then cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1. *Stance (Round 5+)*: This damage becomes Devil Damage.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -463,10 +487,12 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "This unit takes damage from an ACT ability, and that ability resolves. ", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: This unit takes damage from an ACT ability, and that ability resolves. \n**Effect**: *Splash (self)*: remove 1 negative token on self or gain 1 *vitality* for every foe in the splash area. *Stance (R4+)*: both effects trigger.",
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: remove 1 negative token on self or gain 1 *vitality* for every foe in the splash area. *Stance (Round 4+)*: both effects trigger.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -490,10 +516,12 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**5 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You hit an attack", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: You hit an attack. \n**Effect**: *Splash (self)*: 1 holy damage. *Stance (R3+)*: 2 holy damage *(R5+)*: 4 holy damage. *(R6+)*: 5 holy damage.",
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: 1 holy damage. *Stance (Round 3+)*: 2 holy damage *(Round 5+)*: 4 holy damage. *(Round 6+)*: 5 holy damage.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -517,10 +545,12 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Allied unit is slain", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger**: Allied unit is slain. \n**Effect**: Return unit to life at 1 hp at the end of the turn and remove all negative tokens. It becomes immune to all damage and *curseproof* until the end of its next turn. *Stance (R3+)* and it gains 1 vitality *(R5+)* 3 *vitality* instead.",
+                            "name": "Effect",
+                            "$text": "Return unit to life at 1 hp at the end of the turn and remove all negative tokens. It becomes immune to all damage and *curseproof* until the end of its next turn. *Stance (Round 3+)* and it gains 1 vitality *(Round 5+)* 3 *vitality* instead.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -539,24 +569,203 @@
             "sortIndex": 2,
             "selectionEntryGroups": [
               {
-                "name": "Bonus Traits",
-                "id": "b832-555a-451f-b656",
+                "name": "SOUL Upgrades",
+                "id": "ba04-39cc-75b9-babd",
                 "hidden": false,
-                "constraints": [{"id": "7449-e621-c8f0-57e7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "sortIndex": 3,
                 "selectionEntries": [
                   {
-                    "name": "Corpse Violet Stance",
-                    "id": "b602-8657-25e1-8eb9",
+                    "name": "Sword Art: Drifting Blossoms",
+                    "id": "b126-68e0-695b-70e5",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "5817-9c24-1a10-ec65", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Drifting Blossoms",
+                        "id": "dae1-0df7-1d89-e2a3",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn end", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "*Stance*: Step spaces equal to 1 + the round number, then push an adjacent unit 1.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grace",
+                    "id": "734e-65ad-0f49-423b",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "2ded-4308-6335-4e02", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "5b6a-468b-526d-7b8f", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grace",
+                        "id": "947b-a115-b0ef-f611",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or Allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Unit becomes *curseproof* until end of its next turn and attacks against it gain -1D for the duration.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Safflower cut",
+                    "id": "891e-3410-4024-c6d4",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "9a05-7abb-649a-0b3f", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Safflower cut",
+                        "id": "fc45-8734-1e84-c532",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn, Line", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Step 1, then cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1. *Stance (Round 5+)*: This damage becomes Devil Damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Winter Sprout",
+                    "id": "c3d1-c393-3280-52e8",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "50f2-23f4-448e-0cea", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Winter Sprout",
+                        "id": "b464-7f1f-e838-01df",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "This unit takes damage from an ACT ability, and that ability resolves. ", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: remove 1 negative token on self or gain 1 *vitality* for every foe in the splash area. *Stance (Round 4+)*: both effects trigger.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                    "id": "ac20-1838-c9db-bfa8",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "8248-14e8-9aee-2175", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                        "id": "16d6-3c14-3bde-80e2",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**5 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You hit an attack", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: 1 holy damage. *Stance (Round 3+)*: 2 holy damage *(Round 5+)*: 4 holy damage. *(Round 6+)*: 5 holy damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Resurrection",
+                    "id": "8281-3c38-a06b-9c1d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "fcdb-fb22-17b4-0313", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Resurrection",
+                        "id": "d212-a2b5-8a52-7327",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Allied unit is slain", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Return unit to life at 1 hp at the end of the turn and remove all negative tokens. It becomes immune to all damage and *curseproof* until the end of its next turn. *Stance (Round 3+)* and it gains 1 vitality *(Round 5+)* 3 *vitality* instead.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Bonus Traits",
+                "id": "9be7-8a99-8b2f-24d7",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "ec77-4a38-1683-8df3", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Corpse Violet Stance",
+                    "id": "63f1-373c-8b7f-660e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "d1ff-a682-ff69-16cb", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Corpse Violet Stance",
-                        "id": "68a0-ff58-002d-ccb3",
+                        "id": "cb1d-960a-d7a3-dbcd",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -566,17 +775,17 @@
                   },
                   {
                     "name": "Winter Rose Stance",
-                    "id": "d669-fd6d-9f7e-a2f5",
+                    "id": "4a00-69d1-d600-344d",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "09b3-4b87-7874-701d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "625b-c1bc-94af-90d8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Winter Rose Stance",
-                        "id": "031f-ad14-ade7-2770",
+                        "id": "d504-b05c-33ca-f2a6",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -586,16 +795,16 @@
                   },
                   {
                     "name": "Royal Chrysanthemum Stance",
-                    "id": "8bf0-e60d-b8ab-041f",
+                    "id": "9767-0c00-f4ad-d2e5",
                     "hidden": false,
                     "import": true,
                     "type": "upgrade",
-                    "constraints": [{"id": "e050-1ded-18f1-8b70", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "19bb-c79d-f777-3c31", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Royal Chrysanthemum Stance",
-                        "id": "6217-1d43-5072-914b",
+                        "id": "3abe-d73e-2433-1916",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -607,55 +816,54 @@
               },
               {
                 "name": "ACT Upgrades",
-                "id": "e3c3-7bd6-0577-aaf8",
+                "id": "107f-5932-baa5-0a7e",
                 "hidden": false,
+                "sortIndex": 2,
                 "selectionEntries": [
                   {
                     "name": "Grand Oath",
-                    "id": "8d7e-b020-9cd5-eaa1",
+                    "id": "bdf6-6693-2cc6-b278",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "fad5-a4b1-3069-9e1e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "263f-f045-ae03-65c0", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Grand Oath",
-                        "id": "28d3-3a59-d8f8-bf10",
+                        "id": "0cac-6559-5618-0366",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: *Splash (self)*. Self and allies in the area may convert any number of *vitality* to *strength*.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "*Splash (self)*. Self and allies in the area may convert any number of *vitality* to *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
                   },
                   {
                     "name": "Redempta",
-                    "id": "f9ce-b2f4-f634-f40d",
+                    "id": "23d5-3e98-0bd1-ec42",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "1e62-004b-c778-8feb", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "4a41-d687-366f-eaad", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Redempta",
-                        "id": "47c9-988e-8607-46c0",
+                        "id": "baee-5126-3721-18e4",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-4", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Remove all negative tokens on an ally, then transfer to self. That ally gains 1 *vitality* per negative token removed (up to 3 times) and becomes *curseproof* until the start of its next turn.",
+                            "name": "Effect",
+                            "$text": "Remove all negative tokens on an ally, then transfer to self. That ally gains 1 *vitality* per negative token removed (up to 3 times) and becomes *curseproof* until the start of its next turn.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -664,24 +872,25 @@
                   },
                   {
                     "name": "Communion",
-                    "id": "f0ec-f582-f0aa-0293",
+                    "id": "d14e-8668-6d82-fd9e",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 3,
                     "type": "upgrade",
-                    "constraints": [{"id": "2e19-1edf-fa6c-ad44", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "037c-8034-49be-471a", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Communion",
-                        "id": "49e3-87bd-6d99-871f",
+                        "id": "7d88-ebe4-52c5-3742",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Gain 1 *vitality*. Until end of next turn, self and adjacent allies may spend this unit’s hp as if it were *vitality* tokens.",
+                            "name": "Effect",
+                            "$text": "Gain 1 *vitality*. Until end of next turn, self and adjacent allies may spend this unit’s hp as if it were *vitality* tokens.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -690,24 +899,25 @@
                   },
                   {
                     "name": "Decree of Forbiddance",
-                    "id": "f998-3975-1e8e-5fc6",
+                    "id": "694b-3a6b-8bba-e3fe",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 4,
                     "type": "upgrade",
-                    "constraints": [{"id": "3fcf-90f0-cec7-58bf", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "0d06-61f0-ca5e-11fe", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Decree of Forbiddance",
-                        "id": "6128-eba2-ee32-b239",
+                        "id": "0672-df22-18bb-cba8",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Curse, Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Until end of this unit’s next turn, foes ending their turn in range 2 of this unit have a hazard created under them, then are pushed 1.",
+                            "name": "Effect",
+                            "$text": "Until end of this unit’s next turn, foes ending their turn in range 2 of this unit have a hazard created under them, then are pushed 1.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -716,24 +926,25 @@
                   },
                   {
                     "name": "Holy Water Flail",
-                    "id": "e547-e109-46e5-f368",
+                    "id": "3ad3-37ec-82d2-c587",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 5,
                     "type": "upgrade",
-                    "constraints": [{"id": "55f7-1db9-9a9c-3025", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "5321-6a32-e357-7059", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Holy Water Flail",
-                        "id": "3893-1575-390c-3e44",
+                        "id": "14dd-6f30-6e44-de16",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 2-2. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-2", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 holy damage and *splash (target)*: 1 holy damage. *Stance (Round 3+)*: and create a hazard under primary target (round 5+) all units in the area.",
+                            "name": "Effect",
+                            "$text": "1 holy damage and *splash (target)*: 1 holy damage. *Stance (Round 3+)*: and create a hazard under primary target (round 5+) all units in the area.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -742,24 +953,25 @@
                   },
                   {
                     "name": "Relic Lance",
-                    "id": "3c4a-6e48-9685-6a00",
+                    "id": "eeec-797c-d8d5-cb4d",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 6,
                     "type": "upgrade",
-                    "constraints": [{"id": "01aa-152e-e3f6-f99a", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "b2c2-ec09-6288-5689", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Relic Lance",
-                        "id": "98cc-2180-ae3e-f5ce",
+                        "id": "1af6-47b8-7cf9-3852",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Melee.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 2 damage. *Stance*: May step spaces up to the round number with *free movement*, in a straight line, before the attack. On hit, push target half that many spaces.",
+                            "name": "Effect",
+                            "$text": "2 damage. *Stance*: May step spaces up to the round number with *free movement*, in a straight line, before the attack. On hit, push target half that many spaces.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -768,194 +980,26 @@
                   },
                   {
                     "name": "Starmetal Shuriken",
-                    "id": "4789-8468-d0d5-31fb",
+                    "id": "956f-85a3-a618-4d4d",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 7,
                     "type": "upgrade",
-                    "constraints": [{"id": "c2fa-c2d2-1cf3-691c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "3160-4464-36ea-dd29", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Starmetal Shuriken",
-                        "id": "b270-2fb0-61ca-d0eb",
+                        "id": "fc10-7f10-28c0-bf7f",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, range 2-4. ", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 damage. *Stance*: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead.",
+                            "name": "Effect",
+                            "$text": "1 damage. *Stance*: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead.",
                             "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "SOUL Upgrades",
-                "id": "85e3-b341-5e10-a3a8",
-                "hidden": false,
-                "selectionEntries": [
-                  {
-                    "name": "Sword Art: Drifting Blossoms",
-                    "id": "882c-f53d-8f6f-7bb2",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 1,
-                    "type": "upgrade",
-                    "constraints": [{"id": "e6fa-1047-28ec-aca5", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Sword Art: Drifting Blossoms",
-                        "id": "438d-b3b1-d2aa-7077",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn end. \n**Effect**: Stance: Step spaces equal to 1 + the round number, then push an adjacent unit 1.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Grace",
-                    "id": "84d1-e24f-20b1-1645",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 2,
-                    "type": "upgrade",
-                    "constraints": [{"id": "e213-97ec-5d2d-4950", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Grace",
-                        "id": "b0b8-9709-28fd-fd14",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own or Allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn start. \n**Effect**: Unit becomes *curseproof* until end of its next turn and attacks against it gain -1D for the duration.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Sword Art: Safflower cut",
-                    "id": "544d-270f-8f3c-e4e9",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 3,
-                    "type": "upgrade",
-                    "constraints": [{"id": "0615-2c2b-6830-c8f7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Sword Art: Safflower cut",
-                        "id": "c993-e3e0-1dd0-054a",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own turn\nLine", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: Turn start.\n**Effect**: Step 1, then cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1. *Stance (R5+)*: This damage becomes Devil Damage.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Sword Art: Winter Sprout",
-                    "id": "0a2e-b54d-00aa-6a3d",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 4,
-                    "type": "upgrade",
-                    "constraints": [{"id": "4dbb-efec-b751-870c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Sword Art: Winter Sprout",
-                        "id": "0d0f-b4fc-b932-8b95",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: This unit takes damage from an ACT ability, and that ability resolves. \n**Effect**: *Splash (self)*: remove 1 negative token on self or gain 1 *vitality* for every foe in the splash area. *Stance (R4+)*: both effects trigger.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
-                    "id": "265a-5d85-c1aa-e8ae",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 5,
-                    "type": "upgrade",
-                    "constraints": [{"id": "df61-c27d-b8ff-1f4b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
-                        "id": "1c89-fac2-d874-d7e9",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**5 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: You hit an attack. \n**Effect**: *Splash (self)*: 1 holy damage. *Stance (R3+)*: 2 holy damage *(R5+)*: 4 holy damage. *(R6+)*: 5 holy damage.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Resurrection",
-                    "id": "9798-342d-77b9-f4d2",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 6,
-                    "type": "upgrade",
-                    "constraints": [{"id": "8a99-035e-48e9-b6d4", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Resurrection",
-                        "id": "75b8-4585-384f-f5f2",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: Allied unit is slain. \n**Effect**: Return unit to life at 1 hp at the end of the turn and remove all negative tokens. It becomes immune to all damage and *curseproof* until the end of its next turn. *Stance (R3+)* and it gains 1 vitality *(R5+)* 3 *vitality* instead.",
-                            "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
                       }
@@ -1014,10 +1058,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit**: Self and an adjacent ally gain 1 *vitality* *(Stance: R4+)*: 2 *vitality*. Then deal 1 damage and push 1. Cannot miss allies and pushes them +1.",
+                "name": "Effect",
+                "$text": "Self and an adjacent ally gain 1 *vitality* *(Stance: Round 4+)*: 2 *vitality*. Then deal 1 damage and push 1. Cannot miss allies and pushes them +1.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1029,10 +1074,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Self, Ally, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Self, Ally", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Choose self or an adjacent ally. At the end of that unit’s turn, slay them. They splash (self) 1 holy damage to foes, 1 *vitality* to allies. *Stance (R4+)*: Damage gains *piercing* and also clears a negative token from all allies in the area.",
+                "name": "Effect",
+                "$text": "Choose self or an adjacent ally. At the end of that unit’s turn, slay them. They *splash (self)* 1 holy damage to foes, 1 *vitality* to allies. *Stance (Round 4+)*: Damage gains *piercing* and also clears a negative token from all allies in the area.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1044,8 +1090,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: Self or target unit converts all *vitality* into *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Self or target unit converts all *vitality* into *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1188,7 +1235,7 @@
           }
         ],
         "profiles": [
-        {
+          {
             "name": "Holy Body",
             "id": "8261-15a2-6c35-a94b",
             "hidden": false,
@@ -1224,10 +1271,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 3-5", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 3-5", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Create one or (4+) two or (6+) three hazards in range. May destroy a wall instead of creating a hazard.",
+                "name": "Effect",
+                "$text": "Create one or (4+) two or (6+) three hazards in range. May destroy a wall instead of creating a hazard.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1239,10 +1287,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Self: Range 3-5", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 3-5", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Remove one or two *vitality* tokens on this unit, then deal 1 holy damage to that many units in range, ignoring line of sight, and push those units 1. *Stance (R4+)*: damage becomes *piercing*.",
+                "name": "Effect",
+                "$text": "Remove one or two *vitality* tokens on this unit, then deal 1 holy damage to that many units in range, ignoring line of sight, and push those units 1. *Stance (Round 4+)*: damage becomes *piercing*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1255,9 +1304,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Gain two *vitality*. Until the start of this unit’s next turn, adjacent allies may spend *vitality* tokens on this unit as if they were their own.",
+                "name": "Effect",
+                "$text": "Gain two *vitality*. Until the start of this unit’s next turn, adjacent allies may spend *vitality* tokens on this unit as if they were their own.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1432,8 +1482,9 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
+                "name": "Effect",
                 "$text": "**Stance**: MOVE again. Whirling Chain deals +damage equal to half the round number the next time it hits, rounded up. This effect does not stack.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
@@ -1446,8 +1497,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit**: 2 damage. *Stance (Odd)*: and MOVE again, *Stance (Even)*: and push unit 2", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "2 damage. *Stance (Odd)*: and MOVE again, *Stance (Even)*: and push unit 2", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1569,7 +1621,7 @@
           {"name": "House Unit", "id": "2c55-c7f1-20de-9d67", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Scion", "id": "155e-c85e-025b-f4ad", "hidden": false, "primary": false, "targetId": "fa04-6df6-fc81-7d88"}
         ],
-        "constraints": [{"id": "a1f9-5e03-19d9-63d4", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "constraints": [{"id": "a1f9-5e03-19d9-63d4", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 3}],
         "profiles": [
           {
             "name": "Penitent",
@@ -1606,8 +1658,9 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
+                "name": "Effect",
                 "$text": "*Splash (self)*: Remove one negative token from all allies in range and place them on this unit. Then remove one, (4+) two, or (6+) all negative tokens from this unit, and gain 1 strength for each negative token removed this way.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
@@ -1620,8 +1673,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect**: 1 holy damage and (4+) create a hazard under target.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 holy damage and (4+) create a hazard under target.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1632,8 +1686,9 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
+                "name": "Effect",
                 "$text": "**On hit:** 1 damage, and *Stance* (Odd): *Splash (self):* 1 holy damage. *(Even)*: gain 1 vitality.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
@@ -1760,7 +1815,7 @@
         ],
         "constraints": [{"id": "e352-15ac-fd74-a3fd", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
-        {
+          {
             "name": "Inquisitor",
             "id": "c9e3-df74-004b-93a7",
             "hidden": false,
@@ -1795,11 +1850,8 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**Effect**: Step 1. Next attack from this unit gains +1D and +2 maximum range. This effect stacks.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Step 1. Next attack from this unit gains +1D and +2 maximum range. This effect stacks.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -1809,12 +1861,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 2-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {
-                "name": "Description",
-                "$text": "**On hit**: 2 damage. *Stance (Round 3+)*: with *piercing*. (Round 5+): 4 damage with *piercing*.",
-                "typeId": "4ce0-5160-a645-5c3d"
-              }
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "2 damage. *Stance (Round 3+)*: with *piercing*. (Round 5+): 4 damage with *piercing*.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -1979,9 +2028,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Gain 1 *vitality*. Become unable to MOVE or step until start of this unit’s next turn. At the start of that turn, a number of allied units adjacent to this unit equal to the current round number may gain 1 *vitality*.",
+                "name": "Effect",
+                "$text": "Gain 1 *vitality*. Become unable to MOVE or step until start of this unit’s next turn. At the start of that turn, a number of allied units adjacent to this unit equal to the current round number may gain 1 *vitality*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1993,10 +2043,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: An allied unit in range gains *miracle*. If it already had *miracle*, *miracle* triggers on a 2+ until the end of their next turn. At the end of that unit’s turn, they lose *miracle*.",
+                "name": "Effect",
+                "$text": "An allied unit in range gains *miracle*. If it already had *miracle*, *miracle* triggers on a 2+ until the end of their next turn. At the end of that unit’s turn, they lose *miracle*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -2009,9 +2060,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: *Stance (Odd)*: Remove a negative token from an ally in the area,\nthen grant that ally 1 *strength*. *(Even)*: *Splash (self)*: Foes take 1 holy damage.",
+                "name": "Effect",
+                "$text": "*Stance (Odd)*: Remove a negative token from an ally in the area, then grant that ally 1 *strength*. *(Even)*: *Splash (self)*: Foes take 1 holy damage.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]

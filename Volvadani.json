@@ -1,0 +1,1975 @@
+{
+  "catalogue": {
+    "name": "Volvadani",
+    "id": "a8f7-2ea3-43c8-225c",
+    "battleScribeVersion": "2.03",
+    "gameSystemId": "sys-6f8b-0e7c-218a-f6a4",
+    "gameSystemRevision": 1,
+    "library": false,
+    "revision": 1,
+    "type": "catalogue",
+    "catalogueLinks": [
+      {"name": "Campaign Rules", "id": "3caf-2953-4775-2565", "importRootEntries": true, "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
+      {"name": "Heresy", "id": "70b9-faf6-32d5-1d16", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
+    ],
+    "selectionEntries": [
+      {
+        "name": "Penitent Engine",
+        "id": "1a99-1186-c021-98cd",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 5,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "47cb-1fe5-bf4a-f4bf", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Tyrant", "id": "5108-3236-2b05-f600", "hidden": false, "primary": false, "targetId": "4e65-8d12-8eab-a6a7"}
+        ],
+        "constraints": [
+          {
+            "id": "e41d-c72c-b194-ea63",
+            "field": "selections",
+            "includeChildForces": true,
+            "includeChildSelections": true,
+            "scope": "roster",
+            "shared": true,
+            "type": "max",
+            "value": 1
+          }
+        ],
+        "modifiers": [
+          {
+            "field": "error",
+            "type": "add",
+            "value": "Only 1 Tyrant unit allowed",
+            "conditions": [{"childId": "4e65-8d12-8eab-a6a7", "childName": "Tyrant", "field": "selections", "scope": "parent", "shared": true, "type": "greaterThan", "value": 1}]
+          }
+        ],
+        "profiles": [
+          {
+            "name": "Penitent Engine",
+            "id": "00c2-16f7-5c8f-30f0",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "6", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "2+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "PHYS", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Sin Furnace",
+            "id": "8909-4a59-eb35-4fa7",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [
+              {
+                "name": "Description",
+                "$text": "Before entering any space when MOVEing, the Engine can consume an adjacent corpse, wall or hazard, removing it and gaining +1 burst charge. It can do this once per MOVE.",
+                "typeId": "14fe-a261-4f47-6f40"
+              }
+            ]
+          },
+          {
+            "name": "Large",
+            "id": "2c9c-fe63-7b52-e4b2",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "2x2 unit. See entry.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Pendulum Swing",
+            "id": "78cf-e798-37db-c21c",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Burst 1", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage and pull 1. Deals 2 damage against *criminals* with 3+ *guilt*.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Penitent Gaze",
+            "id": "7a5d-f3f6-67a6-d951",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Burst 1, Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Line 3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "The first foe in the line gains 1 *vulnerable* and 2 or (5+) 3 *guilt*.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Final Sentence",
+            "id": "d040-714a-1ec5-6484",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "An adjacent *criminal* with 3+ *guilt* takes 1 or (6+) 2 devil damage. If this *obliterates* the *criminal*, the engine feeds on their sin. It may immediately MOVE again and gains +1 burst charge per guilt on the criminal, distributed as it wishes.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "9129-9baa-3b0b-0888",
+            "hidden": false,
+            "constraints": [{"id": "db86-3745-fe33-b865", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "db86-3745-fe33-b865",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "55e1-fec7-07c8-e87e",
+                    "childName": "Tyrant",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "db86-3745-fe33-b865",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "55e1-fec7-07c8-e87e",
+                    "childName": "Tyrant",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Decapitate",
+                "id": "9289-5410-733d-f123",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "0736-63e2-8fbf-f70d", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Decapitate",
+                    "id": "178d-d5cd-2c9d-b62e",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Pendulum Swing deals devil damage against criminals with 4+ *guilt*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Heavy Swing",
+                "id": "65c7-018f-3339-7674",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "6b76-a3f0-bb66-730b", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Heavy Swing",
+                    "id": "b385-29d0-d2f5-0a05",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Pendulum Swing gains +1 maximum range but pushes 1 instead.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Hell Pins",
+                "id": "e0d3-11cd-dd35-87dc",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "f377-5cbb-e163-b2fd", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Hell Pins",
+                    "id": "3f6e-ff39-4727-0b70",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "A unit that survives Final Sentence gains 2 *vulnerable*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mancatcher",
+        "id": "068a-5883-36b6-5b98",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 3,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "64bc-d9ba-9bf7-4c21", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Hunter", "id": "99f7-df58-1d2f-6e8e", "hidden": false, "primary": false, "targetId": "8d86-d66c-554d-f5a5"}
+        ],
+        "constraints": [{"id": "67db-c908-7ad1-df65", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Mancatcher",
+            "id": "4e5e-c902-6626-f98b",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Make Quota",
+            "id": "b20e-b0cb-dd28-43e7",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "At the end of any turn this unit slays a *criminal*, may gain +2 burst to any ability.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Chain Grab",
+            "id": "61b5-12b1-f1c8-c80d",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Burst 2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 3-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "1 damage and pull target spaces  equal to their *guilt*. *Criminals* with 3+ *guilt* take 1 fire damage again.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Spinecracker",
+            "id": "2989-688b-cbf1-e068",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Foe, Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Target foe must choose: gain 1 *vulnerable* and become unable to MOVE until the end of its next turn, or take *piercing* fire damage equal to their *guilt*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "6f59-dea0-06d6-6aaf",
+            "hidden": false,
+            "constraints": [{"id": "cdc9-6e6f-53be-21a1", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "cdc9-6e6f-53be-21a1",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "ebda-48f8-bd51-2c2b",
+                    "childName": "Hunter",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "cdc9-6e6f-53be-21a1",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "ebda-48f8-bd51-2c2b",
+                    "childName": "Hunter",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Iron Coffin",
+                "id": "9ffa-0168-a3a0-1aae",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "856e-b180-746c-c142", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Iron Coffin",
+                    "id": "c7bc-3c45-6ad7-8135",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "When slaying a *criminal*, may replace any corpse they create with a wall.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Wicked Chain",
+                "id": "1d28-e73d-fe83-3fae",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "7254-0a44-6f49-3093", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Wicked Chain",
+                    "id": "00f9-023f-a168-d79b",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Chain Grab also has *splash (target)*: pull all criminals 1", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Caltrops",
+                "id": "319d-5a41-4943-4e7d",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "6964-1968-8651-014d", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Caltrops",
+                    "id": "59dd-88b2-ec39-b73e",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "After pulling a unit, chain grab leaves a hazard in the first space they vacate.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Clerk",
+        "id": "12c4-80b8-1f15-2d9d",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 1,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "e095-9b21-8616-cc01", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Freak", "id": "452d-fc69-6f3a-a8be", "hidden": false, "primary": false, "targetId": "19d1-0a3d-46f4-65e9"}
+        ],
+        "constraints": [{"id": "9cb2-bff4-d3b0-d764", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Clerk",
+            "id": "f4fd-12c6-d5b1-5473",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Technicality",
+            "id": "5c57-bfa4-2943-6cdb",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "At turn start, may inflict 1 *guilt* on a foe in range 1-3.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Court Summons",
+            "id": "3d45-63fc-7ffd-174b",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Foe, Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Target foe gains 1 *vulnerable*, then is pulled 1 per *guilt*. If it does not end its next turn adjacent to the Clerk, it takes 1 fire damage and 1 *guilt*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Discard Contraband",
+            "id": "cec4-73e4-dbb7-7c24",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Burst 1", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Target unit discards one positive and negative token of your choice, except *guilt*. Create a hazard in a free adjacent space to that unit.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Deputize",
+            "id": "995d-8a65-af22-85ba",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Ally", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "An ally in range gains +2 or (5+) +3 burst charges, distributed in any manner they choose, but their abilities during their next turn have no effect against any for with less than 3 *guilt*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "3bb5-ca36-8b06-3906",
+            "hidden": false,
+            "constraints": [{"id": "5d19-3b4e-a38f-97cb", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "5d19-3b4e-a38f-97cb",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "5d19-3b4e-a38f-97cb",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "97b1-8815-fb52-c2ed",
+                    "childName": "Freak",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Union Healthcare",
+                "id": "d899-9b15-0ddf-fa71",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "0576-1ff7-f43a-1476", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Union Healthcare",
+                    "id": "47a3-12ca-b251-1a65",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "Deputize immediately allows a unit to step 2, ignoring adverse terrain and elevation penalties.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Shuffle Papers",
+                "id": "e470-d183-328d-45d8",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "6c06-2d1e-cb95-50f1", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Shuffle Papers",
+                    "id": "10b8-f154-4364-1853",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "At the start of this unit's turn, instead of using its regular passive, may move a guilt token from a foe in line of sight to any other foe in line of sight.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Contractual Loophole",
+                "id": "58a1-7ad2-fdfb-c998",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "6274-bac5-c7e5-a053", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Contractual Loophole",
+                    "id": "a3bf-e847-029c-1190",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [
+                      {
+                        "name": "Description",
+                        "$text": "When this unit is slain, it instead remains at 1 hp and becomes immune to all damage. At the end of its next turn, it is *obliterated*.",
+                        "typeId": "2ee8-274b-b3fc-9655"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Bobby",
+        "id": "0e58-8e84-7ed7-f53d",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 2,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "75f5-35e5-07e5-430b", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Horror", "id": "3b65-0195-3185-d9aa", "hidden": false, "primary": false, "targetId": "88fe-98a4-c63f-2c4e"}
+        ],
+        "constraints": [{"id": "2325-8a3c-1539-157f", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "profiles": [
+          {
+            "name": "Bobby",
+            "id": "0886-c495-36fe-9a6c",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "4+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Clattering Engine",
+            "id": "b850-de5e-af76-2694",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "This unit's MOVE has burst 3. At 0 burst, it cannot MOVE.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Ferocious Walloping",
+            "id": "eec0-dde3-94ec-6378",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Burst 1", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage, then inflict 1 *vulnerable* against *criminals*.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "The Clamps",
+            "id": "884b-21bb-e128-d9b5",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Foe", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Adjacent foe gains 1 *vulnerable* and cannot exit a space adjacent to the Bobby until the Bobby is slain, the Bobby breaks adjacency for any reason, or the start of the Bobby's next turn.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Bloodhound",
+            "id": "ef5a-ac7a-372b-f98e",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Foe", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Target a foe in range. For each *guilt* on the target, gain +1 burst charge to any ability and may step 1.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "d55e-6e60-dba8-efd5",
+            "hidden": false,
+            "constraints": [{"id": "2f9f-5a2c-5dc2-1d6e", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "2f9f-5a2c-5dc2-1d6e",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "2f9f-5a2c-5dc2-1d6e",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "0866-43f5-7846-cb12",
+                    "childName": "Horror",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Mage Hunter",
+                "id": "1b5d-103a-c8b2-ef90",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "1a1c-b0d2-bc55-0847", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Mage Hunter",
+                    "id": "f099-0456-009e-77cc",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "The Bobby has *curseproof* and *MAG* armor against *criminals*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Pursuit",
+                "id": "4195-5267-7fd1-2f67",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "b79d-78a2-1a42-3c3e", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Pursuit",
+                    "id": "34ff-569b-9f51-1178",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "If The Clamps is broken early by a foe, its target gains 2 *guilt*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Frenzied Bobby",
+                "id": "7b8d-5ba1-eb39-d7d6",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "87f5-34cb-06a2-5f29", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Frenzied Bobby",
+                    "id": "2ae1-044f-cfda-ee41",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "The Bobby gains +1D on attacks against *criminals*.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Screwhead",
+        "id": "ed37-dd59-4f44-5b01",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 4,
+        "type": "unit",
+        "categoryLinks": [
+          {"name": "House Unit", "id": "0537-608a-530c-4de5", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
+          {"name": "Scion", "id": "62e4-73a3-3957-a1ec", "hidden": false, "primary": false, "targetId": "fa04-6df6-fc81-7d88"}
+        ],
+        "constraints": [{"id": "98b8-8175-ef87-838b", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 3}],
+        "profiles": [
+          {
+            "name": "Screwhead",
+            "id": "202a-4243-069e-0f84",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "3", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "4", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "-", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Clad in Law",
+            "id": "ec36-a5b6-d34f-e48d",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Has SUPER armor against *criminals*.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Drum Shotgun",
+            "id": "562a-7a28-843b-e1f7",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Burst 2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-2", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage and push 1. Gains *pierce* against *criminals*.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          },
+          {
+            "name": "Piston Fist",
+            "id": "5037-ac0d-b45f-a415",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Burst 1", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "Step 1, then push an adjacent unit 2. If target would be pushed into a wall or the edge of the map, they gain 2 *vulnerable*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Roaring Reload",
+            "id": "4fef-90db-cb3c-bfd7",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "*Splash (self)*: Push 1. All burst abilities gain +1 or (4+) 2 charges.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Upgrades",
+            "id": "1791-43f9-fdf8-b6bc",
+            "hidden": false,
+            "constraints": [{"id": "91df-fd88-4a8c-4920", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 0}],
+            "modifiers": [
+              {
+                "field": "91df-fd88-4a8c-4920",
+                "type": "set",
+                "value": 1,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "field": "91df-fd88-4a8c-4920",
+                "type": "set",
+                "value": 2,
+                "conditions": [
+                  {
+                    "childId": "cfab-8a96-2672-3d73",
+                    "childName": "Scion",
+                    "field": "selections",
+                    "includeChildSelections": true,
+                    "scope": "force",
+                    "shared": true,
+                    "type": "equalTo",
+                    "value": 2
+                  }
+                ]
+              }
+            ],
+            "selectionEntries": [
+              {
+                "name": "Shimmering Heat",
+                "id": "082b-777f-862d-5f52",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 3,
+                "type": "upgrade",
+                "constraints": [{"id": "57d1-63a3-1dda-b923", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Shimmering Heat",
+                    "id": "7fa6-eecc-9c48-b71e",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "The Screwhead and all adjacent units lose the benefit of all armor.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Superheated",
+                "id": "cca5-7264-213b-0add",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 1,
+                "type": "upgrade",
+                "constraints": [{"id": "60b5-83a6-0240-f8e5", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Superheated",
+                    "id": "46ec-5786-f7ec-c709",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Roaring reload's splash deals 1 fire damage to *criminals* after push.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              },
+              {
+                "name": "Blast Slag",
+                "id": "2e79-9261-53bf-2d0c",
+                "hidden": false,
+                "import": true,
+                "sortIndex": 2,
+                "type": "upgrade",
+                "constraints": [{"id": "906e-8a10-1ae1-0aee", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 1}],
+                "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                "profiles": [
+                  {
+                    "name": "Blast Slag",
+                    "id": "ad33-613d-837d-2a86",
+                    "hidden": false,
+                    "typeId": "47d4-1cb7-7b93-261a",
+                    "typeName": "Upgrade",
+                    "characteristics": [{"name": "Description", "$text": "Roaring Reload creates a hazard in free adjacent spaces after it resolves.", "typeId": "2ee8-274b-b3fc-9655"}]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Praetor",
+        "id": "228b-b7dd-3e08-811e",
+        "defaultAmount": "1",
+        "hidden": false,
+        "import": true,
+        "sortIndex": 0,
+        "type": "unit",
+        "categoryLinks": [{"name": "Necromancer", "id": "6b8a-6b0d-10d5-1c7d", "hidden": false, "primary": true, "targetId": "51aa-2972-b4d9-be05"}],
+        "profiles": [
+          {
+            "name": "Praetor",
+            "id": "941f-304c-20d8-2537",
+            "hidden": false,
+            "typeId": "7297-1922-7299-d456",
+            "typeName": "Unit",
+            "characteristics": [
+              {"name": "Movement Value", "$text": "4", "typeId": "3b87-1c4f-a3c0-a6c2"},
+              {"name": "Health Points", "$text": "8", "typeId": "27df-97b3-2013-3ca8"},
+              {"name": "Defense", "$text": "3+", "typeId": "86d1-139f-866e-0c1f"},
+              {"name": "Armor", "$text": "PHYS", "typeId": "4ce6-766a-5184-794a"}
+            ]
+          },
+          {
+            "name": "Steel Purpose",
+            "id": "8c95-6d4b-c1c2-4bd3",
+            "hidden": false,
+            "typeId": "957a-4ad1-8e49-55f3",
+            "typeName": "Traits",
+            "characteristics": [{"name": "Description", "$text": "Once a round, you may grant a unit that damages you or an adjacent unit 1 *guilt*.", "typeId": "14fe-a261-4f47-6f40"}]
+          },
+          {
+            "name": "Hammer Shotgun",
+            "id": "0fd2-3c8e-8c95-c1f5",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Attack, Burst 2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {
+                "name": "Effect",
+                "$text": "1 damage. Gains *pierce* against criminals with 3+ *guilt*. At turn end, regains +1 burst if used against at least 1 *criminal*.",
+                "typeId": "4ce0-5160-a645-5c3d"
+              }
+            ]
+          },
+          {
+            "name": "Indict",
+            "id": "fde7-147e-457a-f4fc",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Target foe turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 1-4", "typeId": "eaab-3fcf-aa20-6b45"},
+              {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+              {"name": "Effect", "$text": "Foe gains 1 *guilt*, then gains twice as much guilt this turn.", "typeId": "07d2-d978-e8e2-acb2"}
+            ]
+          },
+          {
+            "name": "Call Witness",
+            "id": "8484-1964-d7ca-6e11",
+            "hidden": false,
+            "typeId": "dd79-c1b6-f795-8499",
+            "typeName": "SOUL ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Own turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+              {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Trigger", "$text": "Turn End", "typeId": "1168-c65d-8a02-19c3"},
+              {
+                "name": "Effect",
+                "$text": "Another ally in range that has not been activated this round may immediately take their turn following this turn.",
+                "typeId": "07d2-d978-e8e2-acb2"
+              }
+            ]
+          },
+          {
+            "name": "Stoke Furnace",
+            "id": "94b8-fda8-aa82-4d0a",
+            "hidden": false,
+            "typeId": "fbdf-1d03-d885-5e61",
+            "typeName": "ACT Ability",
+            "characteristics": [
+              {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "Self or an adjacent ally may clear a negative token and gains +1 or (4+) +2 burst charges.", "typeId": "4ce0-5160-a645-5c3d"}
+            ]
+          }
+        ],
+        "selectionEntryGroups": [
+          {
+            "name": "Starting Upgrades",
+            "id": "4c94-d242-13a0-8b64",
+            "collapsible": true,
+            "hidden": true,
+            "sortIndex": 1,
+            "constraints": [{"id": "9d1d-7c50-1bed-210f", "field": "selections", "includeChildSelections": false, "scope": "parent", "shared": true, "type": "max", "value": 2}],
+            "selectionEntryGroups": [
+              {
+                "name": "Bonus Traits",
+                "id": "0d30-0cd3-c5d6-a677",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "893f-1e66-cfeb-9de2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Corpse Violet Stance",
+                    "id": "4e9d-471e-37b8-04db",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "2169-cee6-db97-01e8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Corpse Violet Stance",
+                        "id": "cc71-3e9c-46c7-22cf",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: Gain either physical or magical armor (choose).", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Winter Rose Stance",
+                    "id": "cca7-838a-5c70-2c58",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ae4f-4d87-0656-7b2b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Winter Rose Stance",
+                        "id": "d001-3918-19da-a4d3",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: Attacks gain +1D.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Royal Chrysanthemum Stance",
+                    "id": "2d99-bd15-2d71-9a9d",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [{"id": "547e-ca58-9d7c-f67c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Royal Chrysanthemum Stance",
+                        "id": "adf3-9187-fbf2-0fa9",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: May step 2 either before or after ACTing.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "753f-d53a-3cc8-1fd8",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "Grand Oath",
+                    "id": "12c1-f036-f958-0810",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "2ee1-f8e0-c4c1-99e2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grand Oath",
+                        "id": "ea63-8fa3-171c-43f2",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "*Splash (self)*. Self and allies in the area may convert any number of *vitality* to *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Redempta",
+                    "id": "cc7c-1e2f-a4d6-5d31",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "d68b-e5f5-1c6a-0bd5", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Redempta",
+                        "id": "c884-ded6-114e-1d69",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Remove all negative tokens on an ally, then transfer to self. That ally gains 1 *vitality* per negative token removed (up to 3 times) and becomes *curseproof* until the start of its next turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Communion",
+                    "id": "818c-3e43-8d7a-28d7",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e878-53bc-d3b8-0816", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Communion",
+                        "id": "bc41-5bab-9c95-7b23",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Gain 1 *vitality*. Until end of next turn, self and adjacent allies may spend this unit’s hp as if it were *vitality* tokens.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Decree of Forbiddance",
+                    "id": "f024-5513-4706-213d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "1a8c-090c-bc4c-b4a1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Decree of Forbiddance",
+                        "id": "2f87-163a-2163-588e",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse, Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Until end of this unit’s next turn, foes ending their turn in range 2 of this unit have a hazard created under them, then are pushed 1.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Holy Water Flail",
+                    "id": "d288-55e5-c04a-2195",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3112-0d2e-fce9-ac3b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Holy Water Flail",
+                        "id": "cfc5-1cd8-6228-77fa",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-2", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 holy damage and *splash (target)*: 1 holy damage. *Stance (Round 3+)*: and create a hazard under primary target (round 5+) all units in the area.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Relic Lance",
+                    "id": "4f08-48e7-a87a-3980",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "7a36-6cc7-c1ea-f6ab", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Relic Lance",
+                        "id": "d43b-a6e9-084f-98a0",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "2 damage. *Stance*: May step spaces up to the round number with *free movement*, in a straight line, before the attack. On hit, push target half that many spaces.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Starmetal Shuriken",
+                    "id": "8a67-209b-a51e-74d9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3973-2dcc-2eec-1d0d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Starmetal Shuriken",
+                        "id": "d3d1-c77a-1422-42e0",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 damage. *Stance*: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "ed44-f777-1734-0726",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Sword Art: Drifting Blossoms",
+                    "id": "180f-2bbe-5082-86d8",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e0b1-47ea-85ae-0125", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Drifting Blossoms",
+                        "id": "1224-df83-18d0-8cef",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn end", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "*Stance*: Step spaces equal to 1 + the round number, then push an adjacent unit 1.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grace",
+                    "id": "79c1-bf8d-8912-234b",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "d682-6db3-075a-5927", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grace",
+                        "id": "b80a-0443-6772-e053",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or Allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Unit becomes *curseproof* until end of its next turn and attacks against it gain -1D for the duration.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Safflower cut",
+                    "id": "1b99-4100-57c8-97c4",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "b873-4c5f-59cc-b2a7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Safflower cut",
+                        "id": "ea54-9fd2-a594-d143",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn, Line", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Step 1, then cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1. *Stance (Round 5+)*: This damage becomes Devil Damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Winter Sprout",
+                    "id": "7b84-5562-f415-d749",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e219-b603-443e-ce20", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Winter Sprout",
+                        "id": "0ac5-e4c0-b668-7265",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "This unit takes damage from an ACT ability, and that ability resolves. ", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: remove 1 negative token on self or gain 1 *vitality* for every foe in the splash area. *Stance (Round 4+)*: both effects trigger.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                    "id": "cffb-1821-8f2a-1ecb",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "b4fe-c382-c3b1-51c5", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                        "id": "0e78-dc11-9430-3c82",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**5 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You hit an attack", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: 1 holy damage. *Stance (Round 3+)*: 2 holy damage *(Round 5+)*: 4 holy damage. *(Round 6+)*: 5 holy damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Resurrection",
+                    "id": "f549-a255-d983-181a",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "8a9a-c7dc-effb-3d35", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Resurrection",
+                        "id": "ddf6-5b37-6523-b6f5",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Allied unit is slain", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Return unit to life at 1 hp at the end of the turn and remove all negative tokens. It becomes immune to all damage and *curseproof* until the end of its next turn. *Stance (Round 3+)* and it gains 1 vitality *(Round 5+)* 3 *vitality* instead.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Dark Power Upgrades",
+            "id": "fb0d-2a98-fdee-7205",
+            "collapsible": true,
+            "hidden": true,
+            "sortIndex": 2,
+            "selectionEntryGroups": [
+              {
+                "name": "SOUL Upgrades",
+                "id": "76d0-601c-b499-67df",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Sword Art: Drifting Blossoms",
+                    "id": "820f-7104-86a5-9f4c",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "8270-b1bc-082f-f7a6", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Drifting Blossoms",
+                        "id": "7b24-8335-868f-4353",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn end", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "*Stance*: Step spaces equal to 1 + the round number, then push an adjacent unit 1.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grace",
+                    "id": "2b92-1e53-08bb-687d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "324e-968a-d4e0-efdb", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grace",
+                        "id": "c196-a1b3-c59b-a312",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own or Allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Unit becomes *curseproof* until end of its next turn and attacks against it gain -1D for the duration.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Safflower cut",
+                    "id": "313b-69cd-84e4-1a86",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "efc5-d750-43a7-275a", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Safflower cut",
+                        "id": "ff26-c91c-f6e9-cd43",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn, Line", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Step 1, then cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1. *Stance (Round 5+)*: This damage becomes Devil Damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Sword Art: Winter Sprout",
+                    "id": "46ba-cfe6-0442-930a",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "a3fa-e9bc-3289-e1cd", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Sword Art: Winter Sprout",
+                        "id": "8110-2857-b139-2876",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "This unit takes damage from an ACT ability, and that ability resolves. ", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: remove 1 negative token on self or gain 1 *vitality* for every foe in the splash area. *Stance (Round 4+)*: both effects trigger.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                    "id": "f6a4-bdc8-858a-bc8a",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "16e1-94ef-98e6-f501", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Supreme Sword Art: Merciful Snowdrop Cut ",
+                        "id": "c6ab-ec9a-565a-f5f0",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**5 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You hit an attack", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: 1 holy damage. *Stance (Round 3+)*: 2 holy damage *(Round 5+)*: 4 holy damage. *(Round 6+)*: 5 holy damage.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Resurrection",
+                    "id": "164a-8d16-7222-9966",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "5a92-8487-8e92-86db", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Resurrection",
+                        "id": "0e92-2a95-1240-3304",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Any turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Allied unit is slain", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "Return unit to life at 1 hp at the end of the turn and remove all negative tokens. It becomes immune to all damage and *curseproof* until the end of its next turn. *Stance (Round 3+)* and it gains 1 vitality *(Round 5+)* 3 *vitality* instead.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Bonus Traits",
+                "id": "651c-0907-27d9-1cd3",
+                "hidden": false,
+                "sortIndex": 1,
+                "constraints": [{"id": "b7d0-d587-00c2-31e5", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "selectionEntries": [
+                  {
+                    "name": "Corpse Violet Stance",
+                    "id": "0b7f-d407-faaf-7262",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "8042-2ad3-c1a7-eec9", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Corpse Violet Stance",
+                        "id": "d76a-47a3-78dd-d9d3",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: Gain either physical or magical armor (choose).", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Winter Rose Stance",
+                    "id": "b7ac-0190-57f4-6747",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ce54-7142-2eec-1ac8", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Winter Rose Stance",
+                        "id": "fa74-53a2-6807-883f",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: Attacks gain +1D.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Royal Chrysanthemum Stance",
+                    "id": "2c47-9bfd-5cb7-0bf1",
+                    "hidden": false,
+                    "import": true,
+                    "type": "upgrade",
+                    "constraints": [{"id": "f8d5-c98e-d5a3-6396", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
+                    "profiles": [
+                      {
+                        "name": "Royal Chrysanthemum Stance",
+                        "id": "5c9a-5fd1-d9fa-63a1",
+                        "hidden": false,
+                        "typeId": "957a-4ad1-8e49-55f3",
+                        "typeName": "Traits",
+                        "characteristics": [{"name": "Description", "$text": "*Stance (Round 3+)*: May step 2 either before or after ACTing.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "f589-c95f-95b4-ef9e",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "Grand Oath",
+                    "id": "8d6f-f990-0e6e-7ef2",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "7484-ca2f-5392-e16b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Grand Oath",
+                        "id": "c4f9-8762-b2cd-00b8",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "*Splash (self)*. Self and allies in the area may convert any number of *vitality* to *strength*.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Redempta",
+                    "id": "4a14-8117-18be-ca61",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "18bb-3494-36b1-725e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Redempta",
+                        "id": "42e4-8fbb-616a-9de7",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Remove all negative tokens on an ally, then transfer to self. That ally gains 1 *vitality* per negative token removed (up to 3 times) and becomes *curseproof* until the start of its next turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Communion",
+                    "id": "d9d2-d00c-aab6-936b",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "3430-8cec-8b84-aa8c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Communion",
+                        "id": "9a98-798f-8807-a6a2",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Gain 1 *vitality*. Until end of next turn, self and adjacent allies may spend this unit’s hp as if it were *vitality* tokens.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Decree of Forbiddance",
+                    "id": "bc20-7b20-e281-2031",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "c3dd-8ded-2661-f247", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Decree of Forbiddance",
+                        "id": "c9c3-1403-56e4-03e9",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Curse, Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Until end of this unit’s next turn, foes ending their turn in range 2 of this unit have a hazard created under them, then are pushed 1.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Holy Water Flail",
+                    "id": "126f-2037-61ac-8cab",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "322c-0319-7797-03f3", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Holy Water Flail",
+                        "id": "1a4f-f5a4-c6c4-b390",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-2", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 holy damage and *splash (target)*: 1 holy damage. *Stance (Round 3+)*: and create a hazard under primary target (round 5+) all units in the area.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Relic Lance",
+                    "id": "4089-7541-9eab-1173",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "5c68-be42-ac5c-e4c1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Relic Lance",
+                        "id": "6371-c4af-0b5a-cfdb",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "2 damage. *Stance*: May step spaces up to the round number with *free movement*, in a straight line, before the attack. On hit, push target half that many spaces.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Starmetal Shuriken",
+                    "id": "5a30-e5ed-edbb-f4a9",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [{"id": "ef78-3d4a-a9a5-7aac", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Starmetal Shuriken",
+                        "id": "eef9-d0bb-f8a5-aeb5",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 damage. *Stance*: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

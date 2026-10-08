@@ -12,6 +12,22 @@
       {"name": "Heresy", "id": "58c2-eefd-1d1c-1b2b", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"},
       {"name": "Campaign Rules", "id": "d71c-3895-424b-01c5", "importRootEntries": true, "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"}
     ],
+    "rules": [
+      {
+        "name": "Mutation",
+        "id": "3c06-c687-44d0-6f08",
+        "description": "When a unit mutates, it gains a mutation token. Mutation tokens can be discarded instead of discarding any other token. (Mutation tokens can be a stand-in and act as a ‘copy’ for any other token, allowing you to keep the original)",
+        "hidden": false,
+        "alias": ["mutate", "mutates"]
+      },
+      {
+        "name": "Spare Parts",
+        "id": "f8b9-fa34-45e9-e2b5",
+        "description": "Gains an additional effects if an adjacent corpse is consumed at the start of the ability. Scales per corpse consumed.",
+        "hidden": false,
+        "page": ""
+      }
+    ],
     "selectionEntries": [
       {
         "name": "Stitch",
@@ -62,9 +78,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "Effect: Gain 1 strength, (4+) 1 speed, (5+) and 1 vitality, (6+) and explode for splash (self): 1 damage. \nSpare parts: Roll +1D per corpse and pick the highest result.",
+                "name": "Effect",
+                "$text": "Gain 1 *strength*, (4+) 1 *speed*, (5+) and 1 *vitality*, (6+) and explode for *splash (self)*: 1 damage.  **Spare parts**: Roll +1D per corpse and pick the highest result.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -76,8 +93,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Melee", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "On hit: 1 damage and mutate.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage and mutate.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -230,9 +248,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect:** *Mutate*, then gain 1 *strength*. \n**Spare Parts**: Then gain (3+) 1 *speed*, (5+) and 1 *vitality*, (6+) then *mutate again*. Roll +1D per corpse and pick the highest result.",
+                "name": "Effect",
+                "$text": "*Mutate*, then gain 1 *strength*. **Spare Parts**: Then gain (3+) 1 *speed*, (5+) and 1 *vitality*, (6+) then *mutate again*. Roll +1D per corpse and pick the highest result.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -244,8 +263,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**On hit:** 1 damage and *splash* (self): 1 damage. ", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "1 damage and *splash (self)*: 1 damage. ", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           }
         ],
@@ -403,10 +423,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect:** One or two units in range *mutate*. \n**Spare parts:** and also grant one of these units 1 strength if at least one corpse was consumed.",
+                "name": "Effect",
+                "$text": "One or two units in range *mutate*. **Spare parts:** and also grant one of these units 1 *strength* if at least one corpse was consumed.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -418,8 +439,9 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Curse, Range 1-3", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Effect:** A unit in range removes one token of this unit’s choice (3+): two (5+) all", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Tag", "$text": "Curse", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "A unit in range removes one token of this unit’s choice (3+): two (5+) all", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -429,10 +451,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect:** Instantly slay self or an allied unit in range. Another allied unit in range gains 2 *speed*, *vitality*, and *strength*, or just 1 if the slain unit was a thrall.",
+                "name": "Effect",
+                "$text": "Instantly slay self or an allied unit in range. Another allied unit in range gains 2 *speed*, *vitality*, and *strength*, or just 1 if the slain unit was a thrall.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -590,7 +613,8 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Line 4", "typeId": "f29c-ed50-4f8c-19dd"},
-              {"name": "Description", "$text": "**Line:** 1 damage.\n**Effect:** Allies in the line *mutate* instead of taking damage.", "typeId": "4ce0-5160-a645-5c3d"}
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+              {"name": "Effect", "$text": "**Line:** 1 damage.\n**Effect:** Allies in the line *mutate* instead of taking damage.", "typeId": "4ce0-5160-a645-5c3d"}
             ]
           },
           {
@@ -601,9 +625,11 @@
             "typeName": "SOUL ability",
             "characteristics": [
               {"name": "Tag", "$text": "Own or Allied Turn\nRange 1-2", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+              {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
               {
-                "name": "Description",
+                "name": "Effect",
                 "$text": "**Effect:** Unit in range gains 1 *strength*, (3-4) OR 1 *speed*, (5-6) OR 1 *vitality*.\n**Spare parts**: May choose one token per corpse consumed instead of rolling, up to three times.",
                 "typeId": "07d2-d978-e8e2-acb2"
               }
@@ -617,8 +643,10 @@
             "typeName": "SOUL ability",
             "characteristics": [
               {"name": "Tag", "$text": "Own or Allied Turn. \nRange 1-3. ", "typeId": "b09c-2bf5-95e0-bba3"},
+              {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
               {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-              {"name": "Description", "$text": "Copy up to four positive tokens on target unit, then grant them to another unit in range.", "typeId": "07d2-d978-e8e2-acb2"}
+              {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+              {"name": "Effect", "$text": "Copy up to four positive tokens on target unit, then grant them to another unit in range.", "typeId": "07d2-d978-e8e2-acb2"}
             ]
           }
         ],
@@ -700,7 +728,7 @@
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
-                        "characteristics": [{"name": "Description", "$text": "May remove a mutation token on self to grant +1D on any attack.", "typeId": "14fe-a261-4f47-6f40"}]
+                        "characteristics": [{"name": "Description", "$text": "May remove a *mutation* token on self to grant +1D on any attack.", "typeId": "14fe-a261-4f47-6f40"}]
                       }
                     ]
                   }
@@ -731,7 +759,8 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {"name": "Description", "$text": "**Effect:** Create two or (5+) three corpses in free adjacent spaces, then *mutate*.", "typeId": "4ce0-5160-a645-5c3d"}
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "Create two or (5+) three corpses in free adjacent spaces, then *mutate*.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
@@ -754,10 +783,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-2.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect:** Create a perfect copy of an allied unit in range in any other free space\nin range. Then *obliterate* the original as it collapses into flesh and replace it with a corpse token.",
+                            "name": "Effect",
+                            "$text": " Create a perfect copy of an allied unit in range in any other free space in range. Then *obliterate* the original as it collapses into flesh and replace it with a corpse token.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -782,10 +812,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-3.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect:** Remove up to three negative tokens from a unit, then it may step 1 and it *mutates*. \n**Spare Parts:** The unit *mutates* and steps once for each negative token removed instead.",
+                            "name": "Effect",
+                            "$text": "Remove up to three negative tokens from a unit, then it may step 1 and it *mutates*. **Spare Parts:** The unit *mutates* and steps once for each negative token removed instead.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -810,10 +841,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-3.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect:** Choose a unit in range. That unit may step 2. If it ends its turn in the space of a corpse, it *mutates*, removes the corpse, then may step 2 and *mutate* again.",
+                            "name": "Effect",
+                            "$text": "Choose a unit in range. That unit may step 2. If it ends its turn in the space of a corpse, it *mutates*, removes the corpse, then may step 2 and *mutate* again.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -838,10 +870,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, range 2-4.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit:** 1 toxin damage. \n**Effect:** At end of target’s nextturn, they explode for a *splash* (target) effect for 1 toxin damage. Your allies in the area *mutate* instead of taking damage.",
+                            "name": "Effect",
+                            "$text": "1 toxin damage. \nAt end of target’s next turn, they explode for a *splash* (target) effect for 1 toxin damage. Your allies in the area *mutate* instead of taking damage.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -866,10 +899,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 2-4.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit:** May remove one positive token from target, then deal 1 toxin damage. \n**Spare Parts:** If at least one corpse was consumed, repeat this effect, but no more than once this turn.",
+                            "name": "Effect",
+                            "$text": "May remove one positive token from target, then deal 1 toxin damage. **Spare Parts:** If at least one corpse was consumed, repeat this effect, but no more than once this turn.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -894,10 +928,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Line 3.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Line 3", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect:** Line: 1 fire damage and inflict 1 *vulnerable*, (3-4) OR 1 toxic damage and inflict 1 *slow*, (5-6) OR 1 curse damage and inflict 1 *weak*. \n**Spare Parts:** Roll 1D for effect per corpse consumed and choose any result.",
+                            "name": "Effect",
+                            "$text": "1 fire damage and inflict 1 *vulnerable*, (3-4) OR 1 toxic damage and inflict 1 *slow*, (5-6) OR 1 curse damage and inflict 1 *weak*. **Spare Parts:** Roll 1D for effect per corpse consumed and choose any result.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -930,9 +965,11 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Description", "$text": "**Effect:** Swap places with an allied unit,then both of you *mutate*.", "typeId": "07d2-d978-e8e2-acb2"}
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Swap places with an allied unit,then both of you *mutate*.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -955,11 +992,13 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect:** Remove up to three mutation tokens on target unit, then target may step 2 per token removed with *free* movement, ignoring hazards.",
+                            "name": "Effect",
+                            "$text": "Remove up to three *mutation* tokens on target unit, then target may step 2 per token removed with *free movement*, ignoring hazards.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -984,11 +1023,13 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger:** Turn start.\n**Effect:** Remove up to three mutation tokens from target, then target gains +1D on attacks this turn per token removed. If three or more were removed, their damage gains pierce.",
+                            "name": "Effect",
+                            "$text": "Remove up to three *mutation* tokens from target, then target gains +1D on attacks this turn per token removed. If three or more were removed, their damage gains *pierce*.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -1013,11 +1054,13 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Curse\nAny Turn\nRange 1-4", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Curse. Any Turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn end", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger:** Turn end. \n**Effect:** Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are *obliterated*. Create up to 3 corpse tokens under their space or in free adjacent spaces.",
+                            "name": "Effect",
+                            "$text": "Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are *obliterated*. Create up to 3 corpse tokens under their space or in free adjacent spaces.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -1042,13 +1085,11 @@
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Curse\nFoe Turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Curse, Foe Turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "4 SOUL", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger:** Target turn start or end. \n**Effect:** Inflict 2 *slow*, *weak*, and *vulnerable* on target foe.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "Target turn start or end", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Inflict 2 *slow*, *weak*, and *vulnerable* on target foe.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -1072,10 +1113,12 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "6 SOUL", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger:** Turn start. \n**Effect:** Increase MV to 6, DF to 6+, deal +1 damage with all abilities, become *curseproof*, gain *free* movement, and gain *super armor*. Keep any damage taken. At the end of your next turn, your form destabilizes and you are *obliterated*.",
+                            "name": "Effect",
+                            "$text": "Increase MV to 6, DF to 6+, deal +1 damage with all abilities, become *curseproof*, gain *free* movement, and gain *super armor*. Keep any damage taken. At the end of your next turn, your form destabilizes and you are *obliterated*.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -1091,63 +1134,66 @@
             "id": "9a44-e4ea-ae27-a1fa",
             "collapsible": true,
             "hidden": false,
+            "sortIndex": 2,
             "selectionEntryGroups": [
               {
                 "name": "SOUL Upgrades",
-                "id": "d848-9a88-64d5-8e5e",
+                "id": "ab82-1545-372f-4e8e",
                 "hidden": false,
                 "sortIndex": 3,
                 "selectionEntries": [
                   {
                     "name": "Flesh Jump",
-                    "id": "0d26-8307-63cd-4f20",
+                    "id": "d7da-f221-abc5-055a",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
                     "constraints": [
-                      {"id": "1e62-9d8e-926c-5c25", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                      {"id": "cabc-a810-39be-5916", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
                     ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
                     "profiles": [
                       {
                         "name": "Flesh Jump",
-                        "id": "3d1e-b98e-f271-9ec6",
+                        "id": "ee91-3a19-1fa4-f9a0",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {"name": "Description", "$text": "**Effect:** Swap places with an allied unit,then both of you *mutate*.", "typeId": "07d2-d978-e8e2-acb2"}
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Swap places with an allied unit,then both of you *mutate*.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
                   },
                   {
                     "name": "Grow Bonus Legs",
-                    "id": "fa79-c185-dbbc-77dd",
+                    "id": "60ea-c295-6bc2-1785",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
                     "constraints": [
-                      {"id": "c3d8-e0dc-4ec3-e20e", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                      {"id": "1689-4853-624a-f4a9", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
                     ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
                     "profiles": [
                       {
                         "name": "Grow Bonus Legs",
-                        "id": "ea14-8c14-67ad-cd09",
+                        "id": "9d19-f86a-25b6-3ba5",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect:** Remove up to three mutation tokens on target unit, then target may step 2 per token removed with *free* movement, ignoring hazards.",
+                            "name": "Effect",
+                            "$text": "Remove up to three *mutation* tokens on target unit, then target may step 2 per token removed with *free movement*, ignoring hazards.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -1156,28 +1202,29 @@
                   },
                   {
                     "name": "Grow Bonus Limbs",
-                    "id": "4090-5afa-708e-d931",
+                    "id": "130c-32d7-d5b1-f11a",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 3,
                     "type": "upgrade",
                     "constraints": [
-                      {"id": "c38b-e13b-177c-cbb9", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                      {"id": "202d-42d8-1af7-273c", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
                     ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
                     "profiles": [
                       {
                         "name": "Grow Bonus Limbs",
-                        "id": "a73c-7e1b-2f3a-a7ca",
+                        "id": "cc1e-76ed-c7dc-93fd",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Own or allied turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Own or allied turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger:** Turn start.\n**Effect:** Remove up to three mutation tokens from target, then target gains +1D on attacks this turn per token removed. If three or more were removed, their damage gains pierce.",
+                            "name": "Effect",
+                            "$text": "Remove up to three *mutation* tokens from target, then target gains +1D on attacks this turn per token removed. If three or more were removed, their damage gains *pierce*.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -1186,28 +1233,29 @@
                   },
                   {
                     "name": "Recycle",
-                    "id": "5d40-14bf-7ff3-bcbe",
+                    "id": "b9d0-fa17-2675-5ab2",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 4,
                     "type": "upgrade",
                     "constraints": [
-                      {"id": "c558-d18e-d3ff-2249", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                      {"id": "0f9e-67c8-e94f-4b1e", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
                     ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
                     "profiles": [
                       {
                         "name": "Recycle",
-                        "id": "9453-8498-9aa1-14c1",
+                        "id": "c997-afad-3490-8ae8",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Curse\nAny Turn\nRange 1-4", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Curse. Any Turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-4", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn end", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Trigger:** Turn end. \n**Effect:** Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are *obliterated*. Create up to 3 corpse tokens under their space or in free adjacent spaces.",
+                            "name": "Effect",
+                            "$text": "Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are *obliterated*. Create up to 3 corpse tokens under their space or in free adjacent spaces.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -1216,263 +1264,57 @@
                   },
                   {
                     "name": "Devolve",
-                    "id": "30b3-ba9f-c85d-6f6d",
+                    "id": "1b31-48ae-c730-ab40",
                     "hidden": false,
                     "import": true,
+                    "sortIndex": 5,
                     "type": "upgrade",
                     "constraints": [
-                      {"id": "2262-c2a0-55de-1270", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                      {"id": "c8a0-a627-7958-fc13", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
                     ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
                     "profiles": [
                       {
                         "name": "Devolve",
-                        "id": "dd91-11f0-bfb1-7b00",
+                        "id": "ba58-ee87-9015-7a88",
                         "hidden": false,
                         "typeId": "dd79-c1b6-f795-8499",
                         "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Curse\nFoe Turn\nRange 1-3", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Tag", "$text": "Curse, Foe Turn\n", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "4 SOUL", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger:** Target turn start or end. \n**Effect:** Inflict 2 *slow*, *weak*, and *vulnerable* on target foe.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "Target turn start or end", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Inflict 2 *slow*, *weak*, and *vulnerable* on target foe.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
                   },
                   {
                     "name": "Final Form",
-                    "id": "04c8-667c-055c-b056",
-                    "hidden": false,
-                    "import": true,
-                    "type": "upgrade",
-                    "constraints": [
-                      {"id": "710c-caf5-2739-90b5", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
-                    ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Final Form",
-                        "id": "9396-2eeb-83b6-dd17",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own Turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "6 SOUL", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger:** Turn start. \n**Effect:** Increase MV to 6, DF to 6+, deal +1 damage with all abilities, become *curseproof*, gain *free* movement, and gain *super armor*. Keep any damage taken. At the end of your next turn, your form destabilizes and you are *obliterated*.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "ACT Upgrades",
-                "id": "2284-4889-727b-f62d",
-                "hidden": false,
-                "sortIndex": 2,
-                "selectionEntries": [
-                  {
-                    "name": "New Material",
-                    "id": "ff95-762c-eb89-14f1",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 1,
-                    "type": "upgrade",
-                    "constraints": [
-                      {"id": "06a1-9773-9238-edea", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
-                    ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "New Material",
-                        "id": "327e-48ea-3ee9-96e8",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {"name": "Description", "$text": "**Effect:** Create two or (5+) three corpses in free adjacent spaces, then *mutate*.", "typeId": "4ce0-5160-a645-5c3d"}
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Clone",
-                    "id": "e9cb-344e-ad36-9cb2",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 2,
-                    "type": "upgrade",
-                    "constraints": [
-                      {"id": "69d5-fe00-5b9d-7c22", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
-                    ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Clone",
-                        "id": "5ec3-95a7-6c25-cf81",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-2.", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect:** Create a perfect copy of an allied unit in range in any other free space\nin range. Then *obliterate* the original as it collapses into flesh and replace it with a corpse token.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Stitch Fix",
-                    "id": "5fed-078a-7b4e-23bf",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 3,
-                    "type": "upgrade",
-                    "constraints": [
-                      {"id": "cd9b-6955-eb7b-b795", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
-                    ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Stitch Fix",
-                        "id": "677e-99f9-e8b6-0de7",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-3.", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect:** Remove up to three negative tokens from a unit, then it may step 1 and it *mutates*. \n**Spare Parts:** The unit *mutates* and steps once for each negative token removed instead.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Inject Stimulant",
-                    "id": "6d73-a552-b85e-ee03",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 4,
-                    "type": "upgrade",
-                    "constraints": [
-                      {"id": "1021-b4c8-ed94-c5b9", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
-                    ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Inject Stimulant",
-                        "id": "5f0d-4f92-ebfa-fb87",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Range 1-3.", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect:** Choose a unit in range. That unit may step 2. If it ends its turn in the space of a corpse, it *mutates*, removes the corpse, then may step 2 and *mutate* again.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Biotoxin Injector",
-                    "id": "177e-4f9f-9a4f-07a3",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 5,
-                    "type": "upgrade",
-                    "constraints": [
-                      {"id": "82dd-ae3c-9114-4768", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
-                    ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Biotoxin Injector",
-                        "id": "b16b-8654-2c32-7b0d",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Attack, range 2-4.", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**On hit:** 1 toxin damage. \n**Effect:** At end of target’s nextturn, they explode for a *splash* (target) effect for 1 toxin damage. Your allies in the area *mutate* instead of taking damage.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Mutagen Injector",
-                    "id": "edb7-d654-0ca1-7cdf",
+                    "id": "be61-3235-3587-17bf",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 6,
                     "type": "upgrade",
                     "constraints": [
-                      {"id": "eac4-07c5-798f-45e4", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                      {"id": "d4b2-a380-f5f7-4629", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
                     ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
                     "profiles": [
                       {
-                        "name": "Mutagen Injector",
-                        "id": "c4d7-fd97-79b1-a23e",
+                        "name": "Final Form",
+                        "id": "e21b-6eb3-b439-c405",
                         "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 2-4.", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Own Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "6 SOUL", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Turn start", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit:** May remove one positive token from target, then deal 1 toxin damage. \n**Spare Parts:** If at least one corpse was consumed, repeat this effect, but no more than once this turn.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Chaos Beam",
-                    "id": "e6de-5b3c-da9b-e396",
-                    "hidden": false,
-                    "import": true,
-                    "type": "upgrade",
-                    "constraints": [
-                      {"id": "0bfb-cc66-e8c3-38b2", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
-                    ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Chaos Beam",
-                        "id": "8943-ea38-a412-7230",
-                        "hidden": false,
-                        "typeId": "fbdf-1d03-d885-5e61",
-                        "typeName": "ACT Ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Line 3.", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect:** Line: 1 fire damage and inflict 1 *vulnerable*, (3-4) OR 1 toxic damage and inflict 1 *slow*, (5-6) OR 1 curse damage and inflict 1 *weak*. \n**Spare Parts:** Roll 1D for effect per corpse consumed and choose any result.",
-                            "typeId": "4ce0-5160-a645-5c3d"
+                            "name": "Effect",
+                            "$text": "Increase MV to 6, DF to 6+, deal +1 damage with all abilities, become *curseproof*, gain *free* movement, and gain *super armor*. Keep any damage taken. At the end of your next turn, your form destabilizes and you are *obliterated*.",
+                            "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
                       }
@@ -1482,39 +1324,26 @@
               },
               {
                 "name": "Bonus Traits",
-                "id": "2674-d510-fdcb-3f6b",
+                "id": "cc56-803d-cfdf-35b3",
                 "hidden": false,
                 "sortIndex": 1,
-                "constraints": [{"id": "12a6-a984-d92a-a738", "field": "selections", "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                "modifiers": [
-                  {
-                    "field": "hidden",
-                    "type": "set",
-                    "value": true,
-                    "conditionGroups": [
-                      {
-                        "type": "and",
-                        "conditions": [{"childId": "0e3a-d09e-93fc-fb30", "childName": "Bonus Traits", "field": "selections", "scope": "parent", "shared": true, "type": "atLeast", "value": 1}]
-                      }
-                    ]
-                  }
-                ],
+                "constraints": [{"id": "bb7e-7873-41db-e4a5", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                 "selectionEntries": [
                   {
                     "name": "Rapid Move",
-                    "id": "ba26-bda1-2104-3310",
+                    "id": "0b43-1413-b9c8-dd60",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
                     "constraints": [
-                      {"id": "5375-a59c-867e-b579", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                      {"id": "fc84-896c-598d-2da5", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
                     ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Rapid Move",
-                        "id": "af54-810c-580a-497b",
+                        "id": "9e42-27c9-4dcf-f1df",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -1524,19 +1353,19 @@
                   },
                   {
                     "name": "Accelerate Evolution",
-                    "id": "e90b-cec0-13d1-9553",
+                    "id": "f614-383b-43d1-aa33",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
                     "constraints": [
-                      {"id": "30a0-6239-acb2-12b1", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                      {"id": "ad27-b6d0-486a-018f", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
                     ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Accelerate Evolution",
-                        "id": "e25e-75cb-eef4-296c",
+                        "id": "b371-dd75-633a-3127",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -1546,24 +1375,230 @@
                   },
                   {
                     "name": "Ancillary Limbs",
-                    "id": "8eef-c520-1e4a-7254",
+                    "id": "7fa8-f563-67d2-390f",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 3,
                     "type": "upgrade",
                     "constraints": [
-                      {"id": "2216-afe0-ac16-fd3d", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1},
-                      {"id": "a7a4-654e-50b5-ca91", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                      {"id": "c29f-2b1a-4219-a13e", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
                     ],
-                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 1}],
+                    "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Ancillary limbs",
-                        "id": "20f3-fb08-71d7-8975",
+                        "id": "ace3-0c5d-5865-7052",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
-                        "characteristics": [{"name": "Description", "$text": "May remove a mutation token on self to grant +1D on any attack.", "typeId": "14fe-a261-4f47-6f40"}]
+                        "characteristics": [{"name": "Description", "$text": "May remove a *mutation* token on self to grant +1D on any attack.", "typeId": "14fe-a261-4f47-6f40"}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ACT Upgrades",
+                "id": "706d-1582-98cd-449e",
+                "hidden": false,
+                "sortIndex": 2,
+                "selectionEntries": [
+                  {
+                    "name": "New Material",
+                    "id": "c8e8-07b0-c3fc-38ab",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "c013-659b-f4da-4e71", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "New Material",
+                        "id": "d87e-dd08-27c4-a4d7",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "Create two or (5+) three corpses in free adjacent spaces, then *mutate*.", "typeId": "4ce0-5160-a645-5c3d"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Clone",
+                    "id": "2713-e4d3-fe68-b527",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "ece7-407e-8217-f48a", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Clone",
+                        "id": "ce83-e98e-3ced-e71b",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": " Create a perfect copy of an allied unit in range in any other free space in range. Then *obliterate* the original as it collapses into flesh and replace it with a corpse token.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Stitch Fix",
+                    "id": "54d5-f807-37a6-6b61",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "5453-fd2d-788a-430f", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Stitch Fix",
+                        "id": "b9d2-3524-4280-d56b",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Remove up to three negative tokens from a unit, then it may step 1 and it *mutates*. **Spare Parts:** The unit *mutates* and steps once for each negative token removed instead.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Inject Stimulant",
+                    "id": "e69f-1aa9-dbff-5b49",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "a76e-49aa-f2bc-c919", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Inject Stimulant",
+                        "id": "9602-1e36-27f1-66e9",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 1-3", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "Choose a unit in range. That unit may step 2. If it ends its turn in the space of a corpse, it *mutates*, removes the corpse, then may step 2 and *mutate* again.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Biotoxin Injector",
+                    "id": "d03b-db37-e40d-f54b",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "cd56-371b-65d9-2d77", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Biotoxin Injector",
+                        "id": "92a8-642c-7bf4-a385",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 toxin damage. \nAt end of target’s next turn, they explode for a *splash* (target) effect for 1 toxin damage. Your allies in the area *mutate* instead of taking damage.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Mutagen Injector",
+                    "id": "3c9e-f5a6-eb7b-678e",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "277e-0e61-e54c-fc91", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Mutagen Injector",
+                        "id": "e242-af9f-b710-3b44",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "May remove one positive token from target, then deal 1 toxin damage. **Spare Parts:** If at least one corpse was consumed, repeat this effect, but no more than once this turn.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Chaos Beam",
+                    "id": "8a45-0538-680d-9b81",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 7,
+                    "type": "upgrade",
+                    "constraints": [
+                      {"id": "1a88-64ce-baa0-4750", "field": "selections", "includeChildSelections": false, "scope": "1188-a055-8cc9-2578", "shared": true, "type": "max", "value": 1}
+                    ],
+                    "profiles": [
+                      {
+                        "name": "Chaos Beam",
+                        "id": "b144-f693-f729-3cec",
+                        "hidden": false,
+                        "typeId": "fbdf-1d03-d885-5e61",
+                        "typeName": "ACT Ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Line 3", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {
+                            "name": "Effect",
+                            "$text": "1 fire damage and inflict 1 *vulnerable*, (3-4) OR 1 toxic damage and inflict 1 *slow*, (5-6) OR 1 curse damage and inflict 1 *weak*. **Spare Parts:** Roll 1D for effect per corpse consumed and choose any result.",
+                            "typeId": "4ce0-5160-a645-5c3d"
+                          }
+                        ]
                       }
                     ]
                   }
@@ -1586,7 +1621,7 @@
         ],
         "constraints": [{"id": "060e-72a9-ca4b-7617", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
-        {
+          {
             "name": "Strigoi",
             "id": "4aa4-b435-20c4-6e02",
             "hidden": false,
@@ -1614,10 +1649,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 2-4", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: *Splash (target)*: Create a corpse in the area for every unit in the area, up to three times, then *mutate*.",
+                "name": "Effect",
+                "$text": "*Splash (target)*: Create a corpse in the area for every unit in the area, up to three times, then *mutate*.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1629,10 +1665,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 2-4, Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 2-4", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit:** 1 toxic damage. \n**Effect**: Steal a positive token from target. If target has no positive tokens, gain 1 *strength* instead of stealing a token. \n**Spare Parts**: steal 1 more token per corpse consumed. ",
+                "name": "Effect",
+                "$text": "1 toxic damage. \nSteal a positive token from target. If target has no positive tokens, gain 1 *strength* instead of stealing a token. **Spare Parts**: steal 1 more token per corpse consumed. ",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1826,9 +1863,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Gain 1 *strength*, OR 1 *speed*, OR 1 *vitality*. \n**Spare parts**: Repeat this effect once for each corpse consumed, up to three times.",
+                "name": "Effect",
+                "$text": "Gain 1 *strength*, OR 1 *speed*, OR 1 *vitality*. **Spare parts**: Repeat this effect once for each corpse consumed, up to three times.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1840,10 +1878,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Deal 1 devil damage to an adjacent unit. If reduce to 0 hp, *obliterates* unit and the homunculus gains any tokens the absorbed unit had.",
+                "name": "Effect",
+                "$text": "Deal 1 devil damage to an adjacent unit. If reduce to 0 hp, *obliterates* unit and the homunculus gains any tokens the absorbed unit had.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -1855,10 +1894,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit**: 1 damage and *splash (target)*: 1 damage and create one or (5+) or two corpses in an adjacent space to target.",
+                "name": "Effect",
+                "$text": "1 damage and *splash (target)*: 1 damage and create one or (5+) or two corpses in an adjacent space to target.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -2059,10 +2099,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Attack, Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "Attack", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**On hit**: 2 damage (5+) and gain 1 *strength*. \n**Spare Parts**: Gain +1D and 1 max range on the attack if at least one corpse was consumed.",
+                "name": "Effect",
+                "$text": "2 damage (5+) and gain 1 *strength*. **Spare Parts**: Gain +1D and 1 max range on the attack if at least one corpse was consumed.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -2074,10 +2115,11 @@
             "typeId": "fbdf-1d03-d885-5e61",
             "typeName": "ACT Ability",
             "characteristics": [
-              {"name": "Tag", "$text": "Range 1-2", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "Range 1-2", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Create a wall in range. The wall also counts as two corpses. If both corpses are consumed, remove the wall.",
+                "name": "Effect",
+                "$text": "Create a wall in range. The wall also counts as two corpses. If both corpses are consumed, remove the wall.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
@@ -2090,9 +2132,10 @@
             "typeName": "ACT Ability",
             "characteristics": [
               {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+              {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
               {
-                "name": "Description",
-                "$text": "**Effect**: Spend 2 *mutation* tokens. *Summon* a duplicate of this character in range 1-2 without this ability. Then duplicate all positive tokens on this character and place them on the copy.\n• This ability can only be used once per combat.\n• May destroy all walls in the duplicate’s space before placing it.",
+                "name": "Effect",
+                "$text": "Spend 2 *mutation* tokens. *Summon* a duplicate of this character in range 1-2 without this ability. Then duplicate all positive tokens on this character and place them on the copy.\n• This ability can only be used once per combat.\n• May destroy all walls in the duplicate’s space before placing it.",
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]

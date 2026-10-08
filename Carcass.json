@@ -12,6 +12,21 @@
       {"name": "Campaign Rules", "id": "b29d-38bd-512c-efcf", "importRootEntries": true, "targetId": "3ca5-c8cb-23f1-bf2e", "type": "catalogue"},
       {"name": "Heresy", "id": "6b7a-af30-9bef-2c08", "importRootEntries": true, "targetId": "bc57-91b8-c7bd-3892", "type": "catalogue"}
     ],
+    "rules": [
+      {"name": "Formation", "id": "4b05-efb6-ec8c-0bc1", "description": "CARCASS faction trait. Gain +1D on attacks if adjacent to an allied unit.", "hidden": false},
+      {
+        "name": "Headshot",
+        "id": "b4c6-e304-c74c-37c0",
+        "description": "CARCASS special tag. Effect that triggers when rolling a 6 on the final attack roll.",
+        "hidden": false
+      },
+      {
+        "name": "Reload",
+        "id": "c65f-cfbf-e786-ba77",
+        "description": "CARCASS faction tag. This ability must be reloaded by sacrificing a MOVE before becoming usable again. Reloading refreshes all abilities with reload.",
+        "hidden": false
+      }
+    ],
     "selectionEntries": [
       {
         "name": "Ammo Goblin",
@@ -344,10 +359,11 @@
                     ]
                   },
                   {
-                    "name": "Royal Chrysanthemum Stance",
+                    "name": "Clutch Reload",
                     "id": "5f30-9a7e-0363-9f41",
                     "hidden": false,
                     "import": true,
+                    "sortIndex": 3,
                     "type": "upgrade",
                     "constraints": [{"id": "87f4-e204-b090-5ff2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
@@ -387,9 +403,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: *Splash (self)*: 1 fire damage, then step 2 with *free movement*. You may move through foes with this step.",
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: 1 fire damage, then step 2 with *free movement*. You may move through foes with this step.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -413,9 +430,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Push all adjacent foes 1. Until the end of your next turn, you gain *super armor*, cover from all directions, and allied units can use you as a cover object. You cannot MOVE, step or be pushed or pulled for the same duration.",
+                            "name": "Effect",
+                            "$text": "Push all adjacent foes 1. Until the end of your next turn, you gain *super armor*, cover from all directions, and allied units can use you as a cover object. You cannot MOVE, step or be pushed or pulled for the same duration.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -439,11 +457,8 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: *Reload*. On hit, your next attack gains *piercing* and triggers *headshot* effects.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "*Reload*. On hit, your next attack gains *piercing* and triggers *headshot* effects.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
@@ -464,10 +479,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Push an adjacent unit 3. Foes gain 1 *vulnerable* if they would be pushed into a wall or elevated space.",
+                            "name": "Effect",
+                            "$text": "Push an adjacent unit 3. Foes gain 1 *vulnerable* if they would be pushed into a wall or elevated space.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -490,10 +506,11 @@
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 3-5, Charge, Reload*", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack, Charge, Reload*", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 3-5", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 fire damage and 1 *vulnerable*. *Splash (target)*: 1 fire damage. *Headshot*: +1 damage on main target. \n***Effect**: Must reload twice before this is usable.",
+                            "name": "Effect",
+                            "$text": "1 fire damage and 1 *vulnerable*. *Splash (target)*: 1 fire damage. *Headshot*: +1 damage on main target. \n*Must reload twice before this is usable.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -517,9 +534,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Attack, Range 2-2, Reload*", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 damage, then 1 damage. \n**On Hit**: push 1, then push 1. *Headshot*: increase all push by +1. \n***Effect**: Must reload twice before this is usable.",
+                            "name": "Effect",
+                            "$text": "1 damage, then 1 damage.\nPush 1, then push 1. Headshot: increase all push by +1. \n*Must reload twice before this is usable.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -543,9 +561,10 @@
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Attack, Range 2-4, Reload", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 2 damage. *Headshot*: *reload*, and this attack deals +1 base damage on hit for the rest of combat, up to a maximum of 5.",
+                            "name": "Effect",
+                            "$text": "2 damage. *Headshot*: reload, and this attack deals +1 base damage on hit for the rest of combat, up to a maximum of 5.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -577,12 +596,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: you reduce a unit to exactly 1 hp. \n**Effect**: you may immediately activate this ability to deal 1 damage to it. ",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "You reduce a unit to exactly 1 hp", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "You may immediately activate this ability to deal 1 damage to it. ", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -604,12 +621,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: You hit an attack. \n**Effect**: Target gains 3 *vulnerable* after the ability resolves.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "You hit an attack", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Target gains 3 *vulnerable* after the ability resolves.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -631,12 +646,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Foe turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: After any unit MOVEs. \n**Effect**: Step 2, then deal 1 damage to a unit in range 3.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "After any unit MOVEs", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Step 2, then deal 1 damage to a unit in range 3.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -658,10 +671,12 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: *Reload*. Until the start of your next turn, enemy units entering adjacent spaces without being pushed or pulled there take 1 damage and are pushed 1, interrupting their movement. This effect can only trigger once a turn.",
+                            "name": "Effect",
+                            "$text": "*Reload*. Until the start of your next turn, enemy units entering adjacent spaces without being pushed or pulled there take 1 damage and are pushed 1, interrupting their movement. This effect can only trigger once a turn.",
                             "typeId": "07d2-d978-e8e2-acb2"
                           }
                         ]
@@ -685,12 +700,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Every foe in range 2 and line of sight takes 1 *piercing* damage and is pushed 1.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Every foe in range 2 and line of sight takes 1 *piercing* damage and is pushed 1.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -712,12 +725,10 @@
                         "typeName": "SOUL ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
                           {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: *Headshot*. \n**Effect**: Deal 6 devil damage to the targeted unit, sending them Straight to the Grave.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
+                          {"name": "Trigger", "$text": "Headshot", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Deal 6 devil damage to the targeted unit, sending them Straight to the Grave.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -734,193 +745,25 @@
             "sortIndex": 2,
             "selectionEntryGroups": [
               {
-                "name": "SOUL Upgrades",
-                "id": "0bf7-638f-6c38-1370",
-                "hidden": false,
-                "selectionEntries": [
-                  {
-                    "name": "Double Tap",
-                    "id": "4676-7aca-7b99-c9dc",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 1,
-                    "type": "upgrade",
-                    "constraints": [{"id": "3681-547c-50e0-278d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Double Tap",
-                        "id": "6f49-e42b-2df2-2f4a",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: you reduce a unit to exactly 1 hp. \n**Effect**: you may immediately activate this ability to deal 1 damage to it. ",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Frag Bullet",
-                    "id": "d939-20e2-3af1-c7f8",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 2,
-                    "type": "upgrade",
-                    "constraints": [{"id": "06a3-4142-9140-b5dc", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Frag Bullet",
-                        "id": "f7e3-9fe4-65ba-7545",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: You hit an attack. \n**Effect**: Target gains 3 *vulnerable* after the ability resolves.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Bullet Hustle",
-                    "id": "d34c-df90-b14d-44a2",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 3,
-                    "type": "upgrade",
-                    "constraints": [{"id": "c3f0-ff7e-3379-194e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Bullet Hustle",
-                        "id": "a38b-32ad-4d45-c8d2",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Foe turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: After any unit MOVEs. \n**Effect**: Step 2, then deal 1 damage to a unit in range 3.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Overwatch",
-                    "id": "ce6b-26a2-263e-6415",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 4,
-                    "type": "upgrade",
-                    "constraints": [{"id": "23ad-75b2-d370-c195", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Overwatch",
-                        "id": "c3a3-27cc-20a1-123f",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: *Reload*. Until the start of your next turn, enemy units entering adjacent spaces without being pushed or pulled there take 1 damage and are pushed 1, interrupting their movement. This effect can only trigger once a turn.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Bullet Sonata",
-                    "id": "2447-94fa-fc0e-6dfd",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 5,
-                    "type": "upgrade",
-                    "constraints": [{"id": "8a74-1f8f-72ba-7f0c", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "Bullet Sonata",
-                        "id": "d690-6fc3-c282-8e2d",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own Turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: Every foe in range 2 and line of sight takes 1 *piercing* damage and is pushed 1.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "S.T.G.",
-                    "id": "21d7-eecc-1320-aaf5",
-                    "hidden": false,
-                    "import": true,
-                    "sortIndex": 6,
-                    "type": "upgrade",
-                    "constraints": [{"id": "5c4d-6ec5-d2dd-d28e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
-                    "profiles": [
-                      {
-                        "name": "S.T.G.",
-                        "id": "0b62-02fc-edb8-2324",
-                        "hidden": false,
-                        "typeId": "dd79-c1b6-f795-8499",
-                        "typeName": "SOUL ability",
-                        "characteristics": [
-                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
-                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
-                          {
-                            "name": "Description",
-                            "$text": "**Trigger**: *Headshot*. \n**Effect**: Deal 6 devil damage to the targeted unit, sending them Straight to the Grave.",
-                            "typeId": "07d2-d978-e8e2-acb2"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
                 "name": "Bonus Traits",
-                "id": "6b53-ebd0-00b9-2452",
+                "id": "16ce-4fe8-dbb3-f852",
                 "hidden": false,
-                "constraints": [{"id": "a7b5-d6a3-e556-48f1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                "sortIndex": 1,
+                "constraints": [{"id": "e18a-d226-ff0c-31ae", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                 "selectionEntries": [
                   {
                     "name": "Gun Kata",
-                    "id": "fcf7-7f7f-9135-5e4d",
+                    "id": "c296-ee36-1ddc-8c37",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "db1d-2e86-7e9d-131a", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "96ca-a111-b79a-7495", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Gun Kata",
-                        "id": "4d4b-33e7-75f6-9b35",
+                        "id": "b50f-f857-7af3-bfd8",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -932,17 +775,17 @@
                   },
                   {
                     "name": "Bone Wall",
-                    "id": "ac80-2466-c0bf-a2a1",
+                    "id": "68ef-14fe-746e-36a6",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "70d4-bcb1-8fbe-fa18", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "486d-9661-0667-0ab1", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Bone Wall",
-                        "id": "6a23-1a45-16c7-abdc",
+                        "id": "2df4-454f-7858-2b6f",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -951,17 +794,18 @@
                     ]
                   },
                   {
-                    "name": "Royal Chrysanthemum Stance",
-                    "id": "9dc8-d255-a27e-85f4",
+                    "name": "Clutch Reload",
+                    "id": "34d5-1275-683a-6905",
                     "hidden": false,
                     "import": true,
+                    "sortIndex": 3,
                     "type": "upgrade",
-                    "constraints": [{"id": "de47-ea2f-a8a3-9b8e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "55af-efd4-7a45-2d00", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "costs": [{"name": "Dark Power", "typeId": "205a-3435-7aea-b42b", "value": 0}],
                     "profiles": [
                       {
                         "name": "Clutch Reload",
-                        "id": "0982-d636-aa7e-e58b",
+                        "id": "3490-031d-257e-ae58",
                         "hidden": false,
                         "typeId": "957a-4ad1-8e49-55f3",
                         "typeName": "Traits",
@@ -973,29 +817,31 @@
               },
               {
                 "name": "ACT Upgrades",
-                "id": "ca97-4db0-15c7-637d",
+                "id": "4917-abe1-fc3a-aba6",
                 "hidden": false,
+                "sortIndex": 2,
                 "selectionEntries": [
                   {
                     "name": "Grenade Jump",
-                    "id": "1e04-5dbc-9cbf-f4e0",
+                    "id": "7e96-5f25-db3f-2747",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 1,
                     "type": "upgrade",
-                    "constraints": [{"id": "e850-c61c-dd4e-c639", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "0547-8321-1fe2-4468", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Grenade Jump",
-                        "id": "d7d0-ad25-d216-2463",
+                        "id": "a934-558c-242b-c835",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: *Splash (self)*: 1 fire damage, then step 2 with *free movement*. You may move through foes with this step.",
+                            "name": "Effect",
+                            "$text": "*Splash (self)*: 1 fire damage, then step 2 with *free movement*. You may move through foes with this step.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -1004,24 +850,25 @@
                   },
                   {
                     "name": "Armor Lock",
-                    "id": "c859-13ef-1956-74c7",
+                    "id": "7cdf-ffea-5f2b-2f50",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 2,
                     "type": "upgrade",
-                    "constraints": [{"id": "597f-c84f-3089-74c2", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "a4ab-4fac-ff39-1171", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Armor Lock",
-                        "id": "a16d-2c14-c9d7-20db",
+                        "id": "71c7-ab18-2fb9-8ffe",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Push all adjacent foes 1. Until the end of your next turn, you gain *super armor*, cover from all directions, and allied units can use you as a cover object. You cannot MOVE, step or be pushed or pulled for the same duration.",
+                            "name": "Effect",
+                            "$text": "Push all adjacent foes 1. Until the end of your next turn, you gain *super armor*, cover from all directions, and allied units can use you as a cover object. You cannot MOVE, step or be pushed or pulled for the same duration.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -1030,50 +877,48 @@
                   },
                   {
                     "name": "Devil Bullet",
-                    "id": "e6e9-bc7a-cfef-55c9",
+                    "id": "b293-bda5-e95e-e533",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 3,
                     "type": "upgrade",
-                    "constraints": [{"id": "c0f1-5c5f-8027-9fa9", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "ec46-0484-ea93-8dee", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Devil Bullet",
-                        "id": "6dfc-d643-5236-4248",
+                        "id": "4dbe-ed23-c565-3807",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Self", "typeId": "f29c-ed50-4f8c-19dd"},
-                          {
-                            "name": "Description",
-                            "$text": "**Effect**: *Reload*. On hit, your next attack gains *piercing* and triggers *headshot* effects.",
-                            "typeId": "4ce0-5160-a645-5c3d"
-                          }
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
+                          {"name": "Effect", "$text": "*Reload*. On hit, your next attack gains *piercing* and triggers *headshot* effects.", "typeId": "4ce0-5160-a645-5c3d"}
                         ]
                       }
                     ]
                   },
                   {
                     "name": "Superkick",
-                    "id": "2cad-4512-2c51-1b4d",
+                    "id": "0544-95fd-80ac-0ffb",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 4,
                     "type": "upgrade",
-                    "constraints": [{"id": "ce2f-30db-5a5f-c712", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "7e4f-c346-f61d-74ef", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Superkick",
-                        "id": "3dc4-3660-162c-2468",
+                        "id": "e669-008a-dd06-9279",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Melee", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "\n", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Melee", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**Effect**: Push an adjacent unit 3. Foes gain 1 *vulnerable* if they would be pushed into a wall or elevated space.",
+                            "name": "Effect",
+                            "$text": "Push an adjacent unit 3. Foes gain 1 *vulnerable* if they would be pushed into a wall or elevated space.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -1082,24 +927,25 @@
                   },
                   {
                     "name": "LV4 Living Cannon",
-                    "id": "fd30-ad95-41db-8565",
+                    "id": "cb86-e5be-d25b-1639",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 5,
                     "type": "upgrade",
-                    "constraints": [{"id": "e5a2-060a-7c4d-829b", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "fbb7-a770-9de4-3e0e", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "LV4 Living Cannon",
-                        "id": "b770-f74f-765e-7926",
+                        "id": "5638-c7d3-4109-df0b",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
-                          {"name": "Tag", "$text": "Attack, Range 3-5, Charge, Reload*", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Tag", "$text": "Attack, Charge, Reload*", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "Range 3-5", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 fire damage and 1 *vulnerable*. *Splash (target)*: 1 fire damage. *Headshot*: +1 damage on main target. \n***Effect**: Must reload twice before this is usable.",
+                            "name": "Effect",
+                            "$text": "1 fire damage and 1 *vulnerable*. *Splash (target)*: 1 fire damage. *Headshot*: +1 damage on main target. \n*Must reload twice before this is usable.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -1108,24 +954,25 @@
                   },
                   {
                     "name": "SG88 Two Barrel Shotgun",
-                    "id": "cb26-a751-f30b-d435",
+                    "id": "fc06-77cb-de87-01e9",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 6,
                     "type": "upgrade",
-                    "constraints": [{"id": "d920-2c9d-ebda-0f25", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "b320-202e-7a46-2342", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "SG88 Two Barrel Shotgun",
-                        "id": "b974-c6bc-99dc-e09f",
+                        "id": "b85b-a3db-6447-3550",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Attack, Range 2-2, Reload*", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 1 damage, then 1 damage. \n**On Hit**: push 1, then push 1. *Headshot*: increase all push by +1. \n***Effect**: Must *reload* twice before this is usable.",
+                            "name": "Effect",
+                            "$text": "1 damage, then 1 damage.\nPush 1, then push 1. Headshot: increase all push by +1. \n*Must reload twice before this is usable.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
                         ]
@@ -1134,26 +981,189 @@
                   },
                   {
                     "name": "Unholy Sixgun",
-                    "id": "dde0-4688-74c4-d838",
+                    "id": "c54d-0ee3-b5f5-ffdb",
                     "hidden": false,
                     "import": true,
                     "sortIndex": 7,
                     "type": "upgrade",
-                    "constraints": [{"id": "84ed-0665-dea5-b636", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "constraints": [{"id": "8368-2480-f207-b996", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
                     "profiles": [
                       {
                         "name": "Unholy Sixgun",
-                        "id": "c17d-8698-d7c8-6950",
+                        "id": "ecfd-0cc2-9896-1171",
                         "hidden": false,
                         "typeId": "fbdf-1d03-d885-5e61",
                         "typeName": "ACT Ability",
                         "characteristics": [
                           {"name": "Tag", "$text": "Attack, Range 2-4, Reload", "typeId": "f29c-ed50-4f8c-19dd"},
+                          {"name": "Range", "$text": "", "typeId": "ff6b-accf-c5f6-abe1"},
                           {
-                            "name": "Description",
-                            "$text": "**On hit**: 2 damage. *Headshot*: *reload*, and this attack deals +1 base damage on hit for the rest of combat, up to a maximum of 5.",
+                            "name": "Effect",
+                            "$text": "2 damage. *Headshot*: reload, and this attack deals +1 base damage on hit for the rest of combat, up to a maximum of 5.",
                             "typeId": "4ce0-5160-a645-5c3d"
                           }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SOUL Upgrades",
+                "id": "6c62-6d3f-6cf0-bde0",
+                "hidden": false,
+                "sortIndex": 3,
+                "selectionEntries": [
+                  {
+                    "name": "Double Tap",
+                    "id": "de0e-0a4a-68a1-15a5",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 1,
+                    "type": "upgrade",
+                    "constraints": [{"id": "17da-d628-6fbb-8348", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Double Tap",
+                        "id": "d735-2ef7-8045-975f",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You reduce a unit to exactly 1 hp", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "You may immediately activate this ability to deal 1 damage to it. ", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Frag Bullet",
+                    "id": "3120-9ec8-0eab-454c",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 2,
+                    "type": "upgrade",
+                    "constraints": [{"id": "415b-e65d-b88a-f3e7", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Frag Bullet",
+                        "id": "a1fd-f88a-1034-c635",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**1 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "You hit an attack", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Target gains 3 *vulnerable* after the ability resolves.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Bullet Hustle",
+                    "id": "6a19-ca29-065d-1c76",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 3,
+                    "type": "upgrade",
+                    "constraints": [{"id": "e8fd-5407-0239-d43d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Bullet Hustle",
+                        "id": "d742-f96b-3b94-2fa9",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Foe turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**2 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "After any unit MOVEs", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Step 2, then deal 1 damage to a unit in range 3.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Overwatch",
+                    "id": "360e-0335-0478-51aa",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 4,
+                    "type": "upgrade",
+                    "constraints": [{"id": "12b1-edf6-e672-2892", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Overwatch",
+                        "id": "0425-e70c-30dc-fb32",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**3 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {
+                            "name": "Effect",
+                            "$text": "*Reload*. Until the start of your next turn, enemy units entering adjacent spaces without being pushed or pulled there take 1 damage and are pushed 1, interrupting their movement. This effect can only trigger once a turn.",
+                            "typeId": "07d2-d978-e8e2-acb2"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Bullet Sonata",
+                    "id": "a492-b369-6e27-5e14",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 5,
+                    "type": "upgrade",
+                    "constraints": [{"id": "6dcc-4fa5-7724-2e05", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "Bullet Sonata",
+                        "id": "fe42-f2e1-4fd3-3b14",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own Turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**4 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Every foe in range 2 and line of sight takes 1 *piercing* damage and is pushed 1.", "typeId": "07d2-d978-e8e2-acb2"}
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "S.T.G.",
+                    "id": "e192-039d-2074-c21d",
+                    "hidden": false,
+                    "import": true,
+                    "sortIndex": 6,
+                    "type": "upgrade",
+                    "constraints": [{"id": "f65a-71d7-0275-394d", "field": "selections", "includeChildSelections": false, "scope": "unit", "shared": true, "type": "max", "value": 1}],
+                    "profiles": [
+                      {
+                        "name": "S.T.G.",
+                        "id": "049a-15b3-b166-5257",
+                        "hidden": false,
+                        "typeId": "dd79-c1b6-f795-8499",
+                        "typeName": "SOUL ability",
+                        "characteristics": [
+                          {"name": "Tag", "$text": "Own turn", "typeId": "b09c-2bf5-95e0-bba3"},
+                          {"name": "Range", "$text": "", "typeId": "eaab-3fcf-aa20-6b45"},
+                          {"name": "Cost", "$text": "**6 SOUL**", "typeId": "0d1c-aace-0cc0-d3e3"},
+                          {"name": "Trigger", "$text": "Headshot", "typeId": "1168-c65d-8a02-19c3"},
+                          {"name": "Effect", "$text": "Deal 6 devil damage to the targeted unit, sending them Straight to the Grave.", "typeId": "07d2-d978-e8e2-acb2"}
                         ]
                       }
                     ]
@@ -1196,7 +1206,7 @@
           }
         ],
         "profiles": [
-        {
+          {
             "name": "EGIS Weapon",
             "id": "4baf-e17e-e6ea-2c2e",
             "hidden": false,
@@ -1395,7 +1405,7 @@
         ],
         "constraints": [{"id": "bb02-2aa0-a5f5-dd95", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
-        {
+          {
             "name": "Barrelform",
             "id": "8bcd-4f77-5e3c-8980",
             "hidden": false,
@@ -1576,7 +1586,7 @@
           {"name": "House Unit", "id": "e41f-f1ce-a76c-42cd", "hidden": false, "primary": true, "targetId": "34f2-2368-a022-4c0d"},
           {"name": "Scion", "id": "f826-977c-8a9f-bd5a", "hidden": false, "primary": false, "targetId": "fa04-6df6-fc81-7d88"}
         ],
-        "constraints": [{"id": "12f3-3aec-18f7-45ed", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
+        "constraints": [{"id": "12f3-3aec-18f7-45ed", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 3}],
         "profiles": [
           {
             "name": "Enforcer",
@@ -1938,7 +1948,7 @@
         ],
         "constraints": [{"id": "673a-accc-d47f-38dd", "field": "selections", "includeChildSelections": true, "scope": "roster", "shared": true, "type": "max", "value": 2}],
         "profiles": [
-        {
+          {
             "name": "Infiltrator",
             "id": "ff3b-77b6-4a90-832e",
             "hidden": false,
@@ -2017,7 +2027,7 @@
                 "typeId": "4ce0-5160-a645-5c3d"
               }
             ]
-          },
+          }
         ],
         "selectionEntryGroups": [
           {
